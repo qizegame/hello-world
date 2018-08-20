@@ -1,0 +1,35 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+	/*DOM节点*/
+	function one(){
+		document.getElementById("dv1").previousSibling.previousSibling.style.background="red"/*在这里，多追加了一个兄弟节点的原因是，空格也算一个节点*/
+	}
+
+
+
+	</script>
+</head>
+<body>
+	<input type="button" value="点击" onclick="one()">
+	<div>
+		<p>段落1</p>
+		<div id="dv1">div1号</div>
+		<p>段落2</p>
+		<a>链接</a>
+	</div>	
+	<div>
+		abcd
+	</div>
+
+</body>
+</html>

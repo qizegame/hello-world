@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+		//数组求和
+		/*第一种方法*/
+		var a=[24,26,22,25,29,28];
+		var sum=0;/*先定义一个变量sum，用来保存求得的和*/
+		for(b=0;b<a.length;b++){/*从第一个下标0开始取值并进行循环*/
+			sum=sum+a[b];/*循环从数组a中取出值，并加上上一回的值，赋给sum*/
+		};
+		document.write(sum);
+		document.write("<br/>");
+		/*第二种方法*/
+		var a=[24,26,22,25,29,28];
+		var sum=0;/*先定义一个变量sum，用来保存求得的和*/
+		var leg=a.length;/*定义一个变量leg来保存变量的长度值，这么做的优势在于，在下面的for循环中，a.length不会都去读取数组的长度，大大提高数据执行效率*/
+		for(var b=0;b<leg;b++){/*从第一个下标0开始取值并进行循环*/
+			sum=sum+a[b];/*循环从数组a中取出值，并加上上一回的值，赋给sum*/
+		};
+		document.write(sum);
+		document.write("<br/>");
+
+
+		/*求一堆数组中的最大值*/
+		var c=[15,13,45,6,7,8,789,123];
+		var big=c[0];/*首先把数组的第一个值取出来，假设他是最大值*/
+		var leg=c.length;/*取得数组e的长度，并赋值给变量leg*/
+		for(var d=0;d<leg;d++){/*把数组里的没一个数都取出来，跟预设的最大值比较*/
+			if(big<c[d]){/*如果预设的最大值比取出的值小，那么，把取出的值赋给最大值*/
+			var big=c[d];	
+			}
+		};
+		document.write(big);
+		document.write("<br/>");
+
+		/*求一堆数组的平均值*/
+		var e=[15,13,45,6,7,8,789,123];
+		var he=0;/*定义和给一个变量，初始为0*/
+		var leg=e.length;/*取得数组e的长度，并赋值给变量leg*/
+		for (var f=0;f<leg;f++) {
+			var he=he+e[f];/*取值相加，赋给变量he*/
+
+		};
+		var pingjun=he/leg;/*平均值等于和除以个数 */
+		document.write(pingjun);
+		document.write("<br/>");
+
+		/*二维数组求和*/
+		var g=[1,2,123];
+		var h=[4,5,6];
+		var i=[7,8,9];
+		var ghi=[g,h,i];
+		for(var j=0,leg=ghi.length,he=0;j<leg;j++){
+			for(var k=0,leg1=ghi[j].length;k<leg1;k++){
+			var he=he+ghi[j][k];
+			}
+		}
+		document.write(he);
+		document.write("<br/>");
+
+
+
+
+
+
+	</script>
+	<style>
+	</style>
+</head>
+<body>
+
+</body>
+</html>
+</html>

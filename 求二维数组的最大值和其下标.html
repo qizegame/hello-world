@@ -1,0 +1,43 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+
+
+		/*找二维数组里的最大值及其下标*/
+		var g=[1166,2,111];
+		var h=[4,5,6];
+		var i=[7,8,9];
+		var ghi=[g,h,i];
+		var leg=ghi.length;
+		var big=ghi[0][0];
+		var xiabiao=[0,0]
+		for(j=0;j<leg;j++){
+			for(var k=0,leg1=ghi[j].length;k<leg1;k++){
+				if(big<ghi[j][k]){
+				var big=ghi[j][k];
+				var xiabiao=[j,k];
+				}
+			}
+		}
+		document.write(xiabiao);
+		document.write("<br/>");
+		document.write(big);
+
+
+	</script>
+	<style>
+	</style>
+</head>
+<body>
+
+</body>
+</html>
+</html>

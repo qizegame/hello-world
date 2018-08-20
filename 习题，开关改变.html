@@ -1,0 +1,56 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+ 
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+	function a(n){
+		if(n.target.value=="开"){
+		n.target.value="关"
+		} 
+		else{
+		n.target.value="开"
+		}
+	}
+	/*方法二的好处在于可以计数，了解用户点击了多少次，还能控制用户的点击次数*/
+	var i=0;
+	function b(n){
+		if(i%2==0){
+		n.target.value="关"
+		}else{
+		n.target.value="开"	
+		}
+		i++
+	}
+	var flag=true
+	function c(n){
+		if(flag==true){
+		n.target.value="关"
+		flag=false
+		}else{
+		n.target.value="开"
+		flag=true	
+		}
+	}
+	function d(n){
+		if(n.value=="开"){
+		n.value="关"
+		} 
+		else{
+		n.value="开"
+		}
+	}
+	</script> 
+</head>
+<body>
+	<input type="button" value="开" onclick="a(event)"><!-- 方法一 -->
+	<input type="button" value="开" onclick="b(event)"><!-- 方法二 -->
+	<input type="button" value="开" onclick="c(event)"><!-- 方法三 -->
+	<input type="button" value="开" onclick="d(this)"><!-- 方法四 -->		
+</body>
+</html>

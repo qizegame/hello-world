@@ -1,0 +1,86 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	#two{
+		display:inline-block;/*行内块元素，span本身是行内元素，行内元素是不可以有宽和高的，要先把他变成块元素*/
+		width:100px;
+		height:20px;
+		border:1px solid black;
+	}
+	#three{
+		display:inline-block;
+		height:20px;
+		background: black;
+	}
+	body{
+		cursor: crosshair;
+	}
+	</style>
+	<script type="text/javascript">
+	/*小星星增强版*/
+	//window.onload=init;
+	var a/*定义定时器*/
+	var c=0;/*定义时间*/
+	var e=0;
+	function start(n){
+		n.value="重新开始"
+		e++/*点击开始游戏就自加1，如果再点击一次开始游戏，那么就刷新页面，防止无限点击开始游戏bug*/
+		if(e>=2){
+			location.reload()
+		}else{
+		window.setInterval("shijian()",1000)/*创建时间计时器*/
+		a=window.setInterval("star()",500)/*重复定时器，每隔500毫秒调用一次函数star()*/
+		}
+	}
+	var b=0;/*记录星星的变量*/
+	function star(){
+		b++
+		if(b>20){
+			alert("游戏结束")
+			window.clearInterval(a)/*清除定时器*/
+			location.reload()/*重新载入页面*/
+		}else{
+		var obj=document.createElement("img")/*创建一个图像标签*/
+		obj.src="images/星星.png"/*图像标签的src属性为图片地址*/
+		var x=Math.floor(Math.random()*1000+100)
+		var y=Math.floor(Math.random()*500+100)
+		var w=Math.floor(Math.random()*80+20)
+		obj.style.position="absolute"
+		obj.style.top=y+"px"
+		obj.style.left=x+"px"
+		obj.width=w
+		document.body.appendChild(obj)/*把创建的标签放入body中*/
+		document.getElementById("three").style.width=b*5+"px"
+		/*绑定一个onclick事件*/
+		obj.onclick=removestar
+		}
+	}
+	function removestar(){
+		this.parentNode.removeChild(this)/*发生点击的this的父元素，调用一个删除来删除现在调用的这个this对象*/
+		b--
+		document.getElementById("three").style.width=b*5+"px"
+	}
+	function stop(){
+		alert("暂停游戏")
+	}
+	function shijian(){
+		c++
+		document.getElementById("one").innerHTML=c
+	}
+	</script>
+</head>
+<body>
+	<input type="button" value="开始游戏" onclick="start(this)">
+	<input type="button" value="暂停游戏" onclick="stop()">
+	你已经进行了<span id="one">0</span>秒游戏
+	<span id="two">
+		<span id="three"></span>
+	</span>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- viewport=视窗，content内含义：宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script src="bootstrap-3.3.0-dist/dist/js/jquery.min.js"></script>
+	<!-- 之后再引入bootstrap.min.js文件 -->
+	<script src="bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+	<style>
+	div [class*="col-"]{
+		border:2px solid grey;/*div中，包含col-的所有元素，加上边框*/
+	}
+	.top{
+		width: 800px;
+		border:2px solid grey;
+		margin: 0 auto;
+		background: grey;
+	}
+	.pull-left{
+		width: 390px;
+		height: 200px;
+		background: green;
+	}
+	.pull-right{
+		width: 390px;
+		height: 200px;
+		background: orange;	
+	}
+	</style>
+</head>
+<body>
+	<header></header>
+	<nav></nav>
+	<aside></aside>
+	<div  class="container" style="background-color:grey">
+		这里bootstrap已经预设好了样式，宽度1170px
+		<article></article>
+		<h1>这个标题同样已经预设了样式</h1>
+		<h2 class="page-header">请注意，这个标题二的下面有一条线，也是预设样式</h2>
+		<p class="text-uppercase">文字内容已经定义好了，是14px，<del>删除线</del><br/>this english will 英文全部会大写<br/></p>
+		<p class="text-lowercase">THIS ENGLISH WILL 全部小写<br/></p>
+		<p class="text-capitalize">this english will 首字母会大写<br/></p>
+		<ul class="list-unstyled list-inline">
+		<p>列表的样式 class="list-unstyled"去掉原有符号和格式list-inline变成了横向排列</p>
+		<li>html</li>
+		<li>JavaScript</li>
+		<li>jQuery</li>
+		</ul>
+		<br/>
+		<dl class="dl-horizontal"><!-- 列表变成横向 -->
+			<dt>电器</dt>
+			<dd>吹风机</dd>
+			<dd>刮胡刀</dd>
+			<dd>冰箱</dd>
+			<dd>洗衣机</dd>
+		</dl>
+	</div>
+	<div  class="container table-responsive"><!-- 给表格的父元素加该属性，使得表格能变成响应式 -->
+		<table class="table table-bordered table-hover table-striped table-condensed">
+			<tr><!-- 表格的行 -->
+				<td>品名</td><!-- 表格的列 -->
+				<td>编号</td>
+				<td>状态</td>
+				<td>品名</td>
+				<td>编号</td>
+				<td>状态</td>
+				<td>品名</td>
+				<td>编号</td>
+				<td class="danger">状态</td><!-- 设置单元格的颜色 -->
+			</tr>
+			<tr>
+				<td>笔记本</td>
+				<td>001</td>
+				<td>已发货</td>
+				<td>笔记本</td>
+				<td>001</td>
+				<td>已发货</td>
+				<td>笔记本</td>
+				<td>001</td>
+				<td>已发货</td>
+			</tr>
+			<tr>
+				<td>ipad&nbsppro</td>
+				<td>002</td>
+				<td>出库中</td>
+				<td>笔记本</td>
+				<td>001</td>
+				<td>已发货</td>
+				<td>笔记本</td>
+				<td>001</td>
+				<td>已发货</td>
+			</tr>
+		</table>
+	</div>
+	<br/>
+	<div class="container">
+		<img src="images/banner_01.png" class="img-responsive img-thumbnail"><!-- 图片变成响应式，加圆角的外框 -->
+	</div>
+	<div class="container" style="background:green;">
+		<div class="row"><!-- 表示行 -->
+			<div class="col-md-1">col-1</div><!-- 一行是12列，表示了这里总共就1个块只占1列，于是被分割12个列 -->
+			<div class="col-md-1">col-2</div>
+			<div class="col-md-1">col-3</div>
+			<div class="col-md-1">col-4</div>
+			<div class="col-md-1">col-5</div>
+			<div class="col-md-1">col-6</div>
+			<div class="col-md-1">col-7</div>
+			<div class="col-md-1">col-8</div>
+			<div class="col-md-1">col-9</div>
+			<div class="col-md-1">col-10</div>
+			<div class="col-md-1">col-11</div>
+			<div class="col-md-1">col-12</div>
+			<div class="col-md-1">col-13</div>
+			<div class="col-md-1">col-14</div><!-- 多出的会自动排到下一行 -->
+		</div>
+		<div class="row">
+			<div class="col-md-6">col-1</div><!-- 一行是12列，表示了这里1个块占6列，于是被分割成了2列 -->
+			<div class="col-md-6">col-2</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">在row里col-md-2</div><!-- 占据2个块 -->
+			<div class="col-md-3">在row里col-md-3</div><!-- 占了3个块 -->
+			<div class="col-md-7">在row里col-md-7</div><!-- 占了7个块 -->
+		</div>
+		<div class="col-md-4 col-xs-6"><!-- 定义了不同设备的情况下，响应式的适应能力，非常强 -->
+			<img src="images/banner_01.png" class="img-responsive img-thumbnail" alt="案例">
+		</div>
+		<div class="col-md-4 col-xs-6">
+			<img src="images/banner_01.png" class="img-responsive img-thumbnail" alt="案例">
+		</div>
+		<div class="col-md-4 col-xs-6">
+			<img src="images/banner_01.png" class="img-responsive img-thumbnail" alt="案例">
+		</div>
+	</div>
+	<div class="container" style="background:orange;">
+		<div class="row"><!-- 表示行 -->
+			<div class="col-md-1">col-1</div><!-- 一行是12列，表示了这里总共就1个块只占1列，于是被分割12个列 -->
+			<div class="col-md-1">col-2</div>
+			<div class="col-md-1">col-3</div>
+			<div class="col-md-1">col-4</div>
+			<div class="col-md-1">col-5</div>
+			<div class="col-md-1">col-6</div>
+			<div class="col-md-1">col-7</div>
+			<div class="col-md-1">col-8</div>
+			<div class="col-md-1">col-9</div>
+			<div class="col-md-1">col-10</div>
+			<div class="col-md-1">col-11</div>
+			<div class="col-md-1">col-12</div>
+		</div>
+	</div>
+ 	<div class="container" style="background:orange;">
+		<div class="row"><!-- 表示行 -->
+			<div class="col-md-2 col-md-offset-3">col-2</div>
+			<div class="col-md-4 col-md-offset-1">col-4</div>
+
+		</div>
+	</div>
+ 	<div class="container" style="background:orange;">
+		<div class="row"><!-- 表示行 -->
+			<div class="col-md-4">col-4</div>
+			<div class="col-md-8">col-8</div>
+		</div>
+	</div>
+ 	<div class="container" style="background:orange;">
+		<div class="row"><!-- 表示行 -->
+			<div class="col-md-4 col-md-push-8">col-4</div>
+			<div class="col-md-8 col-md-pull-4">col-8</div>
+		</div>
+	</div>
+	<div class="container">
+		<p class="text-muted bg-info">柔和</p>
+		<p class="text-success">成功</p>
+		<p class="text-info bg-success">提示</p>
+		<p class="text-warning bg-danger">警告</p>
+		<p class="text-danger bg-primary">危险</p>
+		<p class="text-primary bg-warning">初始化的</p>
+		<span class="caret"></span><!-- 下拉的一个小三角 -->
+	</div>
+	<div class="container"><!-- 需要容器 -->
+		<div class="top clearfix"><!-- 清除浮动 -->
+			<div class="pull-left"><!-- 快速左浮动 -->
+
+			</div>
+			<div class="pull-right"><!-- 快速右浮动 -->
+
+			</div>
+		</div>	
+	</div>
+	<div class="container">
+		<form class=><!-- 表单 -->
+			<div class="form-group"><!-- 改进上下边距 -->
+				<label for="cemail">邮箱</label>
+				<input type="enmail" name="cemail" id="cemail" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="pwd">密码</label>
+				<input type="password" name="pwd" id="pwd" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="pwd">手机号</label>
+				<input type="text" name="tel" id="tel" class="form-control">
+			</div>
+			<div class="form-group">
+				<label class="checkbox-inline"><input type="checkbox" name="hobby" >唱歌</label>
+				<label class="checkbox-inline"><input type="checkbox" name="sleep" >睡觉</label>
+				<label class="checkbox-inline disabled"><input type="checkbox" name="live" disabled>旅游</label>	<!-- 双项禁止点击 -->	
+			</div>
+			<div class="form-group">
+				<label class="radio-inline"><input type="radio" name="sex" value="男">男</label>
+				<label class="radio-inline disabled"><input type="radio" name="sex" value="男" disabled>女</label>   <!-- 双项禁止点击 -->
+			</div>
+		</form>
+	</div>
+	<div class="container form-group"><!-- 改进上下边距 -->
+		<div class="input-group">
+			<span class="input-group-addon">搜索</span>
+			<input type="search" name="sc" id="sc" class="form-control"><!-- form-control样式改进，输入框变成圆 角 -->	
+		</div>
+	</div>
+	<div class="container form-group"><!-- 改进上下边距 -->
+		<div class="input-group"><!-- 进行组合 -->
+			<input type="search" name="sc" id="sc" class="form-control"><!-- form-control样式改进，输入框变成圆角 -->	
+			<span class="input-group-addon">查询内容</span>
+		</div>
+	</div>
+
+	<div class="container form-group">
+	<span class="glyphicon glyphicon-heart"></span><!-- 直接从bootstrap网上复制名称使用即可 -->
+	<span class="glyphicon glyphicon-repeat"></span>
+	</div>
+
+	<div class="container form-group"><!-- 改进上下边距 -->
+		<div class="input-group"><!-- 进行组合 -->
+			<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+			<input type="search" name="sc" id="sc" class="form-control"><!-- form-control样式改进，输入框变成圆 角 -->	
+		</div>
+	</div>
+	<form class="container form-inline"><!-- 表单 --><!-- 使得纵向变横向 -->
+			<div class="form-group"><!-- 改进上下边距 -->
+				<label for="cemail">邮箱</label>
+				<input type="enmail" name="cemail" id="cemail" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="pwd">密码</label>
+				<input type="password" name="pwd" id="pwd" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="pwd">手机号</label>
+				<input type="text" name="tel" id="tel" class="form-control">
+			</div>
+	</form>
+	<footer></footer>
+</body>
+</html>

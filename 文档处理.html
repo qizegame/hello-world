@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	.one{
+		background: pink;
+		width:200px;
+		height:100px;
+		margin: 0 auto;
+	}
+	input{
+		display:block;
+		margin: 10px auto;
+	}
+	.div_wai{
+		border:1px solid blue; 
+		margin: 0 auto;
+		width:200px;
+	}
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+		<div class="one">
+		这里是div1
+		</div>
+		<br/>
+		<div class="one">
+		这里是div2
+		</div>
+		<input type="button" value="内部插入">	
+		<br/>
+		<div class="one">
+		这里是div3	
+		</div>
+		<br/>
+		<input type="button" value="外部插入after">
+		<div class="one">
+		这里是div4	
+		</div>
+		<input type="button" value="外部插入before">		
+		<div class="one">
+		这里是div5
+		<p>我也是div里的元素</p>	
+		<a href="#">我也是</a>
+		</div>
+		<input type="button" value="外包裹元素，每个元素都被该元素包裹一遍wrap">	
+		<br/>
+		<div class="div_wai">
+			<div class="one" id="quxiao">
+			这里是div6
+			</div>
+		</div>
+		<input type="button" value="取消包裹unwrap">	
+		<input type="button" value="全部元素用一个包裹wrapAll">		
+		<input type="button" value="内部包裹wrapInner，在该元素的内部进行一层包裹">	
+		<p align="center">我是第二个P标签</p>
+		<input type="button" value="替换replace">
+		<input type="button" value="替换replaceAll">		
+	<script type="text/javascript">
+		$("input:eq(0)").click(function() {
+			$("div:eq(0)").append("<p>这是里插入的内容，我会插入到原有内容的后面</p>")	
+			$("div:eq(1)").prepend("<p>这是里插入的内容，我会插入到原有内容的前面</p>")
+		})
+		$("input:eq(1)").click(function() {
+			$("div:eq(2)").after("<p align=\"center\">这是里插入的内容，我会插入到元素a的后面</p>")	
+		})
+		$("input:eq(2)").click(function() {
+			$("div:eq(3)").before("<p align=\"center\">这是里插入的内容，我会插入到元素a的前面</p>")	
+		})	
+		$("input:eq(3)").click(function() {
+			$("div").wrap("<div class=\"div_wai\">外包裹元素，每个元素都被该元素包裹一遍</div>")/*用一个元素b包裹所有元素，但是b元素，在该元素的外级进行包裹，也就是父级*/
+		})
+		$("input:eq(4)").click(function() {
+			$("#quxiao").unwrap()/*取消元素的外部包裹*/	
+		})	
+		$("input:eq(5)").click(function() {
+			$("div").wrapAll("<div class=\"div_wai\">这是全部包裹wrapAll</div>")/*用一个元素b包裹所有元素*/	
+		})		
+		$("input:eq(6)").click(function() {
+			$("div:eq(4)").wrapInner("<div class=\"div_wai\">这是内部包裹wrapInner</div>")/*用一个元素b包裹所有元素，但是b元素，在该元素的下一级进行包裹，也就是子级*/	
+		})	
+		$("input:eq(7)").click(function() {
+			$("p:eq(1)").replaceWith("<div class=\"div_wai\">这是替换replace</div>")		
+		})
+		$("input:eq(8)").click(function() {
+			$("<div class=\"div_wai\">这是替换replace</div>").replaceAll("p")/*用元素a，去替换所有的元素P*/		
+		})
+	</script>
+</body>
+</html>

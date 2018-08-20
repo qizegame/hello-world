@@ -1,0 +1,32 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+	window.onload=init;
+	function init(){
+		window.setTimeout("tiaozhuan()",5000)
+		window.setInterval("duimiao()",1000)
+	}
+	function tiaozhuan(){
+		location.replace("http://www.baidu.com")
+	}
+	function duimiao(){
+		document.getElementById("one").innerHTML=document.getElementById("one").innerHTML-1
+	}
+
+	</script>
+</head>
+<body>
+	注册成功，页面在<span id="one">5</span>秒后自动跳转
+
+
+</body>
+</html>

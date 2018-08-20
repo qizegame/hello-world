@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+
+/*	input{
+		display:block;
+		margin: 10px auto;
+	}*/
+	div{
+		height:600px;
+		border:1px solid black;
+	}
+
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div>
+		<span style="font-size:20px">坐标0,0</span>
+	</div>
+	<script type="text/javascript">
+	$("div").mousemove(function(event){
+		$("span:eq(0)").html("坐标"+event.clientX+","+event.clientY)
+	})
+	</script>
+</body>
+</html>

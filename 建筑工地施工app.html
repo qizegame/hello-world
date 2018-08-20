@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script src="bootstrap-3.3.0-dist/dist/js/jquery.min.js"></script>
+	<!-- 之后再引入bootstrap.min.js文件 -->
+	<script src="bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+	<style>
+		.bannerbox{
+			border:1px solid #31708f;
+		}
+		.left_01{
+			border:1px solid #31708f;
+		}
+		.right_01{
+			border:1px solid #31708f;
+		}
+	</style>
+</head>
+<body>
+	<div  class="container">
+		<div class="row">
+			<div class="col-md-12 col-xs-12 bannerbox form-control">
+				<img src="images/back.png" class="img-responsive pull-left" alt="案例">
+				首页
+				<img src="images/Category.png" class="img-responsive pull-right" alt="案例">
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="text-info">项目管理</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp切换			
+			</div>
+			<div  class="container-fliud table-responsive"><!-- 给表格的父元素加该属性，使得表格能变成响应式 -->
+			<table class="table table-bordered table-hover"><!-- 边框、鼠标悬停效果、隔行变色 -->
+				<tr><!-- 表格的行 -->
+					<td class="text-success">2016.11-20&nbsp&nbsp&nbsp项目开工<img src="images/圆形选中-fill.png" hspace="130"></td><!-- 表格的列 -->
+				</tr>
+				<tr>
+					<td class="text-success">2016.11-25&nbsp&nbsp&nbsp拆除完成<img src="images/圆形选中-fill.png" hspace="130"></td>
+				</tr>
+				<tr class="active"><!-- 表格的行 -->
+					<td class="text-muted bg-muted">&nbsp&nbsp&nbsp施工中&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp打桩施工<img src="images/向右1.png" hspace="127"></td><!-- 表格的列 -->
+				</tr>
+			</table>
+		</div>
+		<div class="row"><!-- 清除浮动 -->
+			<div class="col-md-6 col-xs-6 left_01"><!-- 快速左浮动 -->
+				66
+			</div>
+			<div class="col-md-6 col-xs-6 right_01"><!-- 快速右浮动 -->
+				66
+			</div>
+		</div>	
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>

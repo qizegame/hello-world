@@ -1,0 +1,33 @@
+		<!doctype html>
+<html onclick="xingxing(event)">
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	
+	}
+	</style>
+	<script type="text/javascript">
+	/*漫天点出小星星*/
+	function xingxing(n){
+		/*创建一个星星(标签)*/
+		var star=document.createElement("img")
+		/*添加src属性*/
+		star.src="images/星星.png"
+		/*随机星星的大小（宽度width）*/
+		star.width=Math.floor(Math.random()*(80-10+1)+10)
+		/*随机出现星星的位置是事件发生的位置*/
+		star.style.position="absolute"/*star相对于body来说绝对位置*/
+		star.style.top=n.clientY-star.width/2+"px"
+		star.style.left=n.clientX-star.width/2+"px"
+		/*把小星星放到body里面（一般是放到body最末尾）*/
+		document.body.appendChild(star)
+	};
+	</script> 
+</head>
+<body><!-- 注意，不在body上加onclick，因为margin（外边距）是不会触发事件的，所以只有直接给html加onclick -->
+
+</html>

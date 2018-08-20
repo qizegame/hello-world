@@ -1,0 +1,50 @@
+		*{margin: 0;padding:0;}/*清除所有格式*/
+		.baby{
+			border: 1px solid orange;
+			width: 1100px;
+			height:400px;
+			margin: 0 auto;
+		}/*设置div的边框，宽、高、以及外边距*/
+		.baby ul li{
+			border: 1px solid orange;
+			width: 250px;
+			height:350px;
+			margin: auto 10px;
+			list-style-type: none;
+			float: left;
+		}/*设置div中ul的边框、宽、高、外边距、去除列表图标、左浮动*/
+		.baby ul li p span{
+			color: orange;
+			font-size: 20px; 
+			float: left;
+			margin:2px 0 0 10px;
+		}/*设置div下span的字体颜色，大小，左浮动，以及外边框*/
+		.baby ul li p buynumber{
+			color: grey;
+			font-size: 15px;
+			float: left;
+			margin:5px 0 0 50px;
+		}/*设置div下buynumber的字体颜色、大小、左浮动、外边框*/
+		.baby ul li p standard{
+			color: black;
+			font-size: 15px;
+			font-family: 微软雅黑;
+			float: left;
+			margin:2px 0 0 5px;
+		}/*设置div下standard的字体颜色、大小、字形、左浮动、以及外边框*/
+		.baby ul li p shopname{
+			color: grey;
+			font-size: 12px;
+			float: left;
+			margin:2px 0 0 10px;
+		}/*设置div下shopname的字体颜色、大小、左浮动、以及外边框*/
+		.baby ul li p add{
+			color: grey;
+			font-size: 15px;
+			float: left;
+			margin:2px 0 0 20px;
+		}/*设置div下的add的字体颜色、大小、左浮动、以及外边框*/
+		.baby ul li img{
+			float: left;
+			margin: 0 auto;
+		}/*设置div下图片的左浮动、以及外边框*/

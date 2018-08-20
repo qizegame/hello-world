@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+
+			//求任意1到v之间的偶数个数
+			function qiuou(ccc){
+				var geshu=0;/*定义偶数个数为geshu*/
+				for (var a=1;a<=ccc;a++) {
+					if(a%2==0){
+						geshu++;/*当有满足条件的a进来，就会自加1，也就说偶数的个数被赋予的geshu这个值会加1*/	
+					}
+				}
+				return geshu;/*当前面所有满足条件的a都运行完了，得出了geshu值，return这个值出来*/
+			}
+				var he= qiuou(100);/*接受return到的函数里的值，并赋给he这个变量*/
+				document.write(he);/*读出he这个变量*/
+	</script>
+	<style>
+	</style>
+</head>
+<body>
+
+</body>
+</html>
+</html>

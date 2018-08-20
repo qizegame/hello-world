@@ -1,0 +1,43 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+ 	function jisuan(){
+ 		var first=parseFloat(document.getElementById("one").value)/*获取第一个对象的value属性，并取浮点数*/
+		var second=parseFloat(document.getElementById("two").value)/*获取第二个对象的value属性，并取浮点数*/
+		var then=document.getElementById("three")/*只获取第三个对象*/
+		var andthen=document.getElementById("four").value/*获取第四个对象的value属性*/
+		if(andthen=="+"){
+			then.value=first+second
+		}
+		else if(andthen=="-"){
+			then.value=first-second
+		}else if(andthen=="*"){
+			then.value=(first*second).toFixed(2)/*最后那个tofixed是为了能抛去浮点运算后面的那些00000，百度的，不是老师教的*/
+		}else{
+			then.value=(first/second).toFixed(2)
+		}
+ 	}
+	</script> 
+</head>
+<body>
+ 	<input type="text" id="one"/>
+ 	<select id="four"><!-- 下拉框 -->
+ 		<option value="+">+</option>
+ 		<option value="-">-</option>
+ 		<option value="*">*</option>
+ 		<option value="/">/</option>
+ 	</select>
+	<input type="text" id="two"/>
+	<input type="text" id="three">
+	<input type="button" value="等于" onclick="jisuan()">
+</body>
+</html>
+</html>

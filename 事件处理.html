@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+
+/*	input{
+		display:block;
+		margin: 10px auto;
+	}*/
+
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div>
+		<img src="images/星星.png" width="20">
+	</div>
+	<input type="button" value="双击事件">
+	<input type="text" value="获得焦点事件">
+	<script type="text/javascript">
+	$(function(){/*加载事件的简写方式*/
+		alert("加载事件。注意观察，在alert弹窗出现的时候，两段文字已经出现")
+	})
+
+	$("div:eq(0)").hover(function(){
+		$("div:eq(0)").html("鼠标放上时的内容")
+	},function(){
+		$("div:eq(0)").html("鼠标离开时的内容")
+	})
+
+	$("input:eq(0)").dblclick(function(){
+		alert("这是双击事件")
+	})
+	$("input:eq(1)").focus(function(){
+		alert("这是获得焦点事件")
+	})	
+	$("input:eq(1)").blur(function(){
+		alert("这是失去焦点事件")
+	})
+	</script>
+	<p>注意观察，在alert弹窗出现的时候，两段文字已经出现</p>
+</body>
+</html>

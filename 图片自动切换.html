@@ -1,0 +1,82 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	ul li{
+		list-style: none;
+		width: 15px;
+		height: 15px;
+		float: left;
+		border:1px solid pink;
+		border-radius: 15px;
+		margin:0 10px;
+		position: relative;
+		left:-50%
+	}
+	ul{
+		position: relative;
+		float: left;
+		left: 50%
+	}
+	.banner_block{
+		text-align: center;
+	}
+	</style>
+	<script type="text/javascript">
+	window.onload=begin;
+	var c;/*定义一个变量c，否则在函数内定义c，c为局域变量，函数stop无法清除局部变量*/
+	var i=1;
+	function begin(){
+		c=window.setInterval("change()",3000)
+		document.getElementById("li1").style.background="white"
+	}
+	function change(){
+		i++
+		if(i>4){ 
+		i=1	
+		}
+		document.getElementById("one").src="images/00"+i+".jpg"	
+		for(a=1;a<=4;a++){
+			document.getElementById("li"+a).style.background="white"
+		}
+		document.getElementById("li"+i).style.background="orange"
+	}
+	function stop(){/*鼠标移上时，清除定时器*/
+		window.clearInterval(c)
+	}
+	function start(){/*鼠标离开时，创建定时器*/
+		c=window.setInterval("change()",3000)
+	}
+	function bian(n,m){	
+		window.clearInterval(c)
+		i=n
+		document.getElementById("one").src="images/00"+n+".jpg"
+		for(j=1;j<=4;j++){
+			document.getElementById("li"+j).style.background="white"
+		}
+		m.style.background="orange"	
+	}
+	function bian2(){
+		c=window.setInterval("change()",3000)
+	}
+	</script>
+</head>
+<body>
+	<div class="banner_block">
+		<img src="images/001.jpg" id="one" onmouseover="stop()" onmouseout="start()">
+		<div class="diandian">
+		<ul>
+			<li id="li1" onmouseover="bian(1,this)" onmouseout="bian2()"></li>
+			<li id="li2" onmouseover="bian(2,this)" onmouseout="bian2()"></li>
+			<li id="li3" onmouseover="bian(3,this)" onmouseout="bian2()"></li>
+			<li id="li4" onmouseover="bian(4,this)" onmouseout="bian2()"></li>
+		</ul>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!--过渡型声明-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--定义文档是中文-->
+<!--同时使用xml:lang和lang的目的是为了更好的兼容性，都是定义文档的文字类型，方便浏览器检索-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+	<!--学习php，笔记-->
+	<head>
+		<!--网站字符集-->
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<!--网站标题-->
+		<title>网页标题</title>
+		<!--网站作者-->
+		<meta name="author" content="秦泽华"/>
+		<!--网站关键字-->
+		<meta name="keywords" content="笔记"/>
+		<!--网站描述-->
+		<meta name="description" content="学习php的笔记案例"/>
+		<!--通过外部css样式定义所有段落P的文字样式-->
+		<link rel="stylesheet" type="text/css" href=""/>
+		<!--通过内嵌css样式定义所有段落P的文字样式-->
+		<style type="text/css">
+		.p_two{
+			color:blue;
+			font-size:15px;
+			line-height:20px;
+		}
+		.ul_one{
+			color:red;
+			font-weight:bold;/*文本加粗*/
+		}
+		</style>
+		<script type="text/javascript"></script>
+		<!--网页经过4秒自动刷新-->
+		<!--<meta http-equiv="refresh" content="4"/>-->
+		<!--网页经过8秒自动跳转百度-->
+		<!--<meta http-equiv="refresh" content="8;https://www.baidu.com/"/>-->
+	</head>
+	<body>
+		<!--输入2个段落，第二文本颜色蓝，大小15px，行间距30，输入两个无序列表，第一个文本颜色红色，文本加粗-->
+		<p>段落一</p>
+		<p class="p_two">段落二</p>
+		<ul class="ul_one">
+			<li>无序1-1</li>
+			<li>无序1-2</li>
+			<li>无序1-3</li>
+		</ul>
+		<ul>
+			<li>无序2-1</li>
+			<li>无序2-2</li>
+			<li>无序2-3</li>
+		</ul>
+	</body>
+</html>

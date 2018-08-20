@@ -1,0 +1,440 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>php学习笔记整理</title>
+	<!-- 引入本地bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script src="bootstrap-3.3.0-dist/dist/js/jquery.min.js"></script>
+	<!-- 之后再引入bootstrap.min.js文件 -->
+	<script src="bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+	<style>
+	.leftbox{
+		background: #D1EEEE;
+		height: 8000px;
+	}
+	.rightbox{
+		text-align: center;
+		background: #FFE7BA;/*设置背景颜色*/
+		height: 8000px;
+	} 
+	.rightbox p[class*="part_"]/*定义了rightbox下，p元素中，所有class标签里带有part的部分，文本左对齐，首行缩进2个字符*/
+	{
+		text-align: left;
+		text-indent:2em;
+	}
+	a:visited{/*定义鼠标移动到链接上的状态*/
+		color:#0000EE;
+		text-decoration: underline;
+	}/*下划线*/
+	.precase{
+		border:1px solid grey;
+		height: 400px;
+	}
+	#dtmove{
+		position: fixed;/*相对于浏览器窗口进行的固定定位*/
+	}
+	</style>
+</head>
+<body class="container-fluid bigbox"><!-- 放入bootstrap容器中，容器类型为100%宽度类型 -->
+	<div class="row">
+		<div class="leftbox col-md-3 col-sm-4 col-xs-6">
+			<aside id="dtmove">
+			<ul>
+				<!-- 第一部分html -->
+				<li>
+					<ol>
+						<a href="#part_one"><h3>html</h3></a>
+					 	<a href="#part_one_one"><li>主要的几个代码</li>
+						<a href="#part_one_two"><li>html介绍</li></a>
+						<a href="#part_one_three"><li>html标签分类</li></a>
+						<a href="#part_one_four"><li>html基本骨架</li></a>
+						<a href="#part_one_five"><li>html结构说明</li></a>
+						<a href="#part_one_six"><li>html书写规范</li></a>
+						<a href="#part_one_seven"><li>html文本标签（格式化标签）</li></a>
+						<a href="#part_one_eight"><li>html段落标签</li></a>
+						<a href="#part_one_nine"><li>html列表</li></a>
+						<a href="#part_one_ten"><li>html特殊字符</li></a>
+						<a href="#part_one_eleven"><li>html图片标签</li></a>
+						<a href="#part_one_twelve"><li>html表格标签</li></a>
+							<ol>
+								<a href="#part_one_twelve_one"><li>表格的扩充</li></a>
+							</ol>
+						<a href="#part_one_thirteen"><li>html链接</li></a>
+						<a href="#part_one_fourteen"><li>html颜色代码（理解部分）</li></a>
+						<a href="#part_one_fifteen"><li>html字符集</li></a>
+						<a href="#part_one_sixteen"><li>html中meta标签</li></a>
+						<a href="#part_one_seventeen"><li>html表单</li></a>
+						<a href="#part_one_eighteen"><li>html控件</li></a>
+						</li>
+					</ol>	
+				</li>
+				<!-- 第二部分xhtml -->
+				<li>
+					<ol>
+						<h3>xhtml的介绍</h3>
+						<p>xhtml简介</p>
+					</ol>
+				</li>
+				<!-- 第三部分css样式 -->
+				<li>
+					<ol>
+						<h3>css样式</h3>
+						<li>css简介</li>
+						<li>如何在html结构中引入css样式</li>
+						<li>css选择器的分类</li>
+						<li>css中复合选择器</li>
+						<li>css伪类</li>
+						<li>css文本属性</li>
+						<li>css背景属性</li>
+						<li>css如何去掉项目前面的符号</li>
+						<li>css边框的一些功能</li>
+						<li>css盒子模型（重点内容）</li>
+						<li>css清除格式</li>
+						<li>css网页的布局思想</li>
+						<li>css行内元素和块元素</li>
+						<li>css继承性</li>
+						<li>css优先级</li>
+						<li>css清除浮动</li>
+						<li>css定位</li>
+					</ol>
+				</li>
+				<!-- 第四部分html5 -->
+				<li>
+					<ol>
+						<h3>html5</h3>
+						<li>html5简介</li>
+						<li>html5的结构</li>
+						<li>html5中新增标签</li>
+						<li>html5中新增type属性</li>
+						<li>html5新增属性</li>
+					</ol>
+				</li>
+				<!-- 第五部分css3 -->
+				<li>
+					<ol>
+						<h3>css3</h3>
+						<li>css3简介</li>
+						<li>css3伪类</li>
+						<li>css3设置文本阴影</li>
+						<li>css3设置盒子阴影</li>
+						<li>css3盒子变成圆角</li>
+						<li>css3设置半透明</li>
+						<li>css3更改背景图片尺寸（禁止平铺）</li>
+					</ol>
+				</li>
+				<!-- 第六部分bootstrap -->
+				<li>
+					<ol>
+						<h3>bootstarp</h3>
+						<li>bootstrap简介</li>
+						<li>bootstrap的环境</li>
+						<li>bootshrap以移动设备优先</li>
+						<li>bootstrap布局容器</li>
+						<li>
+							bootstrap响应式图片
+							<ol>
+								<li>bootstrap栅格系统</li>
+							</ol>	
+						</li>
+						<li>bootstrap辅助样式</li>
+						<li>bootstrap表单</li>
+						<li>bootstrap输入框组</li>
+						<li>bootstrap按钮</li>
+					</ol>
+				</li>
+			</ul>
+			</aside>
+		</div>
+		<div class="rightbox col-md-9 col-sm-8 col-xs-6">
+			<div>	
+				<header>整理于2016.11.20</header>	
+				<a name="part_one"></a><!-- 定义锚点 -->
+				<h2 class="page-header">html篇</h2>
+				<section ><!-- 章节 -->
+					<h3>第一节.主要的几个代码</h3>
+					<p class="part_one_one">主要的几个代码包括html代码、css样式代码、JavaScript代码、jQuery代码、php代码，本教程也是根据这个先后顺序进行学习。</p>
+					<a name="part_one_two"></a><!-- 定义锚点 -->
+				</section>
+				<br/><!-- 换行 -->	
+				<section >
+					<h3>第二节.html介绍</h3>
+					<p class="part_one_two">html（hyper text markup language）意思是超文本标记语言。</p>
+					<p class="part_one_two">html：是一种标准（由w3c制定的标准）；</p>
+					<p class="part_one_two">超本文：是因为在文本内容的基础上，添加了更为丰富的信息（包括图片、动画、声音等）；</p>
+					<p class="part_one_two">标记(也称为标签）：&lta&gt&lt\a&gt、&ltbr/&gt，标签通常有两层含义：表型：每个标签都有一定的表现形式，表意：每个标签都有一定的意义；</p>
+					<p class="part_one_two">语言：可以直接被浏览器解析，和程序语言有区别。</p>
+					<a name="part_one_three"></a><!-- 定义锚点 -->
+				</section>
+				<br/><!-- 换行 -->	
+				<section><!-- 章节 -->
+					<h3>第三节.html标签分类</h3>
+					<p class="part_one_three">
+					1.双标签：由开始标签和结束标签构成，内容放在开始和结束标签之间。语法：&lt标签 属性名="属性值"&gt内容&lt/标签&gt。属性可以理解为人的特征，比如性别=“女”，体重=“45公斤”，身高=“165cm”，其中性别、体重、身高可以理解为标签的属性名，而其中的女、45公斤、165cm则可以理解为属性值。这样的标签有&ltdiv&gt&lt/div&gt、&lta&gt&lt/a&gt、&ltbr&gt&lt/br&gt等。</p>
+					<p class="part_one_three">
+					2.单标签：只有开始标签，没有结束标签，也没有内容，在单标签后面一定要闭合。语法：&lt标签 属性名="属性值" 属性名="属性值"/&gt。这样的标签有&ltlink/&gt、&limg/&gt、&lbr/&gt、&lmeta/&gt等等。
+					</p>
+					<a name="part_one_four"></a><!-- 定义锚点 -->
+				</section>
+				<br/>
+				<srction><!-- 章节 -->
+					<h3>第四节.html基本骨架</h3>
+					<p class="part_one_four">
+					<p class="part_one_four">&lthtml&gt</p>
+					<p class="part_one_four">&lthead&gt（可以理解为人的头部）</p>
+					<p class="part_one_four">&lttitle>网站的标题&lt/title&gt</p>
+					<p class="part_one_four">&lt/head&gt</p>
+					<p class="part_one_four">&ltbody&gt（可以理解为人的身体）</p>
+					<p class="part_one_four">&lt/body&gt</p>
+					<p class="part_one_four">&lt/html&gt</p>
+					<p class="part_one_four">html保存的时候文件的扩展名是xxx.html</p>
+					</p>
+					<a name="part_one_five"></a><!-- 定义锚点 -->
+				</srction>
+				<srction><!-- 章节 -->
+					<h3>第五节.html结构说明</h3>
+					<p class="part_one_five">
+					<p class="part_one_five">&lthtml&gt含义：告诉浏览器，网页的代码用什么格式来进行解析；</p>
+					<p class="part_one_five">&lthead&gt含义：告诉浏览器网页的汉字用什么字符集，使用的字符集不正确，就会出现乱码。常用的字符集有：gb2312简体中文--（汉字操作系统下，默认使用该字符集）、gbk国标码、utf-8多国语言；</p>
+					<p class="part_one_five">&lttitle&gt含义：便于搜索引擎了解网站的内容；</p>
+					<p class="part_one_five">&ltbody&gt含义：网站的内容，99%的内容都放入body标签中，只有放入该标签，才能在窗口中显示；</p>
+					<p class="part_one_five">小提示：tab键可以进行缩进。</p>
+					</p>
+					<a name="part_one_six"></a><!-- 定义锚点 -->
+				</srction>
+				<srction><!-- 章节 -->
+					<h3>第六节.html书写规范</h3>
+					<p class="part_one_six">
+					<p class="part_one_six">html不区分大小写，但是w3c建议使用小写。&ltbody&gt，不推荐&ltBODY&gt；</p>
+					<p class="part_one_six">html如果有标签嵌套，顺序嵌套，不能交叉；</p>
+					<p class="part_one_six">单标签一定要闭合（/）例如&ltbr/&gt；</p>
+					<p class="part_one_six">属性：每一个标签有没有属性，有多少----都是w3c规定好的；</p>
+					<p class="part_one_six">属性值：务必要使用双引号""引起；</p>
+					<p class="part_one_six">注释的内容不会再窗口中显示，注释语法：&lt!--注释内容--&gt</p>
+					</p>
+					<a name="part_one_seven"></a><!-- 定义锚点 -->
+				</srction>
+				<srction><!-- 章节 -->
+					<h3>第七节.html文本标签（格式化标签）</h3>
+					<p class="part_one_seven">
+					<p class="part_one_seven">1.Font用来设置文本的颜色、字体、大小</p>
+					<p class="part_one_seven">语法：</p>
+					<p class="part_one_seven">&ltfont&nbsp属性="属性值">文本内容&lt/font&gt</p>
+					</p>
+					<p class="part_one_seven">2.属性：</p>
+					<p class="part_one_seven">&lt1&gt.</p>
+					<p class="part_one_seven">color设置文本颜色，例如：color="red" color="#ff0000"；</p>
+					<p class="part_one_seven">size设置文本大小，例如：size="5"是以号为单位；</p>
+					<p class="part_one_seven">face设置文本字体，例如：face="黑体"。</p>
+					</p>
+					<p class="part_one_seven">&lt2&gt.</p>
+					<p class="part_one_seven">&ltb&gt文本内容&lt/b>加粗；</p>
+					<p class="part_one_seven">&ltstrong&gt文本内容&lt/strong&gt加粗，起到语气强调左右，特别条件才使用，不可滥用；</p>
+					<p class="part_one_seven">&lti&gt文本内容&lt/i>斜体；</p>
+					<p class="part_one_seven">&ltem&gt文本内容&lt/em&gt斜体，起到语气强调左右，特别条件才使用，不可滥用。</p>
+					</p>
+					<p class="part_one_seven">&lt3&gt.</p>
+					<p class="part_one_seven">&ltu&gt&lt/u&gt下划线；</p>
+					<p class="part_one_seven">&ltins>&lt/ins&gt下划线，同时强调插入的是文本。</p>
+					</p>	
+					<p class="part_one_seven">&lt4&gt.</p>
+					<p class="part_one_seven">&ltsup&gt&lt/sup&gt上标；</p>
+					<p class="part_one_seven">&ltsub&gt&lt/sub&gt下标。</p>
+					</p>
+					<a name="part_one_eight"></a><!-- 定义锚点 -->
+				</srction>
+
+				<srction><!-- 章节 -->
+					<h3>第八节.html段落标签</h3>
+					<p class="part_one_eight">
+					<p class="part_one_eight">1.分段落</p>
+					<p class="part_one_eight">段落的属性：</p>
+					<p class="part_one_eight">位置属性：Align取值 Left居左 center居中 right居右，语法：&ltp align="center"&gt文本内容&lt/p&gt；</p>
+					<br/>
+					<p class="part_one_eight">2.标题</p>
+					<p class="part_one_eight">&lth1&gt&lt/h1&gt标题1</p>
+					<p class="part_one_eight">&lth2>&lt/h2&gt标题2</p>
+					<p class="part_one_eight">..</p>
+					<p class="part_one_eight">...</p>
+					<p class="part_one_eight">&lth6&gt&lt/h6&gt标题6（最多标题6）</p>
+					<p class="part_one_eight">位置属性：Align取值 Left居左 center居中 right居右，语法：&lth1 align="center"&gt标题&lt/h1&gt；</p>
+					<br/>
+					<p class="part_one_eight">3.pre标记：预定义标签，保留原有的空格和换行&ltpre&gt&lt/pre&gt；</p>
+					<p class="part_one_eight">实例：这里就可以看出，&ltpre&gt标签，可以保留原有的一些空格以及换行，</p>
+					<div class="container">
+					<table class="table">
+					<tr>
+					<td>
+					<pre>
+&ltpre&gt
+这是
+预格式文本。
+它保留了      空格
+和换行。
+&lt/pre&gt
+					</pre>
+					</td>
+					<td>
+					<pre>
+
+这是
+预格式文本。
+它保留了      空格
+和换行。
+
+					</pre>
+					</td>
+					</tr>
+					</table>
+					</div>
+					<br/> 
+					<p class="part_one_eight">4.div（块标签）：是网站上使用的标签最多之一，本身没有任何意义，自己独占一行，可用于划分网页结构，结合css一起使用，构成相应的效果。块标签：自己独占一行，如：&lth1&gt&lt/h1&gt、&ltdiv&gt&lt/div&gt、&ltp&gt&lt/p&gt；</p>
+					<br/>
+					<p class="part_one_eight">5.span（行内标签）：本身没有任何含义，但也是网站上使用最多标签之一，结合css一起使用构成功能。行内标签：不自己独占一行，如：&ltem&gt&lt/em&gt、&ltspan&gt&lt/span&gt、&ltu&gt&lt/u&gt；</p>
+					<br/>
+					<p class="part_one_eight">注意：下面的写法不推荐使用，通常做法为块标签内包括行内标签！</p>
+					<p class="part_one_eight">&ltfont color="blue"&gt&lth1&gt标题&lt/h1&gt&lt/font&gt</p>
+					</p>
+					<a name="part_one_nine"></a><!-- 定义锚点 -->
+				</srction>
+				<srction><!-- 章节 -->
+					<h3>第九节.html列表</h3>
+					<p class="part_one_nine">
+					<p class="part_one_nine">&lt1&gt.无序列表：若干个相似内容进行排列。</p>
+					<p class="part_one_nine">例子：</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp·面包</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp·牛奶</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp·鸡蛋</p>
+					<p class="part_one_nine">语法：</p>
+					<p class="part_one_nine">&ltul&gt</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp&ltli&gt面包&lt/li&gt</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp&ltli&gt牛奶&lt/li&gt</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp&ltli&gt鸡蛋&lt/li&gt</p>
+					<p class="part_one_nine">&lt/ul&gt</p>
+					<p class="part_one_nine">&ltul&gt的属性：</p>
+					<p class="part_one_nine">type属性：更改列表前面的符号样式。取值disc（实心圆'默认型'）、circle（空心圆）、square（方块）。</p>
+					<p class="part_one_nine">语法：</p>
+					<p class="part_one_nine">&ltul type="circle"&gt&lt/ul&gt</p>
+					<p class="part_one_nine">&lt2&gt.有序列表：若干个有序的内容进行排列。</p>
+					<p class="part_one_nine">例子：</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp1.面包</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp2.牛奶</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp3.鸡蛋</p>
+					<p class="part_one_nine">语法：</p>
+					<p class="part_one_nine">&ltol&gt
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp&ltli&gt面包&lt/li&gt</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp&ltli&gt牛奶&lt/li&gt</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp&ltli&gt鸡蛋&lt/li&gt</p>
+					<p class="part_one_nine">&lt/ol&gt</p>
+					<p class="part_one_nine">&lt3&gt.自定义列表（用于产品分类）</p>
+					<p class="part_one_nine">语法：</p>
+					<p class="part_one_nine">&ltdl&gt</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp&ltdt&gt电子产品&lt/dt&gt</p>
+					<p class="part_one_nine">&nbsp&nbsp&nbsp&nbsp&ltdd&gt内存条 硬盘 显卡&lt/dd&gt</p>
+					<p class="part_one_nine">&lt/dl&gt</p>
+					<p class="part_one_nine">效果：</p>
+						<dl  class="dl-horizontal"><!-- 用bootstrap中的列表纵向转横向 -->
+							<!--标题-->
+							<dt>电子产品</dt>
+							<!--对标题进行解释-->
+							<dd align="left">内存条</dd>
+							<dd align="left">硬盘</dd>
+							<dd align="left">显卡</dd>
+						</dl>
+					</p>
+					<a name="part_one_ten"></a><!-- 定义锚点 -->
+				</srction>
+				<srction><!-- 章节 -->
+					<h3>第十节.html特殊字符</h3>
+					<p class="part_one_ten">
+					<p class="part_one_ten">&ampnbsp：一个空格，代表一个字符，一个汉字占2个字符</p>
+					<p class="part_one_ten">&ampcopy：版权符号</p>
+					<p class="part_one_ten">&amplt：左括号</p>
+					<p class="part_one_ten">&ampgt：> 右括号</p>
+					<p class="part_one_ten">&ampyen：人民币符号</p>
+					<p class="part_one_ten">&ampamp：&amp符号</p>
+					</p>
+					<a name="part_one_eleven"></a><!-- 定义锚点 -->
+				</srction>
+				<srction><!-- 章节 -->
+					<h3>第十一节.html图片标签</h3>
+					<p class="part_one_eleven">
+					<p class="part_one_eleven">图片标签（属于单标签，行内标签）</p>
+					<p class="part_one_eleven">语法：</p>
+					<p class="part_one_eleven">&ltimg 属性名="属性值"/&gt</p>
+					<p class="part_one_eleven">相关属性：</p>
+					<p class="part_one_eleven">1.图片的路径 src="图片的地址"（需要把图片放入对应目录下）</p>
+					<p class="part_one_eleven">2.图片的宽度 width="数值"（可用两种，第一种：以像素为单位的PX，不用写单位）</p>
+					<p class="part_one_eleven">例如，输入width="300px"，就是错误写法！！！</p>
+					<p class="part_one_eleven">3.图片的高度 higth="数值"</p>
+					<p class="part_one_eleven">4.图片的边框 border="数值"（通过css可以更改边框的颜色）</p>
+					<p class="part_one_eleven">5.图片的解释说明 alt="对图片进行内容描述"</p>
+					<p class="part_one_eleven">6.图片和内容左右之间的距离 hspace="左右距离数值"//通常不用，但是了解，用css样式实现</p>
+					<p class="part_one_eleven">7.图片和内容上下之间的距离 vspace="上下距离数值"</p>
+					<p class="part_one_eleven">想要图片等比例缩放，只需设置宽度/高度中的一项即可</p>
+					</p>
+					<a name="part_one_twelve"></a><!-- 定义锚点 -->
+				</srction>
+
+				<srction><!-- 章节 -->
+					<h3>第十二节.html表格标签</h3>
+					<p class="part_one_twelve">
+						
+					</p>
+					<a name="part_one_thirteen"></a><!-- 定义锚点 -->
+				</srction>
+
+				<srction><!-- 章节 -->
+					<h3>第十三节.html链接</h3>
+					<p class="part_one_thirteen">
+						
+					</p>
+					<a name="part_one_fourteen"></a><!-- 定义锚点 -->
+				</srction>
+
+				<srction><!-- 章节 -->
+					<h3>第十四节.html颜色代码（理解部分）</h3>
+					<p class="part_one_fourteen">
+						
+					</p>
+					<a name="part_one_fifteen"></a><!-- 定义锚点 -->
+				</srction>
+
+				<srction><!-- 章节 -->
+					<h3>第十五节.html字符集</h3>
+					<p class="part_one_fifteen">
+						
+					</p>
+					<a name="part_one_sixteen"></a><!-- 定义锚点 -->
+				</srction>
+
+				<srction><!-- 章节 -->
+					<h3>第十六节.html中meta标签</h3>
+					<p class="part_one_sixteen">
+						
+					</p>
+					<a name="part_one_seventeen"></a><!-- 定义锚点 -->
+				</srction>
+
+				<srction><!-- 章节 -->
+					<h3>第十七节.html表单</h3>
+					<p class="part_one_seventeen">
+						
+					</p>
+					<a name="part_one_eighteen"></a><!-- 定义锚点 -->
+				</srction>
+
+				<srction><!-- 章节 -->
+					<h3>第十八节.html控件</h3>
+					<p class="part_one_eighteen">
+						
+					</p>
+				</srction>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

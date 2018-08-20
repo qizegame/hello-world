@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	.one{
+		background: pink;
+		width:200px;
+		height:100px;
+		margin: 0 auto;
+	}
+	input{
+		display:block;
+		margin: 10px auto;
+	}
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+		<div class="one">
+			<img src="images/星星.png" width="20">
+		</div>
+		<input type="button" value="html类">
+
+		<div class="one">
+			<img src="images/星星.png" width="20">
+		</div>
+		<input type="button" value="html类">
+
+		<div class="one">
+		</div>
+		<input type="button" value="关于input的var">
+	<script type="text/javascript">
+	$("input:eq(0)").click(function(){
+		$("div:eq(0)").html("<b>修改了div内的html内容，并且，他可以识别标签</b>")/*修改了div内的html内容，并且，可以直接标签*/
+	})
+	$("input:eq(1)").click(function(){
+		$("div:eq(1)").text("设置文本内容，不识别标签")
+	})
+	$("input:eq(2)").click(function(){
+		$("input:eq(2)").val("设置value值")
+	});
+	</script>
+</body>
+</html>

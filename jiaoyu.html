@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	.xianshi1,.xianshi2,.xianshi3{
+		width: 33%;
+		height: 300px;
+		text-align: center;
+		display: none
+	}
+	.xianshi1{
+		position: absolute;
+	}
+	.xianshi2{
+		position: absolute;
+		left:33%;
+	}
+	.xianshi3{
+		position: absolute;
+		left:66%;
+	}
+	.kuaikuai{
+		width: 100%;
+		text-align: center;
+		font-size: 4.5rem;
+		font-family: "微软雅黑";
+		color:#333333;
+		margin-top:15px;
+	}
+	.dianji1,.dianji2,.dianji3{
+		width: 33%;
+	}
+	.xianshi1,.xianshi2,.xianshi3{
+		font-size: 3.5rem;
+	}
+	</style>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<table class="kuaikuai">
+		<tr>
+			<td class="dianji1">城东</td>
+			<td class="dianji2">城西</td>
+			<td class="dianji3">澄江街道</td>
+		</tr>
+	</table>
+	<div class="xianshi1"><p>云亭</p><p>贯庄</p><p>东外环路</p></div>
+	<div class="xianshi2"><p>澄e工厂</p><p>新一城</p><p>万达</p></div>
+	<div class="xianshi3"><p>步行街</p><p>中医院</p></div>
+	<script type="text/javascript">
+	$(".dianji1").click(function(){
+		$(".dianji1,.dianji2,.dianji3").css({color:"#333333",borderBottom:""});
+		$(this).css({color:"#4ba0f7",borderBottom:"2px solid #4ba0f7"});
+		$(".xianshi2,.xianshi3").hide(300)
+		$(".xianshi1").toggle(300)
+	})
+	$(".dianji2").click(function(){
+		$(".dianji1,.dianji2,.dianji3").css({color:"#333333",borderBottom:""});
+		$(this).css({color:"#4ba0f7",borderBottom:"2px solid #4ba0f7"});
+		$(".xianshi1,.xianshi3").hide(300)
+		$(".xianshi2").toggle(300)
+	})
+	$(".dianji3").click(function(){
+		$(".dianji1,.dianji2,.dianji3").css({color:"#333333",borderBottom:""});
+		$(this).css({color:"#4ba0f7",borderBottom:"2px solid #4ba0f7"});
+		$(".xianshi1,.xianshi2").hide(300)
+		$(".xianshi3").toggle(300)
+	})
+	</script>
+</body>
+</html>

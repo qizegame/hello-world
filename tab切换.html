@@ -1,0 +1,106 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0; 
+	}
+	ul li{
+		float: left;
+		list-style:none;
+		border:1px solid #FFCCFF;
+		width: 100px;
+		height: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+	#box{
+		border:1px solid #FFCCFF;
+		width:510px;
+		height: 450px;
+		margin-left:500px; 
+		margin-top: 50px;
+		border-radius:5px;
+	}
+	#dv1,#dv2,#dv3,#dv4{/*隐藏块元素*/
+		display: none;
+		text-align: center; 
+		margin-top:60px;
+		line-height: 30px;
+		padding:50px;
+	}
+	#dv1{
+		display:block;/*显示块元素*/
+	}
+	#td1{
+		border-bottom:white;
+	}
+	</style>
+	<script type="text/javascript">
+	function showdiv(n){
+		for(a=1;a<=4;a++){
+		document.getElementById("dv"+a).style.display="none"
+		document.getElementById("td"+a).style.border="1px solid #FFCCFF"
+		}
+		document.getElementById("dv"+n).style.display="block"
+		document.getElementById("td"+n).style.borderBottom="white"
+	}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li id="td1" onmouseover="showdiv(1)">国内新闻</li>
+			<li id="td2" onmouseover="showdiv(2)">国际新闻</li>
+			<li id="td3" onmouseover="showdiv(3)">体育新闻</li>
+			<li id="td4" onmouseover="showdiv(4)">娱乐新闻</li>
+			<li></li>
+		</ul>
+		<div id="dv1">
+		刘延东会见英国北爱尔兰首席部长<br/>
+		李克强会见哈萨克斯坦议会上院议长托卡耶夫<br/>
+		王家瑞会见突尼斯总统埃塞卜西<br/>
+		驻多米尼克大使卢坤拜会多原住民事务部长达鲁<br/>
+		驻多米尼克大使卢坤拜会多旅游部长汤奇<br/>
+		中德高级军官代表团做客驻法兰克福总领馆<br/>
+		驻意大利使馆举行与侨界新年联欢会<br/>
+		外交部副部长李保东会见丹麦外交部性别平等和<br/>
+		</div>
+		<div id="dv2">
+		黔西县谷里镇：夯实基层党组织建设引领脱贫攻<br/>
+		黔西县绿化乡组织党员干部学习换届纪律<br/>
+		陈训华到紫云调研极贫乡镇脱贫攻坚工作<br/>
+		黔西：立足“三水”激发干部活力<br/>
+		黔西供电局：完成110千伏重太线光纤差动保护<br/>
+		曾永涛在西秀区检查指导安全生产工作时强调<br/>
+		黔西县卫计局：健康“四进”提升群众健康素养<br/>
+		国家2016年饮用水水源环境监管项目验收会在安<br/>
+		</div>
+		<div id="dv3">
+		英超-伊布世界波费莱尼送礼旧主 曼联1-1埃弗顿<br/>
+		意甲-尼昂失点拉帕杜拉绝杀 米兰2-1逆转升班马<br/>
+		实力榜:勇士稳居榜首骑士跌出前3火箭稳步上升<br/>
+		登喜路锦标赛斯通赢欧巡第二胜 舒瓦泽尔列第四<br/>
+		托米奇：荣幸能和埃里克森合作，要帮深圳冲超<br/>
+		AC米兰杀神遭弃恐被抛售 阿森纳砸2000万夺人<br/>
+		</div>
+		<div id="dv4">
+		阿汤哥领衔新《木乃伊》 预计明年6月引进国内<br/>
+		悬疑电影《那年夏天你去了哪里》12月30日上映<br/>
+		刘涛加盟芒果台跨年 大跳热舞挑战魔术秀<br/>
+		吴磊蒋依依领衔北京现代音乐研修学院附中2016<br/>
+		饕餮军团打响攻城战 上古神兽首现IMAX大银幕<br/>
+		歌手陈星伊跨界赛车 勇夺巾帼杯亚军<br/>
+		《OS GIRLS》明日两集连播 心机girls再度来袭<br/>
+		爱奇艺获TV地标纯网内容大奖 引领纯网内容新<br/>
+		</div>
+		<div></div>
+	</div>
+</body>
+</html>

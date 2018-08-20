@@ -1,0 +1,76 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+	/*对象的引入*/
+	var obj={name:"张三丰",age:24,taiji:function(){alert("打太极")},zuofan:function(){alert("做饭")}};
+	/*属性*/alert(obj.name);
+	/*方法*/obj.taiji();
+	/*修改元素的属性*/
+	function fn(){
+		var ab=document.getElementById("one");/*获取到id为one的元素*/
+		ab.value="哈哈";/*修改这个元素的value*/
+		alert(ab.type);/*弹出这个元素的type属性*/
+	};	
+	/*修改元素的样式*/
+	function ccc(){
+		var ac=document.getElementById("two");
+		ac.style.fontSize="60px";/*这里把font-size中的横杠去掉，紧接着的第一个字母变成大写，是js的格式规范，后面若还有横杠，类推*/
+		ac.style.background="red";
+	};	
+	function big(){
+		var abc=document.getElementById("three");
+		abc.width=100;
+	};
+	function big_01(){
+		var ad=document.getElementById("four");
+		var abcd=ad.width;
+		ad.width=abcd+20;
+	};
+	function kai(){
+		var add=document.getElementById("five");
+		add.src="images/guan.png";
+		add.width=100;
+
+	};
+	function guan(){
+		var add=document.getElementById("five");
+		add.src="images/kai.png";
+		add.width=100;
+	};
+	function change(){
+		var nei=document.getElementById("six");
+		nei.innerHTML="内容变啦";
+	}
+	</script> 
+</head>
+<body>
+	<!-- 练习一：修改元素的属性 -->
+	<input type="button" value="点击" onclick="fn()" id="one"/>
+	<!-- 练习二：修改元素的样式 -->
+	<div onmouseover="ccc()" id="two">
+	修改div的字体及背景色（当鼠标移上时）
+	</div>
+	<!-- 练习三：图片变大，要注意，定义的id是定义在要修改的元素上面 -->
+	<input type="button" value="变大" onclick="big()">
+	<img src="images/解决方案.png" id="three">
+	<!-- 练习四：连续点击变大 -->
+	<input type="button" value="连续变大" onclick="big_01()">
+	<img src="images/解决方案.png" width="30" id="four">
+	<!-- 练习五：开灯关灯 -->
+	<img src="images/kai.png" width="100" id="five" onmouseover="kai()" onmouseout="guan()">
+	<!-- 修改div中的内容 -->
+	<div id="six">
+		这里是会修改的内容
+	</div>
+	<input type="button" value="点击修改上方内容" onclick="change()">
+</body>
+</html>
+</html>

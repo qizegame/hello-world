@@ -1,0 +1,50 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+	/*math对象*/
+	function dw(a){/*定义一个输出函数*/
+		document.write(a+"<br/><br/>");
+	};
+	var n=Math.abs(-6);/*取绝对值*/
+	dw(n);
+	var n=Math.round(2.123);/*取四舍五入*/
+	var m=Math.round(2.5);
+	dw(n+","+m);
+	var n=Math.floor(5.1);/*向下取不大于5的整数*/
+	dw(n);
+	var n=Math.floor(-4.1);/*向下取不大于-4.1的整数*/
+	dw(n);
+	var n=Math.ceil(5.1);/*向上取不小于5的整数*/
+	dw(n);
+	var n=Math.ceil(-4.1);/*向上取不大于-4.1的整数*/
+	dw(n);
+	var n=Math.random();/*获得一个0到1的随机数*/
+	dw(n);	
+	for(b=1;b<=10;b++){/*取任意两个数区间的随机数，可以取到边际数*/
+		var n=Math.floor(Math.random()*(10-1+1)+1);
+		document.write(n+",");	
+	}
+	document.write("<br/><br/>")
+	document.write("我说\"这里是转义符号\"")
+	alert("我说\n\"这里是换行字符\"")
+
+	document.write("<br/><br/>")
+	document.write("E\\document\\DNF\\截图\\武器.png");/*转义转义字符*/
+	</script> 
+	<style>
+	</style>
+</head>
+<body>
+
+
+</body>
+</html>
+</html>

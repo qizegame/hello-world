@@ -1,0 +1,42 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+	/*data对象*/
+
+	var n1=new Date();/*创建当前的日期对象*/
+	var n2=new Date("1999/9/9 6:06:06");/*创建一个指定的时间日期对象，指定的日期为字符串内的内容*/
+	var n3=new Date(1999,9,9,6,6,6);/*创建一个指定的时间日期对象，第二位是从0开始到11截止来表示月份*/
+	var n4=new Date(23284561313255);/*创建一个指定的时间日期对象，从1970年08:00起，开始以毫秒计算*/
+	var n5=n1.getFullYear();/*获取年份 */
+	document.write(n1.toLocaleString()+"<br/>");/*.toLocaleString()这个方法为，转换为本地格式*/
+	document.write(n5+"<br/>");
+	document.write(n2.toLocaleString()+"<br/>");
+	document.write(n3.toLocaleString()+"<br/>");
+	document.write(n4.toLocaleString()+"<br/>");
+
+	/*计算至今生活了多少天*/
+	/*思路：通过起点和终点的时间戳的差值 */
+	var born = new Date("1989/12/1 20:15:30");/*定义出生日期*/
+	var now = new Date();/*创建当前日期*/
+	born = born.getTime();/*获取1977年至出生毫秒数*/
+	now = now.getTime();/*获取1977年至今天毫秒数*/
+	var day=(now-born)/24/60/60/1000;/*时间戳的差值*/
+	document.write(day);
+	</script> 
+	<style>
+	</style>
+</head>
+<body>
+
+
+</body>
+</html>
+</html>

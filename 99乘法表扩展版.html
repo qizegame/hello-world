@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+		//99乘法表扩展版
+
+		function jiujiu(m,n){
+			for(d=1;d<=m;d++){/*定义一个变量d，d的循环次数，取决于函数中变量m的数值，也就是m为多少，就执行多少次函数*/
+				document.write("<table border='2'>");/*给整个表套上表格*/
+					for(var a=1;a<=n;a++){/*定义一个变量a，为行数，有几行，那就对应会有几列乘法表去执行*/
+						document.write("<tr>");/*给行内的东西套上表格的行标签*/
+						for(var b=1;b<=a;b++){/*定义一个变量b，为列数，上面有多少行数，就会对应的打出多少列数*/
+							document.write("<td>");/*给列数套上表格的列标签*/
+							document.write(a+"*"+b+"="+a*b);/*每一次循环，都会执行出一列结果*/	
+							document.write("<td>");
+						}
+						document.write("</tr>");
+					}
+				document.write("</table>");	
+			}
+		}
+		jiujiu(2,3);/*调用函数，对应m,n，m为2，执行2次函数，意思是打印2份；n是3，意思就是打印的乘法表为3行的乘法表*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+	<style>
+	</style>
+</head>
+<body>
+
+</body>
+</html>
+</html>

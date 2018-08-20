@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	div{
+		width:100px;
+		height:100px;
+		border:1px solid grey;
+		font-size:10px;
+	}
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div>查找
+		<span>查找到span的父元素，并给他一些属性</span>
+		<span>span_02</span>
+	</div>
+	<input type="button" value="查找父元素">
+	<input type="button" value="查找div元素中的span元素">
+	<script type="text/javascript">
+	$("input:eq(0)").click(function(){
+		$("span:eq(0)").parent().css({background:"pink"})
+	})
+	$("input:eq(1)").click(function(){
+		$("div:eq(0)").find("span:last-child").css({background:"red"})
+	})
+	</script>
+</body>
+</html>

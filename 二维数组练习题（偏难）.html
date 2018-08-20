@@ -1,0 +1,158 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+	/*定义一个二维数组（3行3列），输入12个数值，求最大值，最小值，两个下标均为奇数的数的和*/
+	var n=[/*定义二维数组*/
+		[23,24,26,29],
+		[32,24,36,39],
+		[24,28,22,29]
+	];
+	var m=n.length;/*取得二维数组的长度*/
+	var bigone=n[0][0];/*假设最大值*/
+	var smallone=n[0][0];/*假设最小值*/
+	var add=0;/*定义和*/
+	for(a=0;a<m;a++){
+		var b=n[a].length;
+		for(c=0;c<b;c++){
+			if(bigone<n[a][c]){
+				var bigone=n[a][c]
+			};
+			if(smallone>n[a][c]){
+				var smallone=n[a][c]
+			};
+			if(a%2!=0&&c%2!=0){
+				var add=add+n[a][c]
+			};
+		}
+	}
+	document.write("该二维数组中最大值为"+bigone);
+	document.write("<br/>");
+	document.write("该二维数组中最小值为"+smallone);
+	document.write("<br/>");
+
+	/*二维数组，3行3列，求所有值的和以及平均值*/
+	var n=[
+		[23,24,22,26,29,28],
+		[21,10,20,36],
+		[22,33,44,55]
+	]
+	var add=0;/*预设和为0*/
+	var m=n.length;/*取得二维数组差长度*/
+	var lon=0;/*定义总个数*/
+	for(a=0;a<m;a++){
+		for(b=0;b<n[a].length;b++){
+		var add=add+n[a][b];	
+		lon++;/*每循环一次，总个数加1*/	
+		}
+	}
+	var pingjun=add/lon;
+	document.write("该二维数组和为"+add);
+	document.write("<br/>");	
+	document.write("该二维数组的平均值为"+pingjun);
+	document.write("<br/>");
+
+
+	/*判断字符b在一段字符串中是否出现，并求出现了几次*/
+	var n="abCDbserBbbb";
+	var m=n.length;
+	var c="b";
+	ad=0;
+	for(a=0;a<m;a++){
+		var d=n.charAt(a);
+		if(c==d){
+			ad=ad+1;
+		}
+	}
+	document.write("其中跟b字符一样的个数为"+ad+"个");
+	document.write("<br/>");	
+
+
+	/*获取一个长文件路径（E:\itcast\class\php\js\day2\adb.html）中的文件名及其后缀，要获取的结果为文件名abc，后缀html*/
+	var n="E:\\itcast\\class\\php\\js\\day2\\adb.html";
+	var leg=n.length;
+	var m=n.lastIndexOf("\\");
+	var a=n.lastIndexOf(".");
+	var b=n.substr(m+1,leg-m);
+	var c=n.substr(a+1,leg-a);
+	document.write(b);
+	document.write("<br/>");
+	document.write(c);	
+	document.write("<br/>");
+
+	/*获取用户字符并反转后alert*/
+	var a=prompt("请输入任意字符");
+	var b=a.split("")/*把字符获取为数组*/
+	var c=b.reverse();/*反转数组*/
+	var d=c.join("")/*用空字符连接数组各项，取代","逗号*/
+	alert(d);
+	document.write("<br/>");
+
+	/*求圆周率pi的5次方，并四舍五入取整*/	
+	var a=Math.pow(Math.PI,5)/*Math.PI是取得圆周率*/
+	var b=Math.round(a);
+	document.write(b);
+	document.write("<br/>");	
+
+	/*每次刷新页面，显示6个两位数的整数*/
+	//两位数的整数应该是10-99范围内
+	for(a=1;a<=6;a++){
+		var b=Math.floor(Math.random()*(99-10+1)+10);
+		document.write(b+"<br/>");
+	}
+	document.write("编写一个函数,带一个参数n，在页面上输出1~n（n>1）之间所有能被3和5整除的偶数，并要求每行只输出6个（即超过6个后要换行再输出）"+"<br/>");
+	/*编写一个函数,带一个参数n，在页面上输出1~n（n>1）之间所有能被3和5整除的偶数，并要求每行只输出6个（即超过6个后要换行再输出）*/
+	var u=0;
+	function shuchu(n,m){
+		for(a=1;a<=n;a++){
+			if(a%2==0&&a%3==0&&a%5==0){
+				document.write(a+" ")
+				u++
+				if(u%m==0){
+				document.write("<br/>");
+				}	
+			}
+		}
+	}
+	shuchu(999,6);
+	document.write("<br/>");
+	document.write("<br/>");
+	document.write("<br/>");	
+
+
+	/*编写一个函数,带一个参数n，在页面上输出1~n（n>1）之间所有能被3和5整除的偶数，并要求每行只输出6个（即超过6个后要换行再输出）*/
+
+
+	function shu(n){
+		var p=0;
+		for(u=1;u<=n;u++){
+			var a=Math.floor(Math.random()*n+1)
+			if(a%2==0&&a%3==0&&a%5==0){
+				document.write(a+" ")	
+				p++;
+				if(p%6==0){
+					document.write("<br/>")
+				}		
+			}
+		}	
+	}
+	shu(999);
+
+
+	</script> 
+	<style>
+	</style>
+</head>
+<body>
+
+
+</body>
+</html>
+</html>

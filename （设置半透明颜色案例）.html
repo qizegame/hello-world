@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>设置半透明颜色</title>
+	<style>
+	body{
+		background: url(images/banner_01.png);/*背景图*/
+		background-repeat:no-repeat;/*禁止平铺*/
+		background-size: 1500px 300px;/*设置背景图大小*/
+	}
+	.one{
+		width: 400px;
+		height: 200px;
+		background:rgba(255,0,0,0.3);
+		margin: 0 auto;
+	}
+	.two{
+		width: 800px;
+		height: 400px;
+		margin-top: 150px;
+		border:1px solid grey;
+		border-radius: 20px;
+		background: url(images/banner_01.png);/*背景图*/
+		background-size: 1500px 400px;/*设置背景图大小*/
+		position: relative;/*相对定位*/
+	}
+	.three{
+		width:800px;
+		height: 100px;
+		background:rgba(255,255,255,0.6);/*设置透明*/
+		line-height: 100px;/*文本水平居中*/
+		position:absolute;/*绝对定位*/
+		bottom:0;
+		font-size:30px;
+		color: green;
+		text-align: center;/*文本居中*/
+	}
+	</style>
+</head>
+<body>
+	<!--<header>头部</header>
+	<nav>导航</nav>
+	<section>块元素
+		<article>文章内容</article>
+		<aside>侧栏</aside>
+	</section>
+	<footer>底部</footer>-->
+</body>
+	<section class="one">
+	</section>
+	<section class="two">
+		<section class="three">
+			这里是设置半透明的一个综合案例
+		</section>
+	</section>
+</html>

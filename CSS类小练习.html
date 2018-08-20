@@ -1,0 +1,58 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	.one{
+		background: pink;
+		width:200px;
+		height:100px;
+		margin: 0 auto;
+	}
+	.two{
+		background: grey;
+		width:200px;
+		height:100px;
+		margin: 0 auto;
+	}
+	.three{
+		background: orange;
+		width:200px;
+		height:100px;
+		margin: 0 auto;
+	}
+	p{
+		text-align: center;
+	}	
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div class="one">
+	</div>
+	<p>
+	<input type="button" value="1">
+	<input type="button" value="2">
+	<input type="button" value="3">
+	</p>
+	<script type="text/javascript">
+	$("input:nth-child(1)").click(function(){
+		$("div").removeClass("two")
+		$("div").removeClass("three")
+		$("div").addClass("one")
+	})
+	$("input:nth-child(2)").click(function(){
+		$("div").removeClass("one")
+		$("div").removeClass("three")
+		$("div").addClass("two")
+	})
+	$("input:nth-child(3)").click(function(){
+		$("div").removeClass("one")
+		$("div").removeClass("two")
+		$("div").addClass("three")
+	})
+	</script>
+</body>
+</html>

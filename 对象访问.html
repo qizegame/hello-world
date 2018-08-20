@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	.one{
+		background: pink;
+		width:200px;
+		height:100px;
+		margin: 0 auto;
+	}
+	input{
+		display:block;
+		margin: 10px auto;
+	}
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+		<div class="one">
+		</div>
+		<input type="button" value="对象访问">
+		<div class="one">
+		</div>
+		<br/>
+		<div class="one">
+		</div>
+		<br/>
+		<div class="one">
+		</div>
+		<input type="button" value="遍历访问">						
+	<script type="text/javascript">
+		$("input:eq(0)").click(function(){
+		console.log($("div").length)/*在console日志里可以看到读取出的div的个数*/
+	});
+		$("input:eq(1)").click(function(){
+		$("div").each(function(n,m){
+			console.log(n)
+			console.log(m)
+			$(m).html("这是第"+n+"个")/*遍历所有元素，m是变量，代表当前遍历到的对象，n是代表对象的下标数。解释：当开始遍历，遍历到m对象的时候，他会有一个自己的下标，那么，html内容里就输出，他对应小标第n个*/
+			$(this).html("这是第"+n+"个")/*this就是返回实参，返回当前被遍历的这个对象*/
+		})
+	});		
+	</script>
+</body>
+</html>

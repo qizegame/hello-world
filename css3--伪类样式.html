@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<style>	
+	li:first-child{
+		color: blue;
+	}/*在li下，排在第一位的元素，蓝色*/
+	li:last-child{
+		color: red;
+	}
+	li:only-child{
+		color: orange;
+	}/*在li中，独立存在的那个元素，橙色*/
+	li:nth-child(3){
+		color: pink;
+	}/*在li中，排在第三个元素，粉色*/
+	</style>
+</head>
+<body>
+	<!--<header>头部</header>
+	<nav>导航</nav>
+	<section>块元素
+		<article>文章内容</article>
+		<aside>侧栏</aside>
+	</section>
+	<footer>底部</footer>-->
+</body>
+	<section class="box">
+		<ul>
+			<li class="one">html</li>
+			<li class="two">css</li>
+			<li class="three">bootstrap</li>
+			<li class="four">javascript</li>
+			<li id="five">php</li>
+		</ul>
+		<ul>
+			<li>学习php</li>
+			<li>学习php</li>
+		</ul>
+		<ul>
+			<li>学习php</li>
+		</ul>
+	</section>
+</html>

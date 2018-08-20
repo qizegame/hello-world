@@ -1,0 +1,35 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+	var str="看起来你今天心情不错";
+	/*练习：检测用户上传文件是否符合要求*/
+	function fn(){
+		var mold=document.getElementById('one');/*通过get方法，获得id为one的元素*/
+		var mold=mold.value;/*把获得的元素的属性value赋值给one_all_name*/
+		var mold_01=mold.lastIndexOf(".");/*得到最后一个"."点的下标*/
+		var mold=mold.substr(mold_01+1);/*获取下标"."往后的字符串*/
+		var mold=mold.toLowerCase();/*把变量mold转换成小写*/
+		if (mold=="jpg"||mold=="png") {/*注意，这里一定是==号*/
+			alert("图片上传成功")
+		} else{
+			alert("您上传的文件格式为"+mold+"格式，请上传jpg/png/gif格式的图片")
+		}
+		}
+	</script>
+	<style>
+	</style>
+</head>
+<body>
+	<input type="file" id="one"><!-- 建立上传按钮 -->
+	<input type="button" id="two" value="提交" onclick="fn()"><!-- 通过onclick事件，调用函数fn -->
+</body>
+</html>
+</html>

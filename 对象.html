@@ -1,0 +1,92 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+	/*定义一个换行函数，支持循环*/
+	function br(cc){
+		for(a=1;a<=cc;a++){
+		document.write("<br/>")
+		}
+	};
+	/*定义一个输出函数，支持循环*/
+	function dw(m){
+		document.write(m);
+	};
+
+
+
+	//array对象
+	var arr=[23,24,25];
+	var n=arr.concat(28,30,[31,33]);
+	dw(n);
+	br(2);
+
+	/*join加入以连接*/
+	var arr=[18,19,20];
+	var n=arr.join("+");
+	dw(n);
+	br(2);
+
+	/*pop，删除最后一项并返回*/
+	var arr=[12,14,56,77];
+	var n=arr.pop();
+	dw(n);
+	br();
+	dw(arr);
+	br(2);
+
+	/*string对象*/
+	var str="你今天心情不错嘛情"
+	var n=str.charAt(4);/*找到下标为4的字符*/
+	var m=str.charCodeAt(4);
+	dw(n);
+	br(2);
+	dw(m);
+	br(2);
+	var l=str.indexOf("情");/*找到字符第一次出现的下标*/
+	dw(l);
+	br(2);
+	var o=str.lastIndexOf("情");/*找到字符最后一次出现的下标*/
+	dw(o);
+	br(2);
+	dw(o);
+	br(2);
+	var p=str.split("");/*以空字符串分割字符串*/
+	dw(p);
+	br(2);
+	var q=str.substr(0,3);/*从下标0开始，截取3个长度的字符串*/
+	dw(q);
+	br(2);
+	var w=str.substr(0);/*从下标0开始，截取到最后*/
+	dw(w);
+	br(2);
+	var r=str.substring(0,1);/*从下标0开始截取，到下标1结束，但是能取到下标0的数值，不能取到下标1的数值*/
+	dw(r);
+	br(2);
+	var s=str.substring(0);/*从下标0开始，截取到最后*/
+	dw(s);
+	br(2);
+	var str="ABCDE";
+	var r=str.toLowerCase()/*把大写转成小写*/
+	dw(r);
+	br(2);
+	var str="abc";
+	var r=str.toUpperCase()/*把大写转成大写*/
+	dw(r);
+	br(2);
+	</script>
+	<style>
+	</style>
+</head>
+<body>
+
+</body>
+</html>
+</html>

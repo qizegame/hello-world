@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	dt{
+		background: pink;
+		width:100px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<dl>
+		<dt>电子产品</dt>
+		<dd>cpu</dd>
+		<dd>显卡</dd>
+		<dd>风扇</dd>
+	</dl>
+	<dl>
+		<dt>数码手机</dt>
+		<dd>华为</dd>
+		<dd>中兴</dd>
+		<dd>苹果</dd>
+	</dl>
+	<dl>
+		<dt>服饰美妆</dt>
+		<dd>男装</dd>
+		<dd>女装</dd>
+		<dd>化妆品</dd>
+	</dl>
+	<script type="text/javascript">
+		$("dt").mouseover(function(){
+			$(this).parent().find("dd").slideUp()
+		})
+		$("dt").mouseout(function(){
+			$(this).parent().find("dd").slideDown()
+		})
+	</script>
+</body>
+</html>

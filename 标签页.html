@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script src="bootstrap-3.3.0-dist/dist/js/jquery.min.js"></script>
+	<!-- 之后再引入bootstrap.min.js文件 -->
+	<script src="bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+	<style>
+
+
+	</style>
+</head>
+<body>
+	<div>
+		<ul class="nav nav-tabs"><!-- nav是基类 tabs是普通样式 -->
+			<li class="active"><a href="#">第一页</a></li><!-- class="active"默认激活 -->
+			<li><a href="#">第二页</a></li>
+			<li><a href="#">第三页</a></li>
+		</ul>
+
+		<ul class="nav nav-pills"><!-- 胶囊式 -->
+			<li class="active"><a href="#">第一页</a></li>
+			<li><a href="#">第二页</a></li>
+			<li><a href="#">第第三页</a></li>
+		</ul>
+
+		<ul class="nav nav-pills nav-stacked"><!-- 变纵向 -->
+			<li><a href="#">第一页</a></li>
+			<li><a href="#">第二页</a></li>
+			<li class="active"><a href="#">第三页</a></li><!-- 默认激活的是第三个 -->
+		</ul>		
+	</div>
+
+</body>
+</html>
+</html>

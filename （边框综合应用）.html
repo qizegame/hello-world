@@ -1,0 +1,62 @@
+<!--过渡型声明-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--定义文档是中文-->
+<!--同时使用xml:lang和lang的目的是为了更好的兼容性，都是定义文档的文字类型，方便浏览器检索-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+	<!--学习php，笔记-->
+	<head>
+		<!--网站字符集-->
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<!--网站标题-->
+		<title>网页标题</title>
+		<!--网站作者-->
+		<meta name="author" content="秦泽华"/>
+		<!--网站关键字-->
+		<meta name="keywords" content="笔记"/>
+		<!--网站描述-->
+		<meta name="description" content="学习php的笔记案例"/>
+		<!--通过外部css样式定义所有段落P的文字样式-->
+		<link rel="stylesheet" type="text/css" href=""/>
+		<!--通过内嵌css样式定义所有段落P的文字样式-->
+		<style type="text/css">
+		.news{
+			width:300px;
+			height: 400px;
+			border:1px solid red;
+		}
+		*{
+			margin: 0;
+			padding: 0;/*清除原有格式*/
+		}
+		.news h1{
+			height: 45px;/*定义高度45px*/
+			color: blue;/*定义颜色蓝色*/
+			font-size: 15px;/*定义字体大小15px*/
+			background:gray;/*定义背景色，灰色*/
+			line-height: 45px; /*定义位置纵向居中，这里，只要line-height的数值等于height的数值，也就是居中*/
+		}
+		.news ul{
+			list-style: none;/*去掉无序列表前的符号*/
+		}
+		.news ul li{
+			line-height: 40px;/*定义<li>的行距40px*/
+			border-bottom:1px dashed gray;/*定义<li>的下框线粗1px，虚线，灰色*/
+		}
+		</style>
+		<script type="text/javascript"></script>
+		<!--网页经过4秒自动刷新-->
+		<!--<meta http-equiv="refresh" content="4"/>-->
+		<!--网页经过8秒自动跳转百度-->
+		<!--<meta http-equiv="refresh" content="8;https://www.baidu.com/"/>-->
+	</head>
+	<body>
+		<div class="news">
+			<h1>关于边框的综合应用</h1>
+			<ul>
+				<li>第一条</li>
+				<li>第二条</li>
+				<li>第三条</li>
+			</ul>
+		</div>
+	</body>
+</html>

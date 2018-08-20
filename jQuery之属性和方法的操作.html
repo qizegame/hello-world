@@ -1,0 +1,27 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<input type="button" value="属性和方法的操作">
+	<img src="a.jpg">
+	<script type="text/javascript">
+		$("input").click(function(){
+			alert("/*通过属性操作，修改了img这个元素的src属性、width属性*/")
+			$("img").attr({src:"images/星星.png",width:"20px"})/*通过属性操作，修改了img这个元素的src属性、width属性*/
+			alert("/*通过return返回值，修改按钮的value值*/")
+			$("input").attr("value",function(){/*通过return返回值，修改按钮的value值*/
+				return "改变"
+			})
+			alert("/*通过removeAttr来删除input元素的value属性*/")
+			$("input").removeAttr("value") /*通过removeAttr来删除input元素的value的属性*/
+		})
+	</script>
+</body>
+</html>

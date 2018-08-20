@@ -1,0 +1,59 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>关于垂直居中的方法</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+body{font-size:12px;font-family:tahoma;} 
+#wrap{ 
+display:table; 
+border:1px solid #FF0099; 
+width:760px; 
+height:400px; 
+_position:relative; 
+overflow:hidden; 
+} 
+#subwrap{ 
+vertical-align:middle; 
+display:table-cell; 
+_position:absolute; 
+_top:50%; 
+} 
+#content{ 
+_position:relative; 
+_top:-50%; 
+} 
+</style> 
+</head> 
+<body> 
+<div id="wrap"> 
+	<div id="subwrap"> 
+		<div id="content">
+			<pre>
+				现在我们要使这段文字垂直居中显示！ 
+				div#wrap{ 
+				border:1pxsolid#FF0099; 
+				background-color:#FFCCFF; 
+				width:760px; 
+				height:500px; 
+				position:relative; 
+				} 
+				div#subwrap{ 
+				position:absolute; 
+				border:1pxsolid#000; 
+				top:50%; 
+				} 
+				div#content{ 
+				border:1pxsolid#000; 
+				position:relative; 
+				top:-50%; 
+				}				
+			</pre> 
+		</div> 
+	</div> 
+</div> 
+</body> 
+</html> 

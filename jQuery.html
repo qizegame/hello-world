@@ -1,0 +1,155 @@
+		<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>html结构树</title>
+
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	div{
+		border:1px solid pink;
+		width:200px;
+		height:50px;
+	}
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<input type="button" value="通过jQuery改变颜色" id="one">
+	<input type="button" value="通过层级选择器来修改ul标签内的内容" id="two">
+	<input type="button" value="通过parent > child来修改a标签内的内容" id="three">	
+	<input type="button" value="元素+来选择" id="four">
+	<input type="button" value="元素~来选择" id="five">
+	<input type="button" value="：contains（'text'）和：empty选择器" id="six">
+	<div id="div1">
+		通过jQuery弹出这里的内容
+	</div>
+	<ul>
+		<p>
+			p标签
+			<span>这里也会被选择到</span>
+		</p>
+		<a href="#">
+			a链接
+			<p>这里不会被选择到</p>
+		</a>
+		<li id="d1">我是第一个</li>
+		<li>元素+紧挨着的第一个兄弟</li>
+		<li>元素~下面的所有兄弟</li>
+		<li>我是下面的所有兄弟</li>
+	</ul>
+	<ol>
+		<li>：first1</li>
+		<li>2</li>
+		<li>：even3</li>
+		<li>4</li>
+		<li>：even5</li>
+
+	</ol>
+	<div>1</div>
+	<div></div>
+	<div>1</div>
+	<div></div>
+	<div><p>我是含有P标签的div</p></div>
+	<input type="button" value=":has选择器" id="seven">
+	<input type="button" value=":parent选择器" id="eight">
+	<input type="button" value="基本之 :first选择器" id="nine">
+	<input type="button" value="基本之 :even选择器" id="ten">
+	<h1>1</h1>
+	<h2>2</h2>
+	<h3>3</h3>
+	<input type="button" value="属性选择" id="eleven">
+	<span class="apan_01">apan_01</span>
+	<span class="bpan_02">bpan_02</span>
+	<span class="apan_03">apan_03</span>
+	<input type="button" value="子元素选择器（伪类选择器）" id="twelve">
+	<dl>
+		<dd>1</dd>
+		<dd>2</dd>
+		<dd>3</dd>
+		<dd>4</dd>
+		<dd>5</dd>
+	</dl>
+	<input type="button" value="表单选择器" id="thirteen">
+	</br>
+	<from>
+		<input type="text">text框
+	</br>
+		<input type="password">password框
+	</from>
+	<script type="text/javascript">
+		$("#div1").mouseover(function(){/*通过元素选择器，来操作元素*/
+			alert($("#div1").html());
+		});	
+		$("#one").click(function(){
+			$("#one").css({background:"orange"});/*通过id选择器，来操作元素*/
+		});
+		$("#two").click(function(){
+			$("ul p").css({background:"pink"});/*所有在ul下的P标签都会被选择到*/
+		});
+		$("#three").click(function(){
+			$("ul>a").css({background:"yellow"});/*只有在ul下的子标签a才会被选择到，a的子标签不会被选择*/
+		});
+		$("#four").click(function(){
+			$("#d1+").css({background:"red"});/*元素+，只会选择挨着它的下一个兄弟元素*/
+		});
+		$("#five").click(function(){
+			$("#d1~").css({background:"orange"})/*元素~，会选择它的下面的所有兄弟元素*/
+		});
+		$("#six").click(function(){
+			$("div:contains('1')").css({background:"green"});/*内容匹配选择器*/
+			$("div:empty").css({background:"black"});/*内容匹配选择器*/	
+		});
+		$("#seven").click(function(){
+			$("div:has(p)").css({background:"aquamarine"});/*匹配含有P标签的元素，海宝蓝色*/
+		});
+		$("#eight").click(function(){
+			$("div:parent").css({background:"yellow"})/*所有有内容的，且是父元素的div元素，背景色变黄色*/
+			$("div:parent").hide(5000)/*所有有内容的，且是父元素的div元素，在5000毫秒内，隐藏，动画效果*/
+			$("div:parent").show(5000)/*所有有内容的，且是父元素的div元素，在5000毫秒内，显示，动画效果*/
+		});
+		$("#nine").click(function(){
+		    $("li:first").css({background:"pink"});/*找到li这类元素中的第一个*/
+		});
+		$("#ten").click(function(){
+			alert("/*找到这类元素中的所有偶数下标*/")
+		    $("li:even").css({background:"orange"});/*找到这类元素中的所有偶数下标*/
+		    alert("/*找到这类元素中的所有奇数下标*/")
+		    $("li:odd").css({background:"darkslategrey"});/*找到这类元素中的所有奇数下标*/
+		    alert("/*找到该类元素下，下标为1的元素*/")
+		    $("li:eq(1)").css({background:"red"});/*找到该类元素下，下标为1的元素*/
+		    alert("/*查找，小于索引下标的元素*/")
+		    $("li:lt(4)").css({background:"red"});/*查找，小于索引下标4的元素*/
+		    alert("/*匹配所有的h标签*/")
+		    $(":header").css({background:"green"});/*匹配所有的h标签*/
+		    alert("/*匹配所有的li标签，除了最后一个li标签*/")
+		    $("li:not(li:last)").css({background:"black"});/*匹配所有的li标签，除了最后一个li标签*/
+		});
+		$("#eleven").click(function(){
+			alert("/*找到span下，所有带有class属性的元素*/")
+			$("span[class]").css({background:"red"})/*找到带有class属性的元素*/
+			alert("/*找到带有class属性，并且属性值是span_01的元素*/")
+			$("span[class=\"apan_01\"]").css({background:"orange"})/*找到带有class属性，并且属性值是apan_01的元素*/
+			alert("找到span下，class值是以apan开头的属性")
+			$("span[class^=\"apan\"]").css({background:"pink"})/*找到span下，class值是以aspan开头的属性*/
+			alert("找到span下，class值包含b的属性")
+			$("span[class*=\"b\"]").css({background:"grey"})/*找到span下，class值包含b的属性*/
+		});
+		$("#twelve").click(function(){
+			alert("匹配从属于dl父元素下的dd元素中的第一个元素")
+			$("dd:first-child").css({background:"yellow"})/*匹配从属于dl父元素下的dd元素中的第一个元素*/
+			alert("匹配从属于dl父元素下的dd元素中的第N个元素，这里不是下标")
+			$("dd:nth-child(2)").css({background:"blue"})/*匹配从属于dl父元素下的dd元素中的第n个元素*/
+			alert("匹配从属于dl父元素下的dd元素中的倒数第1个元素")
+			$("dd:nth-last-child(1)").css({background:"red"})/*匹配从属于dl父元素下的dd元素中的倒数第1个元素*/
+		})
+		$("#thirteen").click(function(){
+			alert("表单选择，选择了text框")
+			$(":text").css({background:"yellow"})/*表单选择，选择了text框*/
+			alert("表单选择，选择了password框")
+			$(":password").css({background:"red"})/*表单选择，选择了password框*/
+		})
+	</script>
+</body>
+</html>

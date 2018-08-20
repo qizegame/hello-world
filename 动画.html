@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>html结构树</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	<style type="text/css">
+	div{
+		width:100px;
+		height:100px;
+		border:10px solid grey;
+		font-size:10px;
+		margin-left:95px;
+		margin-bottom:10px;
+	}
+	</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div>
+	</div>
+	<input type="button" value="点击show显示">
+	<input type="button" value="点击hide隐藏">
+	<input type="button" value="点击toggle切换">
+	<br/>
+	<input type="button" value="点击slideDown下滑显示">
+	<input type="button" value="点击slideUp隐藏">
+	<input type="button" value="点击slideToggle来回切换">	
+	<br/>
+	<input type="button" value="点击fadeIn淡入">
+	<input type="button" value="点击fadeOut淡出">
+	<input type="button" value="点击fadeToggle来回切换">	
+	<input type="button" value="点击fadeTo淡出，然后在某一个时刻执行函数">
+	<script type="text/javascript">
+	$("input:eq(0)").click(function(){
+		$("div:eq(0)").show(1000)
+		$("div:eq(0)").html("<span style=\"color:red\">fn函数在这里可加可不加</span>")
+	})
+	$("input:eq(1)").click(function(){
+		$("div:eq(0)").hide(1000)
+
+	})
+	$("input:eq(2)").click(function(){
+		$("div:eq(0)").toggle(500)
+	})
+	$("input:eq(3)").click(function(){
+		$("div:eq(0)").slideDown()
+	})
+	$("input:eq(4)").click(function(){
+		$("div:eq(0)").slideUp()
+
+	})
+	$("input:eq(5)").click(function(){
+		$("div:eq(0)").slideToggle()
+	})
+	$("input:eq(6)").click(function(){
+		$("div:eq(0)").fadeIn()
+	})
+	$("input:eq(7)").click(function(){
+		$("div:eq(0)").fadeOut()
+
+	})
+	$("input:eq(8)").click(function(){
+		$("div:eq(0)").fadeToggle()
+	})
+	$("input:eq(9)").click(function(){
+		$("div:eq(0)").fadeTo(3000,0.5,function(){
+			alert("fadeTo淡出到0.5的程度，然后执行函数")
+		})
+	})
+	</script>
+</body>
+</html>

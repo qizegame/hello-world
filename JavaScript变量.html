@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>html结构树</title>
+	<!-- 引入外部bootstrap中的css文件，这里引用的是压缩的 -->
+	<link rel="stylesheet" href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<!-- 务必先引入jQuery文件 -->
+	<script type="text/javascript">
+		var n=23;
+		alert(typeof(n));	/*弹出变量名为n的数据类型*/
+
+		//运算
+		var a=1;
+		alert(a);
+		document.write("<h"+a+">h"+a+"<h"+a+">");
+		a++;
+		alert(a);
+		document.write("<h"+a+">h"+a+"<h"+a+">");
+		a++;
+		alert(a);
+		document.write("<h"+a+">h"+a+"<h"+a+">");
+
+		//赋值传值
+		var b=22;
+		var c=b;
+		b=24;
+		alert("c="+c);
+
+		//引用传值，改动一方的值会影响另外一方
+		var n={name:"张三",age:22};
+		var m=n;
+		m.age=24;
+		alert("n的name="+n.age);
+
+		//if语句
+		var heath="下雨";
+		if(heath=="下雨"){
+			document.write("睡觉")
+		};
+
+		//if，else语句
+		var money="100";
+
+		if (money=="1000") {
+
+		} else{
+			document.write("出去嗨")
+		};
+
+		//switch语句
+		var n=9;
+		switch(n){
+			case 1:
+			document.write("星期一");
+			break;
+			case 2:
+			document.write("星期二");
+			break;
+			default:
+			document.write("星期八");
+			break;
+		}
+		//switch扩展
+		var e=9;
+		switch(true){
+			case 8<e:
+			document.write("9比8大");
+			break;
+			case 10>e:
+			document.write("10比9大");
+			break;
+			default:
+			document.write("没用这个结果");
+			break;
+		}
+
+		//while循环
+			var p=1;
+			while(p<10){
+				document.write(p);
+				p++;
+			}
+
+		//求1到100的和
+			var add=0;//定义一个变量为和，初始值0
+			var i=1;
+			while(i<=100){
+				add=add+i;//把add加上i保存给新的add
+				i++;
+			}	
+				document.write(add);
+
+		//for循环
+			for(i=1;i<=100;i++){
+				document.write(i+" ");//加入空格方便阅览
+			}		
+
+			for(i=1;i<=6;i++){
+				alert(i);
+				document.write("<h"+i+">h"+i+"</h"+i+">");
+			}
+
+		//九九乘法表
+/*			第一行：1x1=1
+			第二行	2x1=2    2x2=4
+			第三行	3x1=3    3x2=6	  3x3=9
+
+			1。有行有列
+			2。有几行就有几列（列的最大值就是行数）*/
+
+
+			document.write("<table border='1'>");
+
+				for (var i = 1; i <= 9; i ++) /*这个循环用来表示行*/{
+					document.write("<tr>");
+					for(var j = 1; j <= i; j ++)/*这个循环用来表示列*/{
+						document.write("<td>");
+							document.write(i+"*"+j+"="+i*j);
+						}	
+						document.write("<td>");
+					document.write("</tr>");
+				}
+			document.write("</table>");
+
+			//星星金字塔
+			document.write("<p align='center'>")
+				for(i=1;i<=5;i++){
+					for(j=1;j<=2*i-1;j++){
+						document.write("*")
+					}
+						document.write("<br/>")
+				}
+			document.write("<p>")
+
+			//算任意半径的圆的面积
+			function mianji(n){
+				var mianji=3.14*n*n;
+				document.write("半径为"+n+"的面积"+mianji);
+			}
+			mianji(10);//调用函数，调用参数为10
+			document.write("<br/>");
+			//算任意两个直角边的另外一边
+			function bian(a,b){
+				var bian=a*a+b*b;
+				var c=Math.pow(bian,0.5);/*开方*/
+				document.write(a+"和"+b+"的另外一边为"+c)
+			}
+			bian(3,4);
+
+
+			//函数的作用域问题
+			function ad(){
+				gg=222;//在这里，如果写上var，那么，abc将变成局部变量
+			}
+				ad();
+				document.write(gg+"<br/>");//写上var的话，这里abc不会出现，因为上面函数内的abc会是局部变量
+
+			//return返回值
+			function ab(){
+				var abc=666;
+				return abc;/*调用adc参数*/
+			}
+			var n=ab();/*接收保存调用的参数*/
+			document.write(n);
+
+
+			//求任意1到v之间的偶数个数
+			function qiuou(ccc){
+				var geshu=0;
+				for (a=1;a<=ccc;a++) {
+					if(a%2==0){
+						geshu++;	
+					}
+					return geshu;
+				}
+				var he=qiuou(10);
+				document.write(he);
+			}
+	</script>
+	<style>
+
+
+	</style>
+</head>
+<body>
+
+</body>
+</html>
+</html>

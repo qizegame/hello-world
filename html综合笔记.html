@@ -1,0 +1,375 @@
+<!--过渡型声明-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--定义文档是中文-->
+<!--同时使用xml:lang和lang的目的是为了更好的兼容性，都是定义文档的文字类型，方便浏览器检索-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+	<!--学习php，笔记-->
+	<head>
+		<!--网站字符集-->
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<!--网站标题-->
+		<title>网页标题</title>
+		<!--网站作者-->
+		<meta name="author" content="秦泽华"/>
+		<!--网站关键字-->
+		<meta name="keywords" content="笔记"/>
+		<!--网站描述-->
+		<meta name="description" content="学习php的笔记案例"/>
+		<!--通过外部css样式定义所有段落P的文字样式-->
+		<!--
+		<link rel="stylesheet" type="text/css" href="外部样式.css"/>
+		-->
+		<!--通过内嵌css样式定义所有段落P的文字样式-->
+		<!--
+		<style type="text/css">
+			p{color:red;font-size:15;font-face:"微软雅黑";}
+		</style>
+		-->
+		<script type="text/javascript"></script>
+		<!--网页经过4秒自动刷新-->
+		<!--<meta http-equiv="refresh" content="4"/>-->
+		<!--网页经过8秒自动跳转百度-->
+		<!--<meta http-equiv="refresh" content="8;https://www.baidu.com/"/>-->
+	</head>
+	<body>	
+		<!--文本标签-->	
+		<div>
+			<!--字体红色，6号，黑体-->
+			<font color="red" size="6" face="黑体">99999</font>
+			<font color="blue" size="5" face="黑体">88888</font>
+			<!--字体加粗-->
+			<b>77777</b>
+			<!--字体加粗，但强调语气，慎用-->
+			<strong>66666</strong>
+			<!--字体倾斜-->
+			<i>55555</i>
+			<!--下划线，但强调语气，慎用，一般在用到*和|的时候用-->
+			<ins>*****|||||</ins>
+			<!--上标-->
+			X<sup>2</sup>
+			<!--下标-->
+			H<sub>2</sub>o
+	        <!--多种字体样式的构成，顺序嵌套，不能交叉！！！-->
+			<u><b><font color="blue">多样化格式</font></b></u>
+			<font color="blue"><b><u>多样化格式</u></b></font>
+		</div>
+		<!--段落标签-->
+		<div>			
+			<!--分段落-->
+			<p>第一段</p>
+			<p>第二段</p>
+			<!--居中-->
+			<p align="center">第三段</p>
+			<!--利用font对字体穿插格式-->
+			<h1 align="center"><font color="blue">标题一</font></h1>
+			<h2>标题二</h2>
+			<h3>标题三</h3>
+			<h4>标题四</h4>
+			<h5>标题五</h5>
+			<h6>标题六</h6>
+		</div>
+		<!--预定义标签-->
+		<div>
+			<pre>
+				锄禾日当午
+				  汗滴禾下土
+				    谁知盘中餐
+				      粒粒皆辛苦
+			</pre>
+			<!--独占一行的一些标签-->
+			<div>关于div的测试</div>关于div的测试
+			<span>关于span的测试</span>
+			<h1>块标签一</h1>
+			<div>快标签二</div>
+			<p>快标签三</p>
+		</div>
+		<!--小测试-->
+		<div>	
+			<!--标题-->
+			<h3><font color="#ff0000">标题三</font></h3>
+			<div>
+				<!--段落一-->
+				<p><font size="5">什么时候</font></p>
+				<!--段落二-->
+				<p>能吃晚饭</p>
+			</div>
+			<!--无序列表的格式、样式为空心圆型-->
+			<ul type="circle">
+				<li>面包</li>
+				<li>牛奶</li>
+				<li>鸡蛋</li>
+			</ul>
+			<!--无序列表的格式、样式为方型-->
+			<ul type="square">
+				<li>面包</li>
+				<li>牛奶</li>
+				<li>鸡蛋</li>
+			</ul>
+		</div>
+		<!--关于网站的常规架构-->
+		<div>			
+			<!--常规网站的架构，div内包裹列表，列表前用标题打头-->
+			<div>
+				<!--标题打头-->
+				<h1>食品</h1>
+				<!--列表（此处为有序列表）-->
+			<ol>
+				<li>面包</li>
+				<li>牛奶</li>
+				<li>鸡蛋</li>
+			</ol>
+			</div>
+			<!--小测试-->
+			<!--定义锚点-->
+			<a name="大家谈"></a>
+			<div>
+				<!--标题打头-->
+				<h1><font color="blue" size="5"><u>大家谈</u></font></h1>
+				<!--列表（此处为无序列表）-->
+				<ul>
+					<li>省长骑车上班</li>
+					<li>亲吻陌生人</li>
+					<li>男子涉嫌被抓</li>
+					<li>谁在鼓吹房价</li>
+				</ul>
+			</div>
+			<!--自定义列表-->
+			<dl>
+				<!--标题-->
+				<dt>电子产品</dt>
+				<!--对标题进行解释-->
+				<dd>主机 鼠标 键盘</dd>
+				<!--标题-->
+				<dt>化妆品</dt>
+				<!--对标题进行解释-->
+				<dd>粉底 面膜 口红</dd>			
+			</dl>
+		</div>
+		<!--几个特殊字符-->
+		<div>			
+			<!--空格字符，1个空格占1个字符，1个汉字2个字符-->
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;文章前面空2个字</p>
+			<!--商标字符，商标字符的字体，通用为Arial字体-->
+			<p><font size="5" face="Arial">&copy;</font></p>
+			<!--钱币字符-->
+			<p>&yen;</p>
+		</div>
+		<!--图片标签-->
+		<div>	
+			<!--插入图片，并附带了图片的一些属性，以及关于图片的描述-->
+			左侧的文字<img src="images/banner_01.png" width="384" higth="200" border="3" hspace="100" alt="横幅" />右侧的文字
+		</div>
+		<!--表格标签-->
+		<div>
+			<!--表格，表格居中，用width给表格添加宽度，border给表格加边框，cellpadding改进内容与单元格的距离cellspacing改进单元格与单元格之间的距离-->
+			<table align="center" width="300" border="1" cellpadding="10" cellspacing="0">
+			<!--行-->
+	 			<tr>
+	 				<!--列-->
+	 				<td>图片内容</td>
+	 				<!--列-->
+	 				<td>内容二</td>
+	 				<!--列，无内容需要放入&nbsp;撑起表格-->
+	 				<td>&nbsp;</td>
+	 			</tr>
+	 			<!--行-->
+	 			<tr>
+	 				<!--列，无内容需要放入&nbsp;撑起表格-->
+	  				<td>&nbsp;</td>
+	  				<!--列，无内容需要放入&nbsp;撑起表格-->
+	 				<td>&nbsp;</td>
+	 				<!--列，无内容需要放入&nbsp;撑起表格-->
+	 				<td>&nbsp;</td>
+	 			</tr>
+			</table>
+			<!--小测试-->
+			<div>
+				<!--表格居中，宽度300像素,边框1像素，单元格间距离0-->
+				<table align="center" width="300" border="1" cellspacing="0">
+					<tr>
+						<td><img src="images/banner_01.png" width="190" higth="160" alt="横幅" /></td>
+						<td><img src="images/banner_01.png" width="190" higth="160" alt="横幅" /></td>
+						<td><img src="images/banner_01.png" width="190" higth="160" alt="横幅" /></td>
+						<td><img src="images/banner_01.png" width="190" higth="160" alt="横幅" /></td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+				        <!--单元格内内容居中-->
+						<td align="center">banner_01</td>
+						<!--单元格宽度100-->
+						<td height="100">banner_01</td>
+						<!--单元格内内容，垂直对齐方式为局顶-->
+						<td valign="top">banner_01</td>
+						<td>banner_01</td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<!--小测试-->
+				<!--表格的宽度为245，边框为1，边框颜色红色，合并边框（暂时使用，后面用css实现）-->
+				<table width="245" border="1" bordercolor="red" rules="all">
+				<!--单元格的高度30，背景色淡蓝色-->
+				<tr height="30" bgcolor="#00FFFF">
+					<td>001</td>
+					<td>张三</td>
+					<td>175cm</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>李四</td>
+					<td>180cm</td>
+				</tr>
+				</table>
+			</div>
+		</div>
+		<!--单元格的合并-->
+		<div>
+			<!--横向合并单元格-->		
+			<div>
+				
+				<table align="center" border="1" bordercolor="blue" cellspacing="0">
+					<tr>
+						<!--单元格合并后，一共只剩下一个单元格了，所以此处只需要留一个td，因为是合并了3个单元格，所以此处写colspan="3"，意味着，这里合并了3个单元格-->
+						<td colspan="3">横向合并三个单元格</td>
+					</tr>
+					<tr>
+						<!--单元格合并后，一共只剩下2个单元格了，所以此处要留2个单元格，因为合并的是后面2个单元格，所以，在后面那个单元格处写colspan="2"，意味着，这里合并了2个单元格-->
+						<td>内容二</td>
+						<td colspan="2">内容三</td>
+					</tr>
+					<tr>
+						<td>内容四</td>
+						<td>内容五</td>
+						<td>内容六</td>
+					</tr>
+				</table>
+			</div>
+			<br/>
+			<!--竖向合并单元格例子1-->
+			<div>			
+				<table align="center" border="1" bordercolor="red" cellspacing="0">
+					<!--因为合并后的竖向单元格，归属于上方的单元格，所以这里第一行的单元格数为3个，第二、第三行的单元格数为2个-->
+					<!--因为合并的是第一行的最后那列单元格3个，所以在第一行的最后一个单元格，进行写入rowspan="3"-->
+					<tr>
+						<td>内容一</td>
+						<td>内容二</td>
+						<td rowspan="3">内容三</td>
+					</tr>
+					<tr>
+						<td>内容四</td>
+						<td>内容五</td>
+					</tr>
+					<tr>
+						<td>内容六</td>
+						<td>内容七</td>
+					</tr>
+				</table>
+				<br/>
+				<!--竖向合并单元格例子2-->
+				<div>
+					<table align="center" border="1" bordercolor="red" cellspacing="0">
+						<!--合并后，第一行单元格数是3个，第二行，是2个，第三行，是3个-->
+						<tr>
+							<!--因为第一行的单元格是通过合并2个单元格得出的，所以这里在第一行第一个单元格写rowspan="2"-->
+							<td rowspan="2">内容一</td>
+							<td>内容二</td>
+							<td>内容三</td>
+						</tr>
+						<tr>
+							<td>内容四</td>
+							<td>内容五</td>
+						</tr>
+						<tr>
+							<td>内容六</td>
+							<td>内容七</td>
+							<td>内容八</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!--链接-->
+		<div>
+			<!--要养成良好的习惯，加上http://-->
+			<!--第一种绝对地址，网址-->
+			<a href="https://www.baidu.com/" target="_blank">百度</a>
+			<!--第二种绝对地址，本地地址，用于测试-->
+			<a href="file:///E:/wamp/www/%E7%AC%AC%E4%B8%80%E4%B8%AA.html" target="_blank">笔记</a>
+			<!--相对地址第一种，直接在文件夹下-->
+			<a href="第一个.html" target="_blank">我的笔记</a>
+			<!--第二种，在当前文件夹下n级-->
+			<a href="images/note/第一个副本.html" target="_blank">笔记副本</a>
+			<!--第三种，在当前文件夹上n级，在第一个副本.html中有案例-->
+			<a href="images/note/第一个副本.html" target="_blank">笔记副本</a>
+			<!--下载内容-->
+			<a href="images/wampserver2.2e-php5.3.13-httpd2.2.22-mysql5.5.24-x64.zip">压缩包下载</a>
+			<!--邮件链接-->
+			<a href="mailto:qinzehua@wuxiyunchou.com">邮件链接</a>
+			<!--空链接-->
+			<a href="#">空链接</a>
+			<!--JavaScript链接-->
+			<a href="JavaScript:window.close()">关闭</a>
+			<!--跳转锚点-->
+			<a href="#大家谈">跳转到大家谈</a>
+		</div>
+		<!--表单-->
+		<div>
+			<!--这里需要定位到php程序，action=""为意思处理程序就在当前文件夹，该方法尽量不用-->
+			<form action="XX.php">
+				<!--单行文本框-->
+				用户名：<input type="text" name="username" size="10" maxlength="10" value="请输入账号/用户名"/>
+				<br/>
+				<!--测试-->
+				<!--必须有的两个条件：type="text" name="自定义的名称"-->
+				邮箱：<input type="text" name="email" size="20" maxlength="30" value="username@qq.com"/>
+				<br/>
+				手机：<input type="text" name="telephonenumber" size="30" maxlength="11" value="请输入您的11位手机号码"/>
+				<br/>
+				密码：<input type="password" name="password" readonly="readonly" disabled="disabled"/>
+				<br/>
+				性别：
+				<input type="radio" name="sex" value="男"/>男
+				<input type="radio" name="sex" value="女"/>女
+				<br/>
+				爱好：
+				<input type="checkbox" name="like" value="旅游" checked="checked"/>旅游
+				<input type="checkbox"name="like" value="听歌" checked="checked"/>听歌
+				<input type="checkbox"name="like" value="睡觉"/>睡觉
+				<br/>
+				<!--rows=""能显示的行数-->
+				留言:<textarea rows="5" cols="30" name="note">请文明发言</textarea>
+				<br/>
+				<!--下拉表单-->
+				城市：
+				<select name="city">
+					<option>江苏</option>
+					<option>上海</option>
+					<option>广西</option>
+				</select>
+				<!--隐藏域-->
+				<br/>
+				<input type="hidden" name="id1"/>
+				<!--文件域-->
+				<br/>
+				请上传文件：<input type="file" name="filename"/>
+				<!--提交按钮-->
+				提交：<input type="submit" value="提交"/>
+				<!--图片提交按钮-->
+				<br/>
+				<input type="image" width="50 " src="images/banner_01.png"/>
+				<br/>
+				<!--重置按钮-->
+				重置：<input type="reset" value="重置"/>
+				<br/>
+				<!--普通按钮，结合了JavaScript构成了一个提示功能-->
+				投票：<input type="button" value="投票" onclick="JavaScript:window.alert('你多次投票了')"/>				
+			</form>
+		</div>
+		<!--css介绍及语法-->
+		<div>
+			<!--文本颜色红色，大小为100px-->
+			<h1 style="color:red;font-size:100px;">css行内样式表<h2/>
+		</div>
+	</body>
+</html>

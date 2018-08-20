@@ -1,0 +1,3198 @@
+主要的几个代码
+html代码、css样式代码、JavaScript代码、jQuery代码、php代码
+html介绍
+html(hyper text markup language)超文本标记语言
+
+html是一种标准：w3c万维网制定的标准
+超文本：在文本内容的基础上，添加了更加丰富的信息（图片、动画、声音等)
+标记（也称为标签）： <单词部分>
+挨着<的是标签，<a>、<p>、<span>
+标签通常有两层含义：
+表型：每个标签都有一定的表现形式
+表意：每个标签都有一定的意义
+语言：可以直接被浏览器解析，和程序语言不一样
+html的标签分类
+1.双标签：开始标签和结束标签构成，内容放在开始和结束标签之间
+语法：<标签 属性名="属性值">内容...</标签>
+属性可以理解为人的特征：性别="女"，体重="45公斤"，身高="165cm"，其中性别为属性名，女为属性值
+例如：<div></div>、<a></a>、<html></html>
+2.单标签:只有开始标签，没有结束标签，没有内容，在单标签的后面一定要闭合。 
+语法：<标签 属性名="属性值" 属性名="属性值"/>
+例如：<link/>、<img/>、<br/>、<meta/>
+html的基本骨架
+<html>
+<head>    //人的头部
+<title>网站的标题</title>
+</head>
+<body>    //人的身体
+</body>
+</html>
+html保存的时候文件的扩展名是xxx.html
+html结构说明
+<html>含义：告诉浏览器，网页的代码用什么格式来进行解析
+<head>含义：告诉浏览器网页的汉字用什么字符集，使用的字符集不正确，就会出现乱码
+gb2312简体中文--（汉字操作系统下，默认使用该字符集）、gbk国标码、utf-8多国语言
+<title>含义：标题，便于搜索引擎
+<body>含义：网站的内容，99%的内容都放入body标签中，只有放入该标签，才能在窗口中显示
+注意：tab键可以进行缩进。
+html的书写规范
+html不区分大小写，但是w3c建议使用小写。<body>，不推荐<BODY>
+html如果有标签嵌套，顺序嵌套，不能交叉
+单标签一定要闭合（/）例如<br/>
+属性：每一个标签有没有属性，有多少----都是w3c规定好的
+属性值：务必要使用双引号""引起
+注释的内容不会再窗口中显示<!--注释内容-->
+html文本标签（格式化标签）
+1.Font：设置文本的颜色、字体、大小
+  语法：<font>设置的内容</font>
+  属性：
+  		color设置文本颜色，例如color="red" color="#ff0000"
+ 		size设置文本大小，例如size="5"是以号为单位
+ 		face设置文本字体，例如face="黑体"
+
+2.<b></b>加粗
+<strong></strong>加粗，起到语气强调左右，特别条件才使用，不可滥用
+<i></i>斜体
+<em></em>斜体，起到语气强调左右，特别条件才使用，不可滥用
+
+3.<u></u>下划线
+<ins></ins>下划线，同时强调插入的是文本
+
+4.<sup></sup>上标
+  <sub></sub>下标
+html段落标签
+1.<p></p>分段落
+段落的属性：
+位置属性：
+Align取值 Left居左 center居中 right居右
+
+2.标题
+<h1></h1>标题1
+<h2></h2>标题2
+..
+...
+<h6></h6>标题6    //最多标题6
+位置属性：
+Align取值 Left居左 center居中 right居右
+
+3.pre标记：
+预定义标签，保留原有的空格和换行<pre></pre>
+
+4.div（块标签）：是网站上使用的标签最多之一，本身没有任何意义，自己独占一行，可用于划分网页结构，结合css一起使用，构成相应的效果
+块标签：自己独占一行
+如：<h1></h1>、<div></div>、<p></p>，都是块标签
+
+5.span（行内标签）：本身没有任何含义，但也是网站上使用最多标签之一，结合css一起使用构成功能
+行内标签：不自己独占一行
+如：<em></em>、<span></span>、<u></u>都是行内标签
+
+注意：下面的写法不推荐使用，通常做法为块标签内包括行内标签！
+<font color="blue"><h1>标题</h1></font>
+html列表
+若干个相似内容进行排列
+1.无序列表
+•面包
+•牛奶
+•鸡蛋
+语法：
+<ul>
+	<li>面包</li>
+	<li>牛奶</li>
+	<li>鸡蛋</li>
+</ul>
+ul的属性：
+type类型，设置前面的符号样式。
+取值：circle（空心圆）disc（实心圆/*默认型*/）square（方块）
+
+2.有序列表
+1.面包
+2.牛奶
+3.鸡蛋
+语法：
+<ol>
+	<li>面包</li>
+	<li>牛奶</li>
+	<li>鸡蛋</li>
+</ol>
+
+3.自定义列表
+<dl>
+	<dt>自定义
+	标题</dt>
+	<dd>对该标题进行描述</dd>
+</dl>
+html特殊字符
+&nbsp：一个空格，代表一个字符，一个汉字占2个字符
+&copy:版权符号
+&lt:< 左括号
+&gt：> 右括号
+&yen:人民币符号
+html图片标签
+图片标签（单标签，行内标签）
+语法：
+<img 属性名="属性值"/>
+1.属性：
+1.图片的路径 src="图片的地址"（需要把图片放入同一个目录下）
+2.图片的宽度 width="数值"（可用两种，第一种：以像素为单位的PX，不用写单位）例如：width="300px"，就是错误写法！！！
+3.图片的高度 higth="数值"
+4.图片的边框 border="数值"（通过css可以更改边框的颜色）
+5.图片的解释说明 alt="对图片进行内容描述"
+6.图片和内容左右之间的距离 hspace="左右距离数值"  //通常不用，但是了解，用css样式实现
+8.图片和内容上下之间的距离 vspace="上下距离数值"。
+想要图片等比例缩放，只需设置宽度/高度中的一项即可
+html表格标签
+语法：
+<table>
+ <tr>//行
+ 	<td>内容</td>//列
+ 	<td>图片内容</td>
+ 	<td>内容</td>
+ </tr>
+ <tr>//行
+  	<td></td>//列
+ 	<td></td>
+ 	<td></td>
+ </tr>
+</table>
+通常表格<table></table>包括<tr></tr>行，行里面包括单元格<td></td>
+注意：内容一定要放入最底层的标签里面
+表格属性：
+1.表格的边框 border="数值"，默认是 0
+2.表格的宽度 width="数值"
+3.表格的高度 height="数值"（w3c推荐不建议使用这个高度，高度会根据内容变化）
+4.表格的位置 align="水平对齐方式"left centet right
+5.表格中的内容和单元格之间的距离 cellpadding="数值"默认数值是2像素
+6.表格中的单元格与单元格之间的距离 cellspacing="数值"默认数值是2像素
+7.表格的颜色 bgcolor="颜色值" 例如bgcolor="red"
+8.表格的背景图片 background="图片的地址"（背景图片名不能含有中文）--修饰作用
+9.表格的合并边框线 rules="all"（w3c不推荐使用，后面用css实现）
+10.表格的边框颜色 bordercolor="属性值"（w3c不推荐使用，后面用css实现）
+注意：背景图片的优先级高于背景颜色，也就是说，既有背景色，也有背景图，显示背景图
+
+<tr></tr>的属性：
+1.行的高度 height="数值"
+2.背景颜色 bgcolor="颜色值"
+3.背景图片 background="图片的地址"
+4.水平对齐方式 align="属性值" left center right
+5.垂直对齐方式 valign="属性值" top middle bottom
+
+<td></td>的属性：
+1.背景颜色 bgcolor="属性值"
+2.背景图片 background="图片地址"
+3.单元格的宽度 width="数值"
+4.单元格的高度 height="数值"
+5.内容在单元格中的水平对齐方式 align="属性值" left center right
+6.内容在单元格中的垂直对齐方式 valign="属性值" top middle bottom
+
+表格的扩充
+合并单元格的问题：
+横向合并（左右合并）若干个单元格合并成一个：colspan="数值"
+例如colspan="3"，意思为，横向合并3个单元格，横向合并的单元格，归属于最左侧的那个
+
+纵向合并：rowspan="数值"
+纵向合并的单元格，归属于上方的单元格
+
+链接
+语法：
+<a 属性="属性值">内容</a>
+属性：
+1.链接的路径
+href="链接的地址url"，url包括绝对地址和相对地址
+
+（1）绝对地址
+也称为网络地址，也就是网址。
+第一种：以http:开头的
+第二种：本地网址，用于本机测试使用
+
+（2）相对地址
+在同一个站点下（通俗点讲，在同一个文件夹）
+1.目标文件和当前文件在同一个目录，直接写文件名称
+2.目标文件在当前文件的下级目录，xx表示文件夹名 xx/xx/文件名
+3.目标文件在当前文件的上级目录 ..表示上一级 ../../文件名称
+
+（3）特殊链接
+<1>下载链接：
+哪些文件不用下载可以直接做链接： .html .gif .jpg
+哪些文件必须下载链接 .zip .mp4 .exe
+<2>邮件链接
+<a href="mailto:邮件地址">内容</a>
+<3>空链接
+在当前页面做空链接 <a href="#">内容</a>
+<4>JavaScript链接 
+<a href="JavaScript:window.close()">关闭</a>
+
+2.打开目标文件的窗口 target="属性值" 
+<1>在新的窗口中打开目标文件
+ _blank
+<2>默认的打开方式，在当前窗口中打开目标文件
+ _self
+
+3.定义锚点的名称 name
+同一个页面内的不同区域直接跳转
+<1>定义锚点 
+<a name="自定义名称"></a>中间不加内容，给连接中的target使用
+
+<2>跳转锚点
+<a href="#自定义名称">内容</a>
+
+颜色代码（理解）
+英文表示：
+color="red" color="blue" color="orange"
+
+十六进制表示：
+十六个基本数构成 0-9、a-f
+color="#ff0000" 红色
+color="#00ff00" 绿色
+color="#0000ff" 蓝色
+
+十进制表示：
+十个基本数构成 0-9
+rgb （255,0,0）红色
+rgb （0,266,0）绿色
+rgb （0,0,255）蓝色
+
+八进制：
+八个基本数构成 0-7
+
+二进制：
+两个基本数构成 0、1
+
+字符集（utf-8 这就是字符集）
+为什么要有字符集，是因为计算机只能处理二进制数据（也就是 0 和 1 ），位了让计算机能识别人类的语言（0-9
+a-z、A-Z、特殊符号），我们就需要对每一个字符进行"编码"。所谓编码，就是每一个字符，都可以用不同二进制来表达。
+假设：A 用二进制表示 1000 B 用二进制表示 10001
+
+<1>ASCII编码：
+用1个字节（8位二进制来表示所有字符），共可以表示2＾8=256 个字符
+
+<2>ANSI编码：
+其他国家，都对ASCII编码进行扩展，用于显示本国的语言
+在中文操作系统 gb2312
+在繁体操作系统 big5
+用2个字节（16位二进制）（来表示，共可以表示2＾16=65536 个字符
+GB2312收入了 6763 个汉字
+
+<3>GBK编码（国标码）：
+对GB2312进行扩充，收录了一些冷门字、罕见字、古汉语等
+收入了大约 2.1 万个汉字
+
+<4>Unicode编码：
+计划将世界上所有字符统一编码，用4个字节（32个二进制）来表示一个字符
+它的缺点：编码表文件太大，不方便使用。用32位二进制表示一个字符，造成空间极大浪费
+
+<5>UTF-8（多国语言编码）
+不同的字符，它会选择合适的编码来进行翻译
+
+meta标签
+描述网页文档的属性
+
+<1>http-equiv
+模拟的是 http 文件头信息，当内容从服务器端发送到客户端，告诉浏览器如何正确的显示信息
+
+字符集//这里尾部加上“号是因为不加，下面的内容也跟着变色
+<meta http=equiv="content-type" content="text/html;charset="UTF-8"/>多国语言"
+<meta http=equiv="content-type" content="text/html;charset="GBK"/>国标码"
+<meta http=equiv="content-type" content="text/html;charset="GB2312"/>简体中文"
+
+网页自动刷新
+<meta http-equiv="refresh" content="4"/>  //网页经过4秒自动刷新
+
+网页自动跳转
+<meta http-equiv="refresh" content="8;http://www.baidu.com"/>  //网页经过8秒自动跳转百度
+
+<2>name
+设置网页的关键字，描述信息等，便于搜索引擎需要
+<meta name="keywords" content="关键字"/>
+<meta name="description" content="网站描述信息"/>
+<meta name="author" content="网站的作者"/>
+
+表单
+
+可以获取客户端的信息（数据），表单有各种各样的控件，输入框，复选框，按钮等
+表单的功能：
+交互功能
+表单的工作原理：
+<1>浏览带有表单的页面，填写必要的信息，之后单击某个提交按钮
+<2>对表单中的数据进行验证，如果不符合制定的要求，提示不通过，如果符合要求，把数据提交到服务器端，数据放入数据库里面
+可以看出，表单分为前台的制作页面，php对数据的处理，数据的传输，数据的删除、更改、搜索
+
+表单的结构：
+语法：
+<form 属性="属性值">
+	控件
+</form>
+
+属性：
+<1>表单的识别名（一个页面有多处表单，通过表单的识别名来辨认你提交的是哪个表单的数据） name 例<form name="bill">控件</form>、<form name="game">控件</form>
+
+<2>对数据进行处理  Action="xx.php"
+对表单中的数据处理的程序就是在当前的文档 Action=""（//尽量少用，不会用）
+
+<3>把表单中的数据提交到服务器端的方法（传递数据的方法） method="get/post"
+	get方法 默认的一种传递数据的方法，通过地址栏传递表单中的数据，不能传递敏感数据，安全性极差，不能传递大量数据，每次只能传递1024字节，不能上传附件
+	post方法 不通过地址栏传递数据，直接把数据传给文件处理程序，相对安全，可以传递海量数据，能上传附件
+
+控件
+<1>单行文本框（单标签，行内标签）
+语法：
+<input type="text"/>
+属性：
+name 单行文本框的识别名称，是把输入框中的值，提交给程序，可自定义名称，要起得有意义，命名规则：（开头是字母或下划线，后面可以是字母或数字下划线）
+size="数值" 输入框的宽度，是以字符为单位，注意！不是以像素为单位
+maxlength="数值" 限定输入字符的长度
+value="内容" 设置输入框的初始值
+
+<2>密码框
+语法：
+<input type="password"/>
+属性：
+name 识别名
+size="" 输入框的宽度，以字符为单位
+maxlength="" 允许输入的字符数
+value=""初始值
+readonly="readonly" 只读（并不常用）
+disabled="disabled" 禁止属性，不能选择，不能更改
+
+<3>单选按钮
+语法：
+<input type="radio"/>
+属性：
+name="" 单选按钮组的识别名称
+value="" 设置每一项的初始值，必须得写
+
+<4>复选框/(多选按钮)
+语法：
+<input type="checkbox"/>
+属性：
+name="" 多选按钮组的识别名称
+value="" 设置每一项的初始值，必须得写
+checked="checked" 默认被选中
+
+<5>多行文本框
+语法：
+<textarea></textarea>
+属性：
+name 多行文本框的识别名称
+rows="" 能显示的行数
+cols="" 一行能显示的字符数
+value <textarea>/*value内容直接输在这里*/</textarea> 预设置初始值
+
+<6>下拉
+
+语法：
+<select>
+<option>给客户的选项内容一</option>
+<option>给客户的选项内容二</option>
+<option>给客户的选项内容三</option>
+</select>
+属性：
+name：下拉的名称
+value：就是默认的中间选项，可以不用再在<option value="">这里添加value
+
+<7>隐藏域（不给客户看，给程序使用）
+语法：
+//id1为举例，可自行设置
+<input type="hidden" name="id1"/>
+
+<8>文件域
+语法：
+<input type="file"/>
+属性：
+name：文件域的识别名称
+这里不需要value，选择文件的过程中，就定义了value
+
+<9>按钮
+(1)提交按钮
+<input type="submit" value="按钮上的文字"/>
+(2)图片按钮
+<input type="image" src="图片的地址"/>
+
+(3)重置按钮（恢复到默认设定状态）
+<input type="reset" value="按钮上的文字"/>
+
+(4)普通按钮（本身没有功能，结合程序构成功能）
+<input type="button" value="按钮上的文字"/>
+
+xhtml的介绍（可扩展的超文本标记语言，适合当今移动设备）---取代html（pc机为主）
+xhtml 语法比html严格
+xhtml 输入的标签和属性必须是小写
+xhtml 单标签后必须加/，例<br/>
+xhtml 属性值必须用双引号--"属性值"
+xhtml 必须有dtd（document type definition  //文档类型定义）
+dtd（document type definition  /*文档类型定义*/），是一种验证机制，检验输入的xhtml是否符合规范
+
+dtd的分类
+<1>过渡型：xhtml1-transitinoal.dtd
+允许使用表现的标签和属性
+颜色、字体、加粗，等，例如<b></b>、<i></i>
+
+<2>严格型：xhtml1-strict.dtd
+不允许使用表现的标签和属性，必须使用css样式来进行设置
+
+
+<3>框架型：
+给框架用，兼容性差，一般不用。
+可以通过该网站地址测试dtd声明？？没找到这个网址
+
+css样式
+css样式（cascading style sheet）层叠样式表：
+body a .box{ }
+
+css的目的：给html加各种样式，让html结构和css样式进行分离（便于维护及更新）
+
+css语法：
+选择器{属性名:属性值;属性名:属性值;... }
+语法说明：
+		<1>一个css样式包括选择器和格式声明语句
+		<2>选择器就是选择给哪个html标签加样式
+		<3>一条格式声明语句包括属性名:属性值;
+		<4>格式声明语句要用{ }包裹
+		<5>属性名，w3c已经定义好，选择并使用即可
+		<6>属性值不用双引号
+		<7>属性值的单位通常是以像素为单位，用px表示，通常情况下，必须带单位
+
+如何在html结构中引入css样式
+1.行内样式表（建议临时测试样式时使用）：
+每一个标签都有style属性
+语法：
+<标签 style="属性名：属性值;">内容</标签>
+行内样式只能应用到当前对应的内容，或者其包含的标签
+
+2.内嵌样式表（当前页面可以使用）：
+语法：
+在head内定义style type
+<head> 
+	<style type="text/css">
+	选择器{属性名:属性值;}
+	</style>
+</head>
+
+3.外部样式表（多个页面可以使用）：
+语法：
+在head内引入预设的.css文件，即可引入外部格式
+<head>
+<link rel="stylesheet" href="外部样式表文件.css"/>  //扩展名.css样式即可建立css文件
+</head>
+
+4.导入样式表（大型网站，管理css样式）：
+语法：
+@import url(xx.css)   //另外一个css文件
+注意：@import是标签，必须放入外部CSS文件中
+
+
+选择器的分类
+1.基本选择器
+	<1>标签选择器
+		选择给哪个标签加样式，自动指向该标签
+		语法：标签选择器名{属性:属性值;}
+		例：body{ }、p{ }、div{ }、table{ }
+		对应的全部标签都会自动引用该样式
+
+	<2>类选择器
+		语法：类选择器名{属性:属性值;}
+		类用.表示，选择器名自定义，要起的有意义
+		例如：.myclass{ }、.page_header{ }、等等，不可以用中文
+		定义完必须进行引用，引用方法为：
+		想要使用样式的标签<标签 class="选择器名"></标签>，例:<p calss="myclass">内容</p>
+		注意：类选择器可以多次引用
+
+	<3>id选择器(给特定的html标签加样式)
+		语法：id 选择器名<属性:属性值;>
+		id用#号表示
+		选择器名自定义，要起得有意义，例：#myid{ }、#id1{ }
+		id必须进行引用，引用方法：<标签 id="选择器名">内容</标签>
+		注意：一个id只引用一次！！！表示唯一，通常id给JavaScript用，不是用来设置样式的，如果想设置样式，用类选择器
+
+	<4>通用选择器（*所有）给所有的标签加样式
+	html body、p、table、ul等等，给所有的html标签加样式
+	语法： *{属性:属性值；}
+	注意：不是所有浏览器都支持，ie6 以下版本都不支持
+
+2.复合选择器
+
+1.多元素选择器（多个标签共有的属性和属性值，放到一起）
+语法：选择器，选择器，{//此处的选择是可以是标签选择器，类选择器，id选择器，等等
+属性:属性值;
+}
+
+2.后代元素选择器（给html的后代标签加样式）
+语法：选择器1 选择器2 选择器3{属性:属性值;}，此处中间是空格，代表选择器1内的选择器2，要逐代递归
+.login .login_input .login_input_out span
+.login_input .login_input_out span
+.login_input_out span
+//后面的课程会讲到此处关于优先级的问题
+
+
+
+3.子元素选择器（给html标签的子标签加样式）
+语法：选择器>选择器{属性:属性值;}
+父系标签>第一层子系标签，只包含第一层！
+
+伪类（锚<a>，必须定义好内容）
+
+a:link{属性:属性名;}未访问的链接
+
+a:visited{属性:属性名;}访问过的链接
+
+a:hover{属性:属性名;}鼠标移动到链接上的状态
+
+a:active{属性:属性名;}单机鼠标左键的那一时刻的样式
+
+
+文本属性
+font-size:12px 大小
+font-weight:bold; 加粗
+font-weight:nomal; 不加粗
+font-style:italic; 倾斜
+font-style:nomal; 正常
+font-family:隶书; 字体
+
+text-decoration:underline; 下划线 text-decoration:overline; 上划线 text-decoration:line-through; 删除线，中间线 text-decoration:none; 去掉所有线条
+text-indent:2em； 文本首行缩进
+color:red; 颜色
+letter-spacing:5px; 字母间距离（英文）
+word-spacing:5px; 单词间距离（英文）
+text-align:left/center/right; 文本对齐方式
+
+背景的属性
+background-color:red  背景颜色
+background-image:url(图片路径)//优先级高于背景颜色
+background-repeat:no-repeat/repeat-x/repeat-y/repeat（不平铺、横向平铺、纵向平铺、横纵都平铺<默认状态>）
+background-position:水平位置（left center right/（数值：正值/负值）） 垂直位置（top center bottom/（数值：正值/负值）） ;    背景图片的展开方式，这里如果只写了一个center，会以为是上部和下部都居中。
+例如：background-position:left top；
+	  background-position:0 0；如果是0 0，不要加像素！！！其中的数值表达的意思为，距离上和左两侧的位置。
+
+可以简写为：background:背景颜色 背景图片 背景图片是否平铺 （附件,通常仅用在body标签） 位置（水平 垂直）； 
+例如：background-color:blue;
+      background-image:url(images/xx.jpg);
+	  background-repeat:no-repeat;
+	  background-position:10px 120px;
+可以简写为：background:blue url(images/xx.jpg) no-repeat 10px 20px;简写的时候，水平和垂直的顺序不能颠倒，其他的主次顺序可以颠倒，但是通常的顺序如下：
+
+附件：back-attachment:背景附件，背景是否随着上方的内容一起滚动，取值：fixed （背景固定，默认下） scoll（滚动）
+
+
+
+去掉列表前面的项目符号
+
+list-style-type:none;，可以简写为list-style:none; 
+用图片替换前的符号：
+list-style-image:url（图片路径）
+
+*{margin:0;padding:0;}清除页面原有的格式，主要是清除一些外边距问题
+
+边框的一些功能
+之前rules="all"表格<table>的属性，来合并表格的边框线
+css的实现方式：border-collapse:collapse;
+
+边框（只要是html就可以加边框线，不仅局限于表格）
+
+上边框：border-top=color:颜色；
+		border-top-style:solid（实线） dashed（虚线） dotted（点状线）；线型
+		border-top-width:2px；粗细
+简写：border-top:粗细 线型 颜色；
+
+右边框：border-right=color:颜色；
+		border-right-style:solid（实线） dashed（虚线） dotted（点状线）；线型
+		border-right-width:2px；粗细
+简写：border-top:粗细 线型 颜色；
+
+下边框：border-bottom=color:颜色；
+		border-bottom-style:solid（实线） dashed（虚线） dotted（点状线）；线型
+		border-bottom-width:2px；粗细
+简写：border-bottom:粗细 线型 颜色；
+
+左边框：border-left=color:颜色；
+		border-left-style:solid（实线） dashed（虚线） dotted（点状线）；线型
+		border-left-width:2px；粗细
+简写：border-left:粗细 线型 颜色；
+
+如果的上右下左四个样式都一样，可以简写为：border：粗细 线型 颜色；
+
+盒子模型（重点）
+
+内容区：
+width height，由这两个数值，定义盒子的大小
+
+边框：
+border，定义边框线粗细等
+
+内边距：
+padding，内容和边框之间的距离，分为上右下左四个值
+padding-top:数值
+padding-right:数值
+padding-bottom:数值
+padding-left:数值
+
+简写方式：
+padding: 10px 20px 30px 40px;上10px右20px下30px左40px
+padding：10px 20px 30px      上10px左20px右20px下30px
+padding：10px 20px           上下10px    左右30px 
+padding：10px                上下左右下10px
+
+
+
+外边距：
+margin-top:数值;上边边框以外的距离
+margin-right:数值;右边边框以外的距离
+margin-bottom:数值;下边边框以外的距离
+margin-legt:数值;左边边框以外的距离
+如果两个纵向排列，正常的文档流，上下两个盒子的margin只会取他们中的最大值的。不是两者相加
+
+简写方式：
+margin: 10px 20px 30px 40px;上10px右20px下30px左40px
+margin：10px 20px 30px      上10px左20px右20px下30px
+margin：10px 20px           上下10px    左右30px 
+margin：10px                上下左右10px
+
+
+网站的结构就是分为两部分(横向、纵向)，如果纵向，直接用div罗列即可，横向的话，就需要用到浮动，这是网站的基本思路。
+
+浮动:float(var)
+
+浮动原理和结构，一般分为两种
+box1（左）box2（左）box3（左）
+box1（左）box2（左）box3（右） 
+
+浮动的特点：
+设置浮动的元素，不占空间
+设置浮动的元素，层级高于普通元素
+如果在一行中的元素想横向排列，都设置浮动即可。
+设置浮动之前，无论之前是否是块元素，设置浮动之后一定是块元素，只有是块元素以后，才能设置宽度和高度
+
+通常情况下div内还有div（外面的div称为父盒子），盒子里面还有盒子
+
+清除格式
+清除自带的一些空白区域。
+清除所有的html标签的格式，后期如果使用，再重新设置
+*{margin:0;padding:0;}
+body,table,p,ul,h1,h2,h3,h4,h5,dd,dl,dt,...{margin:0;padding:0;}
+
+网页的布局思想
+1.清除格式
+*{margin:0;padding:0;}
+
+2.设置页面属性body{ }
+设置整个页面的风格（颜色、文字大小等）例：body{font-size:15px;font-famili:宋体;color:black;background-color:grey;}
+需要考虑：背景颜色/图片、文本大小、文本颜色、文本字体、行间距
+
+3.对页面进行结构划分
+
+行内元素和块元素
+行内元素：
+输完标签后，不是自己占一行（行内元素的宽和高，由它里面的内容来决定，设置width和height无效）
+span b strong a 等等
+默认的css样式是display:inline;
+
+块元素：
+输入完标签后，自己独占一行（需要定义width和height，否则内部必须有内容填充，高度会自适应）
+默认的css样式是display:block;
+Div p table h1 等等
+
+块----->>转换成行内
+display:inline;
+
+行内---->>转换成块
+display:block;
+
+溢出问题处理
+overflow:hidden隐藏
+overflow:auto 装不下会出现滚动条
+overflow:scroll 无论是否装下，都有滚动条边框
+
+网站的继承性
+外层元素的样式，会被里面的元素所继承。
+可以继承的标签：文本的属性样式都可以，大小，字体，颜色。本身有属性的不能被继承
+
+优先级
+单个选择器的优先级
+标签选择器 < 类选择器 < id选择器 < 行内样式表
+
+复合选择器优先级
+css样式越精确，优先级越高
+例：.div .box ul{ } > .box ul{ }
+
+清除浮动
+
+clear:left; //清除左浮动
+clear:right;//清除右浮动
+clear:both;//清除全部浮动。具体看案例
+
+定位
+
+position:static(默认)fixed（固定）relative（相对定位）absolute（绝对定位）结合坐标定位，确立它的位置。
+坐标：偏离目标元素的距离
+left:数值; right:数值; top:数值; bottom:数值;
+无论之前是不是块元素。如果设置固定定位之后，一定是块元素
+
+static（默认）如果不设置，就是默认该方式
+fixed（固定定位）
+1.相对于浏览器窗口进行的定位
+2.如果不设置定位坐标，就在原来的位置
+3.层级要比普通元素高
+
+
+relative（相对定位）
+1.相对定位占据空间
+2.相对定位层级高于普通元素
+3.相对的目标是自己
+
+
+absolute（绝对定位）
+1.设置完绝对定位不占空间
+2.层级高于普通元素
+3.不结合定位坐标。就是在原位
+4.以祖先的绝对/相对定位为参考点，如果祖先没设置，会一直往上级找参考点，直到找body
+
+
+html5介绍
+
+html------xtml------w3c和whatwg（web应用技术工作组）------html5
+
+html5广义上=html5+css3+JavaScript+api等
+
+特点：代码更简洁，标签具有语义化，新增一些属性，代码更宽松，向下兼容
+
+html5的发展史：2004年提出构想----2008年模拟第一份草案----2012年推广----至今，预计在2020年正式版推出
+
+支持html5的浏览器：ie9/或以上才支持html5
+
+html5的结构
+<!doctype html>
+<<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style></style>
+	<title>标题</title>
+</head>
+<body>
+
+</body>
+</html>>
+
+语法更宽松，单标签可以不用/结尾
+可以把所有的标签都看成双标签
+例：<br></br>
+
+html5新增标签
+<header>网页文档的头部区域
+<nav>代表网页的导航---链接上的文本
+<section>代表网页的一个快---与div类似
+<article>网页中的文章内容
+<aside>网页文档的侧边栏
+<footer>代表网页的页脚---版权
+
+html5新增type属性
+placeholder="内容"：主要用来做输入框的提示信息
+required="required" 必填项，不填写就不允许提交
+autofocus="autofocus" 自动获取焦点
+
+html5新增的属性
+email 限定用户输入的必须是email类型
+url 限定用户输入的是url类型（必须是网络地址）
+date 限定用户输入的必须是日期类型
+month 限定用户输入的是月类型
+time 限定用户输入的是时间类型
+week 限定用户输入的必须是周类型
+number 限定用户输入的是数字类型
+tel 限定输入类型手机号
+search 用户输入的是一个搜索框
+color 产生一个颜色选项
+range 产生一个滑块
+
+
+
+能插入的视频格式：.ogg、.mp4、webm
+插入视频的语法：
+<video src="路径" autoplay="autoplay" controls>
+<video autoplay="autoplay" controls>
+	<source src="xx.mp4">
+	<source src="xx.ogg">
+	<source src="xx.webm">
+</video>
+插入音频的语法：
+<audio src="路径" autoplay="autoplay" controls>
+格式：mp3、ogg、wav
+
+css3
+css2+新语法，也就是对css2进行扩充，删减，优化
+
+选择器
+类选择器、id选择器、标签选择器
+
+属性选择器
+E---element元素    data-----属性
+<标签 属性="属性值"></标签>-----------html元素
+
+E[data] 选择带有data属性元素的对象，给该元素加样式
+E[data="one"] 选择带有data属性，并且属性值是one的元素加样式
+E[data^="o"] 选择带有data属性，并且属性值以o开头的元素加样式
+E[data$="o"] 选择带有data属性，并且属性值以o结尾的元素加样式
+E[data*="o"] 选择带有data属性，并且属性值包含o的元素加样式
+
+伪类
+E:first-chlid{ }  第一个孩子
+E:last-chlid{ }  最后一个孩子
+E:only-chlid{ }  只有一个孩子
+E:nth-child( )  第N个孩子
+
+E:nth-child(2n+1) 奇数孩子
+E:nth-child(odd)
+
+E:nth-child(2n) 偶数孩子
+E:nth-child(even)
+
+例子：	li:nth-child(3){
+		color: pink;
+		}/*在li中，排在第三个的元素，粉色*/
+
+伪元素
+
+E:first-line{ } 元素第一行
+E:first-letter{ } 元素第一个字
+E::after{ } 在盒子里面插入内容，在盒子里面的后面
+E::before{ } 在盒子里面插入内容 在盒子里面的前面
+例子：	.two::after{
+			content:"哈哈";
+		}  /*在盒子two后面插入"哈哈"*/
+
+
+设置文本阴影
+
+text-shadow:水平 垂直 模糊强度 颜色; （水平和垂直必须有）
+例子：	section{
+		font-size: 50px;
+		color:red;
+		font-weight: bold;
+		text-shadow:2px 2px 2px #9ACD32;
+	}/*这里采用的是标签选择器，给标签内的文字，加上阴影*/
+
+
+设置盒子阴影
+h-shadow	必需。水平阴影的位置。允许负值。
+v-shadow	必需。垂直阴影的位置。允许负值。
+blur	可选。模糊距离。
+spread	可选。阴影的尺寸。
+color	可选。阴影的颜色。请参阅 CSS 颜色值。
+inset	可选。将外部阴影 (outset) 改为内部阴影。/*摘抄自w3c school*/
+默认是外阴影！！！不需加outset，内阴影才需要写inset
+
+如果有多组值中间用逗号相隔，水平正值是右侧，负值左侧；垂直正值是下侧，负值上侧
+
+例子：	.one{
+		width: 400px;
+		height: 400px;
+	  	border:2px solid grey; 
+		margin: 0 auto;
+		box-shadow: 10px 10px 10px green,-10px -10px  pink;
+	}    /*可以设置多个阴影，暂时没找到内外阴影同时设置的方法*/
+
+盒子变成圆角
+border-radius: 左上 右上 左下 右下
+例子：	.three{
+		width: 150px;
+		height: 150px;
+		margin: 0 auto;
+		border:2px solid grey;
+		border-radius:75px;/*四个值都一样，还可以简写一个值,这里值是50%的时候，会形成一个圆*/
+	}
+
+设置半透明颜色
+color:rgba(255,0,0,0.3) 文字透明
+background:rgba(0,0,0,0.6) 图像透明
+例子：.one{
+		width: 400px;
+		height: 300px;
+		background:rgba(255,0,0,0.3);
+		margin: 0 auto;
+	}
+
+背景图片可以更改尺寸
+第一种：
+background-size:宽度 高度；
+例子：	body{
+		background: url(images/banner_01.png);/*背景图*/
+		background-repeat:no-repeat;/*禁止平铺*/
+		background-size: 1500px 400px;/*设置背景图大小*/
+	}
+
+第二种（常用）：
+background-size：cover; 背景图会把整个盒子覆盖（包括高和宽）
+background-size：contain；背景图会把高或者宽中一项覆盖，然后就停止
+
+bootstrap
+bootstrap是stwitter公司的两名前端设计师设计的。
+是基于html css JavaScript的超强的前端框架
+
+特点：
+学习了html css JavaScript就可以学习bootstrap
+以移动设备为优先，pc 平板 手机 都可以用
+所有主流浏览器都支持，浏览器兼容问题
+
+bootstrap的环境
+1.下载bootstrap到本地，然后还要保存js文件到js文件夹下该方法必须保证是html5
+2.直接联网，copy外部bootstrap的链接，放到meta下即可
+
+以移动设备为优先
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<!-- name=视窗，内容宽度等于移动设备宽度一致，初始比例1:1，禁止用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+</head>
+<body>
+	<!--<header>头部</header>
+	<nav>导航</nav>
+	<section>块元素 
+		<article>文章内容</article>
+		<aside>侧栏</aside>
+	</section>
+	<footer>底部</footer>-->
+</body>
+</html>
+
+bootstrap布局容器
+<div class="container">/*固定宽度1170px*/
+
+<div class="container-fluid">/*宽度为100%*/
+
+<h2 class="page-header">/*给标题下方添加分隔符*/
+
+<small></small>/*小一号（副标题）*/
+
+<big></big>/*大一号（副标题）*/
+
+<strong></strong>推荐使用的加粗
+
+<em></em>推荐使用的倾斜
+
+<del></del>删除线
+
+<div class="text-center">居中对齐left左对齐，right右对齐
+
+<p class="text-uppercase">英文全部会大写
+
+<p class="text-lowercase">全部小写
+
+<p class="text-capitalize">首字母会大写
+ 
+<ul class="list-unstyled"> 去掉符号和格式
+
+<ul class="list-inline"> 竖向排列变横向排列
+
+<dl class="dl-horizontal"> 列表变成横向 
+
+表格
+<table class="table"> 表格的基类样式
+
+<table class="table-bordered">表格加边框
+
+<table class="table-hover">鼠标悬停效果
+
+<table class="table-striped">隔行变色
+
+<table class="table-table-condensed">适当内容紧凑（padding值减半）
+
+<section class="table-responsive"><!-- 给表格的父元素加该属性，使得表格能变成响应式 -->
+
+Class	描述
+.active	鼠标悬停在行或单元格上时所设置的颜色
+.success	标识成功或积极的动作
+.info	标识普通的提示信息或动作
+.warning	标识警告或需要用户注意
+.danger	标识危险或潜在的带来负面影响的动作
+
+排版标签
+<h1></h1>/*36px*/
+.../*30px*/
+../*24px*/
+/*18px*/
+/*14px */
+<h6></h6>/*12px*/
+
+响应式图片
+<img src="images/banner_01.png" class="img-responsive"><!-- 图片变成响应式 -->
+
+图片的形状
+img-circle 图片椭圆形
+
+img-rounded 图片圆角
+
+img-thumbnail 图片外加一个圆角边框
+
+删格系统（结合图片使用）
+删格系统一定要放入容器中，这是第一步
+<div class="container"></div>
+<div class="container-fluid"></div>
+
+主要用来将浏览器窗口自动分配，最多12列，栅格系统是有对应的行row和列col构成
+
+如果想做成响应式的效果，要使用栅格系统的参数
+
+超小屏幕 手机 (<768px)	小屏幕 平板 (≥768px)	中等屏幕 桌面示器 (≥992px)	大屏幕 大桌面显示器 (≥1200px)
+
+栅格系统行为	     总是水平排列	                  开始是堆叠在一起的，当大于这些阈值时将变为水平排列C
+
+.container 最大宽度		None （自动）			750px					970px								1170px
+
+类前缀					.col-xs-				.col-sm-				.col-md-							.col-lg-
+
+列（column）数	12
+
+最大列（column）宽		自动					~62px					~81px								~97px
+
+槽（gutter）宽	30px （每列左右均有 15px）
+
+可嵌套	是
+
+偏移（Offsets）	是
+
+列排序	是
+
+偏移：offset只能向右偏移
+col-xl/sm/md/lg-offset-数值（这里偏移的是列，不是像素！）
+
+排序：
+col-xl/sm/md/lg-pull-数值 左移
+col-xl/sm/md/lg-oush-数值 右移
+
+-辅助样式
+情境文本颜色
+.text-muted（柔和）.text-success（成功）.text-info（提示）.text-warning（警告）.text-danger（危险）.ext-primary（初始化的）
+
+背景颜色（注意，这里是没有柔和的！）
+.bg--success（成功）-info（提示）-warning（警告）-danger（危险）-primary（初始化的） 
+
+下拉三角<span class="caret"></span>（中间内容为空）
+
+快速浮动pull-left pull-right
+清除浮动 clearfix加给父盒子/*父盒子获得自然高*/
+
+表单
+ .form-group   进行分组/*添加到父元素，改进距离*/
+.form-control   /*改进样式*/可以给输入框加<input><textarea></textarea>
+.checkbox-inline 给label标签加，给包含的<input>及内容加样式
+.radio-inline 给label标签加，给包含的<input>及内容加样式
+
+输入框组
+.input-group-addon 给组合的内容加
+.input-group 给父元素加
+.form-inline 使得表单纵向变横向
+
+
+.form-horizontal 响应式表单，必须结合栅格系统一起使用
+注意：输入框不能使用栅格系统，只能给<div><span>...这种元素加，如果没有，就定义一个这样的元素出来
+
+按钮
+可以加按钮效果的标签
+<input type="button" value="按钮">/*普通按钮*/
+<button>按钮</button>
+<a href="">链接</a>
+
+.btn 是按钮样式的基类，加其他样式前必须加它
+按钮样式.btn-primary
+		.btn-default
+		.btn-success
+		.btn-warning
+		.btn-danger
+按钮大小.btn-lg 大号
+		.btn-sm 中号（默认大小）	
+		.bth-xs 小号
+
+按钮组：给父元素加.btn-group
+
+缩略图
+参考案例。比较详细
+
+下拉菜单
+.dropdown-menu 给下来列表中的内容（给ul加样式）
+.dropdown 给父元素加（给包含触发的按钮和下拉列表加样式）
+data-toggle 按钮的触发器
+.dropdown-menu-left 下拉列表的对齐方式 right 右对齐
+
+标签页
+.nav是标签页的基类，给ul加。
+.nav-tabs 普通样式
+.nav-pills 胶囊式
+.nav-stacked 横向变纵向
+.active 给要激活的 li 项加
+语法：
+<ul class="nav  nav-tabs">
+
+导航
+navbar 导航栏的基类，给<nav>标签加 
+.navbar-default: 导航栏的默认样式
+.container 是<nav>的子元素，导航栏内容都放入其中
+.navbar-header 导航栏头部样式
+.collapse 是折叠导航栏的样式的基类。给<ul>的父元素加
+.navbar-collapse 是折叠导航栏的样式。给<ul>的父元素加
+.nav是导航栏的链接基类 给<ul>加
+.navbar-nav 是导航栏的链接样式 给<ul>加
+.navbar-left 或right 组件排列。导航链接、按钮或文本对齐
+.navbar-fix-top 或bottom 固定导航在顶部或底部 需要为<body>设置padding-top:70px 
+.navbar-inverse 可以实现反色导航栏。
+
+分页
+详见案例
+
+JavaScript
+html 是标记语言
+JavaScript 是编程语言（基于客户端的脚本语言）
+
+变量：用来存储数据
+语法：var 变量名=值;
+var（系统内部的关键字，用来申明变量）
+变量名（给值一个命名）
+1.不能以数字开头 
+2.变量名只能包含数字、字母、下划线 3.变名区分大小写 
+4.不能和系统内部关键字相同 
+5.建议：变量名要有语义化
+值（数据） 数据类型： typeof 可以查看数据类型 语法：type（变量名）
+数字类型：数字，number
+字符类型（加""）：string 字母，汉字，符号，空字符也是字符类型
+空类型：null 表示什么都没有
+未定义类型：undefined 表示没有定义
+布尔类型：true false boolean（bool）
+符合数据类型：复杂类型，array数组，object对象
+=（赋值运算符）：把符号右边的数值赋给坐标的变量名
+
+alert单出一个窗口（会停止后续代码进行，要点掉窗口才能继续）
+
+firebug调试（不要太相信firebug）
+
+运算符：
+1.赋值运算符
+2.算数运算符
++ - * / % ++（递增1） --（递减1）语法：i++ 或 ++i
+注意：当有赋值运算符参与到++和--中的时候，var j= ++i意味i先自加1然后把这个值赋值给j;  而var j=i++意味着先把i赋值给j，然后再自加1
+3.比较运算符
+（>大于,<小于,>=大于等于,<=小于等于,!=不等于,===全等于,!==不全等于）
+==等于：仅仅判断两个值相等
+===全等于：判断两个值、数据类型，是否相同
+4.逻辑运算符（!,&&,||） 
+!:非，不是。取反的意思
+&&：逻辑与：两个条件的满足情况，如果两个条件同时满足为true，否则为false
+||：判断两个条件的满足情况，如果两个条件中，有一个满足，结果就为true，只有当两个条件都不满足，则为false
+5.复合赋值运算符（+=，-=，*=，/=）
++=：var i=6; 
+i+=6;/*意思是i=i+6*/
+i*=6;/*意思是i=i*6*/
+6.字符串运算符
+（+，连接符号两边的内容）当+符号的两边，任意有一遍是字符串就会执行字符串+
+23+"24"    /*意思是2324，连接了符号两边的内容*/  
+
+js的语法规则
+1.区分大小写
+2.所有的符号必须是英文状态下的
+3.每行表达出所要表达的意思即可
+4.结尾处加上;号
+
+js的注释
+//：内容（单行）
+/*内容*/（多行）
+
+alert：弹出窗口
+
+document.write() 输出数据到屏幕，相当于直接把数据放在了body里面 
+
+位运算符
+二进制：0,1
+十进制：0-9
+
+&:获取两个数的二进制位，比较相同位数上的数字，如果都为1，则为1，否则为0
+var n=9&8; 
+9的二进制 0 0 0 0 1 0 0 1
+8的二进制 0 0 0 0 1 0 0 0
+计算      0 0 0 0 1 0 0 0 
+
+所以
+var n=9&8;
+alert(n)的结果为8
+
+
+<<: 把某个数字的二进制位数同时左移N位
+var n=9<<2; 左移2位，后面不足的补0，前面空出的不管
+9的二进制 0 0 0          0 1 0          0          1
+计算      0 0 1          0 0 1          0          0 
+十进制    0 0 1*2的5次方 0 0 1*2的2次方 0          0
+			  32             4
+
+结果：  32+4= 36
+
+运算符的优先级
+1.小括号最优先
+2.逻辑与&&大于逻辑或||
+3.赋值运算符最后进行
+4.当有多个运算符参与运算的时候，脑子里必须有意识的知道运算符是有优先级的
+
+var a=1
+document.write("<h"+a+">h"+a+"<h"+a+">")
+a++
+document.write("<h"+a+">h"+a+"<h"+a+">")
+a++
+document.write("<h"+a+">h"+a+"<h"+a+">")
+
+传值
+
+1.赋值传值：两份数据，数据间不会影响
+var n=3;
+var m=n;
+
+2.引用传值：一份数据。任意一方改动值，都会受到影响
+var a={name:"张三",age:24};
+var b=a;
+
+在简单数据的传值中，都是赋值传值，而复杂数据都是引用传值 
+
+流程控制  if语句
+1.if语句
+语法：if(条件){语句块};
+执行：判断条件是否符合，如果满足，就会执行语句块，如果不满足，不会执行。
+注意：可能不执行
+
+2.if,else语句
+语法：		if (condition) {
+			# code...
+		} else {
+			# code...
+		}
+注意：必行会执行一个语句块		
+
+3.if,elseif语句
+语句：if(条件1){语句块1}elseif(条件2){语句块2}elseif(条件3){语句块3};
+注意：如果判断条件没有满足就不会执行
+
+4.if,elseif,elseif,else语句
+语句：if(条件1){语句块1}elseif(条件2){语句块2}elseif(条件3){语句块3}else{语句块4};
+注意：必定会执行某个语句块
+
+if语句可以嵌套
+
+switch语句
+
+语法：
+	switch (variable) {
+		case '值1':
+			# code...
+			break;
+		case '值2':
+			# code...
+			break;		
+		default:
+			# code...
+			break;
+	}
+执行：变量和值1比较，如果相同，执行语句1，不同会比较值2，如果相同，执行值2，最后会执行default的语句
+
+循环
+循环三要素：
+			1.循环变量的初始化
+			2.循环条件的判断
+			3.循环变量的改变
+
+while循环：
+	 语法：
+	 	var i=1;//循环变量的初始化	
+		 while(i<=100/*循环条件的判断*/){
+		 		//循环体
+		 		i++//循环变量的改变
+		 }
+
+	 执行：循环变量初始化-->>循环条件的判断（true，判断为false就不会执行）-->>执行循环语句-->>循环条件的判断-->>执行循环语句（直到判断到false）
+
+	 循环语句的执行为从上至下执行
+
+dowhile循环
+	   语法：
+	   		var i=1;
+	   		do{
+	   			//循环体
+	   			i++;//循环变量的改变
+
+	   		}while(i<=100)
+	   	执行：循环变量初始化-->>立刻执行一次循环体-->>循环变量的改变-->>循环条件的判断（true，判断为false就不会执行）-->>循环体--->>循环变量改变-->>直到判断false跳出	
+
+for循环
+		语法：
+
+			for(var i=1;/*变量初始化*/i<=100;/*循环条件判断*/i++/*循环变量的改变*/){
+				document.write(i);//循环体
+			}	
+
+		执行：变量初始化-->>条件判断（true）-->>循环体-->>循环变量的改变-->>条件判断(false终止)	
+
+扩展：循环可以嵌套
+
+九九乘法表扩展：
+			document.write("<table border='1'>");
+
+				for (var i = 1; i <= 9; i ++) /*这个循环用来表示行*/{
+					document.write("<tr>");
+					for(var j = 1; j <= i; j ++)/*这个循环用来表示列*/{
+						document.write("<td>");
+							document.write(i+"*"+j+"="+i*j);
+						}	
+						document.write("<td>");
+					document.write("</tr>");
+				}
+			document.write("</table>");
+
+函数
+一段能自动完成某些功能的代码
+定义语法：
+	function 函数名(形式参数1,形式参数2){
+		//函数体
+	}
+注意：函数不会自动执行，需要调用才能执行
+
+调用语法：
+	函数名(实际参数1,实际参数2);
+
+函数的作用域
+function ab(){
+	var abc=2;    //在这里，如果把var不写，那么，abc将变成全局变量
+}
+ab();
+document.write(abc);    //这里abc不会出现，因为上面函数内的abc是局部变量
+
+返回值：return
+return:跳出函数不执行
+return值：跳出函数的同时把值返回调用函数的位置
+
+function ab(){
+	var abc=666;
+	return abc;    /*调用adc参数*/
+}
+var n =ab();    /*接收保存调用的参数*/
+document.write(n);
+
+函数的调用和定义不分先后，可以先取用函数，再定义函数，也可以先定义再调用
+
+数组
+var a=23;
+var b=24;
+var c=26;
+
+var abc=[23,24,26]/*数组*/数组提供了一个属性：length（可用来求得数组的长度，‘长度-1是下标数’）语法举例：abc.length
+取值：abc[0] abc[1] abc[2] ，下标从左往右从0开始取值
+赋值  abc[0]=29;
+
+二维数组
+
+var a=[1,2,3];
+var b=[4,5,6];
+var c=[7,8,9];
+var abc=[a,b,c];
+取值： abc[0][1]; 
+
+系统内部的函数
+parseInt：取整（如果字符串开头第一个是字母，就会出现NaN）
+			parseint(24.2);
+			parseint("24.2");
+			parseint("24.21abc");
+			parseint("24.ab.24.23");
+			parseint("24ab");
+			parseint("abs4");(NaN)
+
+parseFloat：取浮点数
+			parseint(24.2);
+			parseint("24.2");
+			parseint("24.21abc");
+			parseint("24.ab.24.23");
+			parseint("ab.24");(NaN)
+
+NaN:not number
+
+isNaN(用来判断一个数据是否为数字)
+如果判断是数字：false
+如果判断是字符：true
+
+isNaN(n)解读：n is not a number。判断变量N是否不是一个数字，
+
+array对象
+array是一个数组对象
+
+var arr=[22,24,26]（简单写法）
+var arr=new array(22,24,26);（完整写法）
+
+属性：
+length：arr.length（获取数组长度）
+
+方法：
+.concat() 连接内容或数组，组成新的数组，例：
+var arr=[22,24];
+var n=arr.concat(23,26[18,19]);
+document.write(n);/*输出的结果为22,24,23,26,18,19*/
+
+.join() 加入某个字符，用这个字符连接数组的每项，组成字符串，如果以空字符串连接，那么就不会有字符产生，会直接把数组的每项连接。
+
+.pop() 删掉最后一项并返回
+
+.pusu() 加入一项并返回数组长度
+
+.reverse() 反转数组的顺序
+
+属性和方法的一般形式：
+属性：对象名.属性名;
+方法：对象名.方法();
+
+string对象
+字符串对象
+
+属性：
+length（获取字符串的长度）
+
+方法：
+charAt(n); 找到对应下标n上的字符
+
+charCodeAt(n); 找到对应下标n上的字符的编码值。（A编码值97 a编码值65）
+
+indexOf("m"); 找m在字符串中第一次出现的位置（下标）找不到这个字符返回-1
+
+lastIndexOf("m"); 找m在字符串中最后一次出现的位置（下标） 找不到这个字符返回-1
+
+split("n") 以n分割字符串，并返回数组。
+abcde用n分割的结果为abcde，但是这个字符串已经变成数组类型
+abcde用c分割的结果是ab,de 
+abcde用""空字符串分割的结果是a,b,c,d,e
+
+substr(下标,截取个数n):截取字符串，从下标开始，截取n个，假如只有一个参数，意思就是从下标开始，截取后面全部
+
+substring(下标1,下标2)；截取字符串，从下标1开始，截图到下标2，可以截取到下标1的数值，但不能截取到下标2的数值。
+
+toLowerCase() 把字符串中的字母转换成小写
+
+toUpperCase() 把字符串中的字母转换成大写
+
+math对象
+Math.pow(n,m); 求n的m次方
+Math.abs(n); 求n的绝对值
+Math.round(n);求n的四舍五入的值
+Math.floor(n);求n向下取整的值;不大于n的最大整数
+Math.ceil(n);求n向上取整的值;不小于n的最小整数
+Math.random();获得一个0-1之间的随机数，能取到0，但是不能取到1。
+Math.random()*n;0到n之间随机数
+Math.random()*n+m;m到m+n之间的随机数
+
+求任意两个数之间的随机数,两个边际都可以取到
+Math.floor(Math.random()*(大数-小数+1)+小数)
+
+JS特殊字符
+\：转义字符
+\r:回车
+\n:换行
+
+data对象
+1.var n1=new Date();/*创建当前的日期对象*/
+2.var n2=new Date("1999/9/9 6:06:06");/*创建一个指定的时间日期对象*/
+3.var n3=new Date(1999,9,9,9,9);/*创建一个指定的时间日期对象*/
+4.var n4=new Date(232845613132);/*创建一个指定的时间日期对象，从1970年08:00起，开始以毫秒计算，时间戳*/
+方法：
+getFullYear()获取年份
+getMonth()获取月份，是从0开始计数的
+getDate()获取日期
+getHours()获取小时
+getMinutes()获取分钟
+getSeconds()获取秒
+getMilliseconds()获取毫秒
+getDay()获取星期
+getTime()获取1970年1月1日起至今的毫秒值
+
+
+setFullYear(n)设置年份
+setMonth()设置月份
+setDate()设置日期
+setHours()设置小时
+serMinutes()设置分钟
+setSeconds()设置秒数
+setMilliSeconds()设置毫秒数
+setDay()设置星期，这个设置无意义，当你选择了一个事件，它的星期就已经产生了
+
+对象
+对象：一类中的具体的实例。例如：保时捷是“汽车”这个类中的一个具体实例,但是保时捷又是一个类，因为保时捷汽车又有很多种
+
+var obj={name:"张三丰",age:24,taiji:function(){alert("打太极")},zuofan:function(){alert("做饭")}}
+
+属性：name,age
+方法：taiji，zuofan
+在js的角度看标签，都是对象
+标签：html属性，css属性
+html的属性修改：对象.html 属性=值;
+css的属性修改：对象.syle.属性="值";
+
+获取对象的方法
+其中方法之一：document.getElementById("id名")
+
+鼠标事件
+onclick 点击
+onmouseover 鼠标悬停
+onmouseout	鼠标离开
+ondblclick 鼠标双击
+onmousedown 鼠标按下
+onmouseup 鼠标抬起
+onmousemove 鼠标移动
+
+表单事件
+onfocus 获得焦点
+onblur 失去焦点
+onsubmit 提交事件
+onchange 当发生改变的时候
+onreset 重置事件
+onchange事件
+当发生改变时发生的事件
+textarea文件域
+select下拉列表
+上面那个用到的可能多一点
+
+键盘事件
+onkeyup 键盘按起
+onkeydown 键盘按下
+onkeypress 键盘按键一次
+
+窗口事件
+onload 页面加载完之后立刻执行的事件，两种方式：
+1.<script>window.onload=init/*初始化*/;</script>
+2.<body onload="init()"></body>
+
+Event事件（保存事件发生时的相关的信息）
+当事件发生的时候，event会保存与其相关的信息，例如鼠标在页面点击一次，会保存点击的位置，操作，等等。
+Event.clientX：事件发生时X的坐标
+Event.clientY：事件发生时Y的坐标
+Event.target：事件源（如input上发生了点击，input就是事件源）
+Event必须通过实际参数的形式传递给函数，才可以用
+
+修改div中的内容
+innerHTML 获取对象中所有的内容（包括文本内容、标签内容），一般指的是双标签，或者容器标签才用
+innerText 获取对象中所有的文本内容
+======注意：在页面获取的内容，都是字符串（案例：简易版计算器中能体现出来）======
+
+漫天都是小星星案例
+Document.createElement("标签名");
+document.body.appendChild("对象");
+注意：margin（外边距）不会触发事件。 
+两个特殊：
+（document.body代表的是body标签对象）
+（document.documentElementhtml代表的是html标签对象）
+
+js三块介绍
+js包括ECMAscript，BOM,DOM
+
+1.window最高级
+2.BOM：浏览器对象模型
+3.DOM：文档对象模型
+4.BOM属于网页打开就会存在的东西
+5.DOM属于我们去操作的代码
+6.document是链接了DOM和BOM，document有下级，其他都没有下级（其他的下级称为多窗口）
+
+window的方法
+window的三个弹窗
+1.alert()；
+弹出一个窗口
+2.prompt()；
+显示可提示用户输入的对话框（|如果用户不填写信息点击确认，得到的是一个空字符串，如果用户点击取消，得到的是null）
+3.confirm()：
+显示一个带有提示性的选择框（两个结果，true或flase）
+
+window.open 打开一个新窗口
+windows.open("地址","名字","设置1，设置2，设置3")
+设置：width、height，left（距左距离）top（距顶距离），scrollbars：滚动条，toolbar：工具栏，location：地址栏
+
+window.close 关闭窗口
+window.close();只有通过js代码打开的窗口，才能由js代码关闭
+
+定时器
+创建定定时器
+一次性定时器：window.setTimeout("js代码",时间t)
+执行：在时间t之后执行js代码，一次
+时间：以毫秒为单位
+反复性定时器：window.setInterval("js代码",时间t)
+执行：每过时间t就会执行一次js代码
+时间：以毫秒为单位
+
+清除定时器
+清除一次性定时器
+window.clearTimeout(定时器的变量名字);例子：
+var a=window.setTimeout("fn",1000);
+function fn(){
+	alert("哈哈")
+}
+window.clearTimeout(a);
+
+清除反复定时器
+window.clearsetInterval(定时器的变量名字);
+
+注意：要想清除定时器，必须给定时器变量名，匿名定时器无法清除
+
+图片切换案例
+1.反复性定时器
+2.window.onload
+3.onmouseover、onmouseout
+4.鼠标放到列表上，图片停止切换，背景色变换
+5.鼠标离开列表上，图片切换，背景色变换
+
+获取对象的方式
+document.getElementsByTagName("标签名")获取的是html里所有这个标签名的合集。通过修改下标的方式来修改对应的合集内的内容
+扩展：可以是----对象.getElementsByTagName("标签名")获取的是对象里所有这个标签名的合集。通过修改下标的方式来修改对应的合集内的内容
+属性：length
+
+例：obj=document.getElementsByTagName("div")
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+obj[0].style.background="red";就可以修改div1的背景颜色
+
+document.getElementsByName("name名")    用在表单里//获取的是数组形式
+document.getElementsByClassName("class名")   class集合//获取的是数组形式（firebox能用）
+document.images    img图片集合//获取的是数组形式
+document.links    链接集合//获取的是数组形式
+document.forms 获取表单对象集合//数组
+document.body
+document.documentElementhtml
+event
+this
+
+使用频率：ID > this/event > 标签 > 其他获取方式
+
+bom
+location对象
+location.href; 获取页面的url信息，也可以赋值给他，来实现页面跳转功能。
+例：location.href="http://www.baidu.com"
+
+方法：
+location.assign("url地址") 加载新的文档 
+location.reload() 重新加载当前文档（刷新）
+location.replace("url地址") 用新的文档替换当前文档
+区别：
+assign会产生历史记录，能返回到上一级，但是replace替换后，就不能返回上一级面了
+
+history对象
+属性：length。记录访问过的页面数量，而不是访问过几次
+	  back。返回上一页
+	  forward。前进一页。加载历史记录中的下一个URL
+	  go(n)。跳转到历史记录中的自定页面，如果是-1，实际上就是forward的功能
+
+screen对象
+screen.width 获取屏幕的宽度
+screen.height 获取屏幕的高度
+availHeight 获取除去任务栏的高度
+availWidth 获取除去任务栏的高度
+
+navigator对象
+浏览器对象
+appCodeName 返回浏览器的代码名
+appName 返回浏览器名
+appVersion 返回浏览器的版本号和平台信息
+userAgent 浏览器信息（一般用这个）
+
+DOM
+描述网页各个组成部分之间的关系
+
+在火狐浏览器中，空白处也算一个节点
+parentNode：父节点
+
+childNodes：子节点（是以数组的形式保存）
+
+firstChild：第一个子节点
+
+lastChild：最后一个子节点
+
+nextSibling：下一个兄弟节点（必须是同父级关系） 
+
+previousSibling：前一个兄弟节点（必须是同父级关系） 
+
+星星增强版
+绑定一个onclick事件
+对象.事件=函数;      注意：这里不带括号
+注意：在绑定事件中，this可以直接使用
+
+removeChild(obj) 删除obj。  注意：要想删除某个节点，必须找到它的父节点。
+
+------------------功能增加------------------
+1.游戏开始
+2.游戏暂停
+3.星星超过20结束游戏
+
+当当网静态动态案例
+iframe
+相当于在页面上挖出一块地方，引入一个文件，用途是不同页面可能存在同样的一些模块，比如导航栏，底部栏，这些都是全站都有的模块。
+<iframe src="" width="" height=""></iframe>
+
+登录验证：onsubmit（表单提交事件）
+事件会在表单中的确认按钮被点击时发生
+onsubmit="return 函数()" 语义：将函数检查的结果，return返回给onsubmit
+
+script标签位置
+1.可以放到任何位置
+2.页面可以有n个script标签
+3.可以通过引入的方式，写js
+4.js标签可以不写，但是不能乱写
+5.匿名函数的调用（方法1）(function(){代码})();其他方法后面再学
+
+jQuery
+是一个JavaScript库
+prototype：最早一个成熟的js框架，yui（雅虎）,tangram（百度）jx（腾讯）kissy（阿里）都有自己写的框架
+
+JavaScript：包含ECMAscript、DOM、BOM
+jQuery：把BOM和DOM的部分封装
+
+jq特点：资源类型多，DOM封装。用户多，文件小，速度快，比较复杂的DOM封装
+  理念：write less , do more，
+  下载：www.jquery.com 下载的时候compressed是压缩版本，一般用于生产环境。 Uncompressed是未压缩版本，一般用于开发环境。
+
+jQuery部署：<script src="jq....js"></script>,注意：不管任何时候，写jq都要引入，并且必须第一引入
+xxxx.min.js是压缩过的jQuery文件，xxxx.js是未压缩过的jQuery文件。
+考虑到兼容问题（ie8），一般使用jQuery的1.9以下版本
+
+jquery内容
+选择器、事件、DOM、动画、基本操作、插件（自定义插件、外部引入插件）、ajax
+
+语法：$(选择器).action ();所有的元素，都要加上"  "双引号，否则就找不到了
+console.log()可以在firebug里弹出控制台日志
+选择器：
+选择器：选择页面元素的工具。jaquery最早的时候，就是选择器出名
+1.基本选择器
+（1）id选择器
+$("#id名")
+
+（2）元素选择器element
+$("div")、$("input")
+
+（3）类选择器
+class="one"
+$(".one")
+
+（4）联合选择器
+$("div,p,a,ul")把多个元素连接在一起选择
+
+2.层级选择器
+（1）$("ancestor descendant")：表示选取ancestor里面所有的descendant元素
+
+（2）$("parent  >  child")：表示只选取parent的child元素，不包含child的子元素，它只能选取自己的child子元素，不能跨级找孙元素，只能parent >chid>grandson来找到孙元素
+
+（3）$("元素+")：表示选取后面的兄弟元素（仅下一个）
+（4）$("元素~")：表示获取后面的所有的兄弟元素
+
+3.元素的基本选择器（相当于筛选）
+$("元素：first")   匹配该类元素中的第一个
+$("元素：last")   匹配该类元素中的最后一个
+$("元素：even")   匹配该类元素中的偶数元素（下标为偶数）
+$("元素：odd")   匹配该类元素中的奇数元素（下标为奇数）
+$("元素：eq（下标）")  索引该类元素下的，对应下标元素
+$("元素：gt（下标）")  查找，大于索引下标的元素
+$("元素：lt（下标）")  查找，小于索引下标的元素
+$("元素：not（元素）")   匹配一类元素，但是除了not里的元素
+$("元素：header")       匹配所有的<h>标签元素
+
+4.内容选择器
+$("元素：contains（"text"）")   匹配含有text内容的元素
+$("元素：empty")   匹配内容为空的元素
+$("元素：has（标签名）")   匹配包含标签名的元素
+$("元素：parent")   选择作为父元素的元素（元素里面要有内容）
+
+5.属性选择器
+$(" 元素[属性attribute] ")：  属性选择，找到元素下所有带该属性的元素
+$(" 元素[属性attribute=“value值”] ")   找到元素下属性值为“value值”的元素
+$(" 元素[属性attribute！=“value值”] ")   找到元素下属性值不为“value值”的元素
+$(" [属性attribute^=“value值”] ")   查找属性值以“value值”开头的元素
+$(" [属性attribute$=“value值”] ")   查找属性值以“value值”结尾的元素
+$(" [属性attribute*=“value值”] ")   查找包含“value值”的元素
+
+6.子元素选择器：伪类选择器
+type阵营，child阵营
+$("元素：first-child ")    匹配从属与某个父元素下的一类子元素中的第一个
+$("元素：first-of-type ")  匹配从属与某个父元素下的一类子元素中的第一个
+$("元素：last-child ") 
+$("元素：last-of-type ")
+$("元素：nth-child(n) ")   匹配从属与某个父元素下第N个元素，注意：匹配的不是下标
+$("元素：nth- of-type (n) ")
+$("元素：nth-last-child(n) ")   匹配从属与某个父元素下倒数第N个元素
+$("元素：nth-last-type(n) ")
+
+7.表单选择器
+$("：input类型")   可以直接选择到input类型的元素。例子：$(":button")，直接选取按钮类型的元素
+
+$("：type类型")  可以直接选择到type类型的元素。例子：$(":password")，直接选取密码框类型的元素
+当当网注册验证案例
+1.鼠标放入输入框，会有提示信息
+2.鼠标移出，会检测用户填写的信息
+3.提示信息的颜色是灰色，检测错误信息是红色，正确的时候，会出现一个小对勾。
+4.点击提交的时候，也会做检测（全部检测）
+onfocus事件：获取焦点时发生的事件
+onblur事件：失去焦点时发生的事件
+两个特殊的修改属性：
+1.修改class属性：className
+2.修改float属性：cssFloat
+
+属性和方法的操作
+attr：$("元素").attr("属性名") ： 获取元素的对应属性名的属性
+$("元素").attr（"属性名"，"属性值"）")：   设置单个属性可以这么做
+$("元素").attr({属性1:"属性值1"，属性2:"属性值2"，属性3:"属性值4"，}) ： 设置多个属性的方法
+$("元素").attr("key",fn(){return "返回值"})：通过修改函数的返回值来修改属性
+
+removeAttr(name)：删除name属性。注意：A要大写
+
+CSS类
+addClass("className")：添加一个类，但是不会覆盖原有类   注意：C要大写
+removeClass("className")：删除一个类，不会删除class
+
+toggleClass("className")：切换类，如果没有就添加这个类，如果有就删除这个类
+
+小练习
+1、2、3切换div样式
+html类
+$("元素").html()：获取对象内的html代码（相当于innerHTML）
+$("元素").Html(代码)：设置html的内容，识别标签
+
+text类
+$("元素").text()：获取对象内的html代码（相当于innerHTML）
+$("元素").text(代码)：设置html的内容，不识别标签
+
+val值
+相当于input里面的value，只针对input来说
+$("元素").val()；获取元素的value
+$("元素").val("设置的value值")
+
+对象访问
+length：个数
+size()：也是个数。但是我用不了，说size()不是一个函数
+
+each：遍厉
+each：每个元素
+用法：元素.each(function(index，element){代码})
+index：索引下标 element：元素
+
+文档处理
+内部插入：父子级关系（插入的结果是以父子级关系来表示）
+$(元素a) .Append($(元素b))：把b插入到a中，插入位置在a内元素的后面
+$(元素b).appendTo($(元素a))：把b插入到a中，插入位置在a内元素a的后面
+注意：也可以不加$("元素b")，直接采用append（"元素b"）插入
+$(元素a).prepend($(元素b))：把b插入到a中，插入位置在a内元素的前面
+$(元素b). prepend(To($(元素a))：把b插入到a中，插入位置在a内元素的前面
+
+外部插入（兄弟级关系）
+$(元素a).after($(元素b))：把元素b，插入到元素a的后面
+$(元素b).insertAfter($(元素a))：把元素b，插入到元素a的后面
+
+$(元素a).before($(元素b))：把元素b，插入到元素a的前面
+$(元素b).insert Before ($(元素a))：把元素b，插入到元素a的前面
+
+包裹
+$("元素a").wrap($("元素b"))：把元素a，用元素b，包裹起来。如果有多个a元素，那么会每个都被元素b包裹。包裹层会变成父层
+
+$("元素a").unwrap()：取消元素a的包裹
+
+$("元素a").wrapAll($("元素b"))：把所有元素a，用一个元素b包裹起来
+
+$("元素a").wrapInner($("元素b"))：内部包裹。包裹层会变成子层
+
+替换
+$("元素a").replaceWith($("元素b"))：用元素b去替换元素a
+$("元素a").replaceAll($("元素b"))：用元素a去替换全部元素b
+
+删除
+$("元素a").empty()：删除的仅仅是内容
+$("元素a").remove()：删除的是全部，连标签也没了。
+
+克隆
+$("元素a").clone()：克隆出一个一模一样的元素a，但是元素a不会自己显示，需要你添加到对应的地方才行
+
+事件
+加载事件
+$(doucment)、$(body)： 获取html对象、获取body
+加载事件：$(doucment).ready(fn) 页面加载完，会执行函数fn
+简写：$(function(){}) 在工作中，运用简写的比较多
+注意：js的window.onload的加载事件和JQ的加载不同在于：js的会加载完页面的DOM和资源之后才加载，而JQ不会加载资源。
+
+事件切换
+hover(houver,out)，鼠标放上，鼠标离开的两个函数。例：	$("div:eq(0)").hover(function(){
+		$("div:eq(0)").html("鼠标放上时的内容")
+	},function(){
+		$("div:eq(0)").html("鼠标离开时的内容")
+	})
+
+事件
+js的时间都带有on，而jq把on去掉了
+单击。
+$(selector).clcik(fn(){})：selector的点击事件会触发fn函数
+双击
+$(selector).dblclcik(fn(){})：selector的双击事件会触发fn函数
+获得焦点
+$(selector).focus(fn(){})：
+失去焦点
+$(selector).blur(fn(){})：
+发生改变
+$(selector).change(fn(){})：
+鼠标放上（悬浮）
+$(selector).mouseover(fn(){})：
+鼠标离开
+$(selector).mouseout(fn(){})：
+鼠标按下
+$(selector).mousedown(fn(){})：
+鼠标抬起
+$(selector).mouseup(fn(){})：
+鼠标移动
+$(selector).mousemove(fn(){})：
+
+事件处理：
+绑定：
+bind("action"，fn(){})：所有版本都支持。
+多个事件绑定：bind({"处理事件1":fn1, "处理事件2":fn2})
+
+unbind("action")：解除绑定。注意：假如没有写解绑的action事件，就会全部解绑
+
+$(select元素).on({"处理事件1":fn1, "处理事件2":fn2}) ：同样是绑定
+$(select元素).off()：解绑
+
+$(select元素).one：绑定事件，但是绑定后，只会执行一次
+
+查找
+$(select元素).parent()：查找select的父元素
+$(select元素).find(a)：在select元素中，找a元素
+
+动画
+基本动画：
+show(时间毫秒,fn)：显示
+hide(时间毫秒,fn)：隐藏
+toggle(时间毫秒,fn)：切换，在show和hide之间来回切换
+时间可加可不加，fn() 是在效果执行完之后执行的函数，也是可加可不加
+
+滑动
+slideDown(时间毫秒,fn)：下滑
+slideUp(时间毫秒,fn)：收起
+slideToggle(时间毫秒,fn)：切换，在slideDown和slideUp之间来回切换
+时间可加可不加，fn() 是在效果执行完之后执行的函数，也是可加可不加
+
+淡入淡出
+fadeIn(时间毫秒,fn)：淡入
+fadeOut(时间毫秒,fn)：淡出
+fadeTaggle(时间毫秒,fn)：来回切换
+fadeTo(时间，参数，fn)：在淡出进行到一个0-1之间的参数状态时，执行fn函数
+
+动画案例
+$("dt").click(function(){
+	$(this).parent().find("dd").slideToggle()
+})
+
+插件引入
+首先，下载后将css、js、fullpage三个文件下载并放到对应位置的文件夹
+其次，要引入对方的css、js、fullpage这三个文件。
+最后，内容不可随意修改，可修改的内容参考页内的说明
+
+php介绍
+今天的目标：
+<?php
+echo "hello word";     //配置好Apache
+echo "<br/>当前时间：".date("y-m-d h:i:s");     //配置好php
+$link = mysqul_content("localhost"."rott"."123");     //配置好mysql
+
+目标二：
+能建立多个站点，能访问一个网站。比如："www.abc.com"，能访问另外一个网站"www.def.com"
+
+php的应用领域：
+1.web服务器端脚本（主要作用）
+2.命令行脚本
+运行php文件：
+php.exe-f  "php文件路径"（用cmd程序，通过php.exe程序完整路径  - f  "php脚本完整路径"来运行）
+php.exe-r  "php脚本代码"	（用cmd程序，通过php.exe程序完整路径  - r  "php代码段"来运行）
+3.应用程序图形界面 （应用域不多）
+
+php作为一门语言，本身可以是一个纯绿色版的"文件夹"----称之为“php语言包”，可以拷贝到任何地方，其中有一个文件为：php.exe，可以用来执行php代码
+
+php的运行环境
+BS（网络结构）软件模式：
+pc客户端-->>请求，然后web服务器软件（Apache）-->>响应请求，其运行过程中，所涉及到的一些技术或软件如下：
+浏览器端                    服务器端                    数据库端
+html                  服务器软件     语言                 mysql  
+css                    Apache         php                 oracle
+js                      IIS            java                 mssql   
+					    ...			  ...					  ...		
+
+其中，浏览器端的技术是“无可替代”的，而其他层面的，都有可替代性。
+
+web运行流程：
+浏览器键入地址-->>
+
+首先在本机hosts文件中找对应ip，看看是否有访问过的记录（hosts映射域名成ip地址，帮助浏览器访问）
+	hosts文件位置：操作系统/system32/drivers/etc/hosts文件
+	注意：要编辑修改，需要以管理员身份打开编辑器
+
+如果hosts没有找到，则到互联网上找对应的IP（DNS服务器中）
+
+如果还是没找到，则终止请求，返回“找不到服务器”提示
+
+如果找到，然后web服务器取得对应的文件（请求的文件）
+	如果有需要，对该文件进行一定的处理（比如php代码执行，Apache会去站点文件夹取得php文件，然后把php文件交给php语言引擎去执行代码（php引擎对数据库发起mysql命令，然后mysql把执行结果返回），转化成html文件）
+	将文件（或执行结果文件）返回给浏览器（响应）
+	浏览器接收文件
+	浏览器处理文件（显示/执行）
+
+安装Apache
+conf（apache的配置文件夹）
+htdocs（初始站点文件夹）
+bin（可执行文件所在位置）
+modules（apache的模块所在位置，php就是属于其中一个模块）
+
+配置Apache以运行php程序
+第一步：装载php“模块”------其实就是指php语言包中的一个文件而已
+首先将php语言模块，拷贝到计划的目录中。php5apache2_2.dll
+然后打开apach文件夹下的conf下的httpd.conf文件，进行配置
+#号是用来注释的
+#装载
+LoadModule php5_module "E:/wamp/www/amp/php/php5apache2_2.dll"
+推荐使用正斜杠，防止转义引发错误
+第二部：指定php后缀的文件，去找该php模块处理（执行）固定写法
+#识别
+<FilesMatch "\.php$">      这里.php可以改成任何后缀，只是用来意味着对应后缀的文件都用php模块来执行
+	setHandler application/x-httpd-php
+</FilesMatch>
+
+第二种写法：
+AddType application/x-httpd-php .php .pap .phtml （这种写法更灵活，可以识别多个文件后缀。并且只需一行写法）
+
+错误检查：
+拖入法
+Apache目录下bin目录下httpd.exe，直接拖入命令指示符，后接 -t 即可。
+E:/wamp/www/amp/apache/bin/httpd.exe -t
+环境变量法
+我的电脑>属性>高级系统设置>环境变量>系统变量>path>编辑>:http.exe路径。编辑完之后，在命令指示符，直接输入httpd.exe -t或者httpd. -t 即可执行
+先加一个分号，然后把路径引入。  : E:/wamp/www/amp/apache/bin 即可
+
+配置文件修改后，必须重启Apache，才能生效。
+
+php配置（语言配置）
+配置语言模块（乱码）
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+配置语言包
+php.ini-development：适用于开发环境的语言模板
+php.ini-production：适用于产品环境的语言模板
+我们采用php.ini-development，更名为php.ini（复制一份再改名比较妥当）
+搜索关键字timezone。这里是用分号做注释，默认是注释的
+date.timezone =PRC
+
+在apac的配置文件中，设置php.ini文件的路径
+PHPIniDir "E:/wamp/www/amp/php" 不需要写到文件名
+重启Apache
+
+php的模块配置
+理解意见事情：
+php（语言模块）是Apache的众多模块之一
+而msql是php语言中的众多模块之一
+
+第一步：
+	在php.ini文件中，设定模块所在的路径（查找关键字extension_dir）：修改E:\wamp\www\amp\php\ext 完整物理路径。
+
+第二部：打开mysql模块即可
+	extension=php_mysql.dll，习惯上也将extension=php_mysqli.dll打开，不一定要打开。
+
+mysql安装
+ 
+选择自定义安装，尽量选择相同位置。
+
+ 
+
+ 
+
+ 
+
+
+ 
+ 
+
+  
+ 
+launch勾上是默认开机启动
+
+ 
+
+
+主机（站点）配置
+单站点配置项：
+默认情况下，apache安装成功，就默认配置好了一个“站点”，该站点的实际位置在Apache安装位置/htdocs/中，默认主机名是安装时设置的，比如www.abc.com，当然，也可以使用localhost
+一个站点的两个核心信息为：
+	主机名：ServerName 服务器名
+	站点位置：DocumentRoot “实际物理路径 ”
+
+端口监听：
+在Apache的主配置文件httpd.conf中：
+ 
+实际应用中，我们几乎都是80
+
+设置主机（站点）的名字：服务器名/站点名
+ServerName
+ 
+
+设置站点位置（实际物理路径）
+	DocumentRoot “实际物理路径 ”
+重点观念：
+	站点就是一个“文件夹”
+
+ 
+
+目录访问权限
+一个站点，就是一个“目录”
+每个目录，都应该给其设定“访问权限”，语法如下：
+<Directory  "要设置的目录路径">
+	Options Indexes   
+设置当一个请求中没有给定请求的文件名又没有默认网站的时候，显示文件列表
+	Order Deny,Allow
+设置权限控制的先后顺序，只有两种Deny，Allow（先拒绝，后允许），Allow，Deny（先允许后拒绝）
+	Deny from 拒绝名单
+用于设定要拒绝访问的来源地址或服务器名，几乎没有实际意义。
+	Allow from 允许名单
+允许的名单
+	DirectoryIndex "默认首页"
+设置该文件夹下的默认网页，用于请求中不带文件名的时候自动使用该文件作为返回页面
+index.html   123.php  bcd.html...会从左到右逐个寻找是否有这个页面
+</Directory >
+
+目录访问权限中的“分布式权限”：
+对于某个目录的访问权限，我们在Apache中使用Directory来设定。但可能不够方便：
+1.Apache配置修改必须重启
+2.某个站点中的“下级目录”访问权限，不方便单独设置
+这种设置，可以成为“集中式权限”，而分布式权限，就是可以对某个网站的任何一个下级目录，都可以单独去设置其访问权限，并且可以不重启。
+做法：
+第一步：在该站点的对应目录权限的Directory配置中添加一条：AllowOverride all
+ 
+第二部：在该目录下的任何子目录中，创建一个特殊的文件（.htaccess），在该文件中写所需要的“权限内容”，几乎跟Directory中的写法一样
+
+多站点的配置
+第一步：
+	在Apache的主配置文件httpd.conf中，“打开”多站点虚拟主机配置文件项（查找关键字vhost），修改默认的注释#号去掉即可打开
+第二部：
+设置希望提供的“多站点”服务的ip地址和端口号，通常默认就是：*：80，其中“*”号代表所有ip
+在httpd-vhosts.conf，默认其实Apache安装好之后就设置好了，无需手动设置。
+第三部：
+	然后就一个站点一个站点的加上，形式如下：
+<virtualhost  *:80>
+	站点1信息
+</ virtualhost >
+<virtualhost  *:80>
+	站点2信息
+</ virtualhost >
+<virtualhost  *:80>
+	站点3信息
+</ virtualhost >
+...
+...
+......
+注意：先把httpd-vhosts.conf中的两个默认站点删除
+ 
+主要站点的设置下，就3个：
+SeverName、DocumentRppt、<Dirctory>...</Dirctory>
+ServerAlias  www.wuxiyunchou.cn  wuxiyunchou.cn  用来设置站点的域名别名
+
+在多站点配置中，第一个站点被称为“默认站点”，如果某个请求的域名，跟任何一个站点都匹配不上，就会返回这个站点。在单个网页中，设置
+DirectroyIndex  xxx.php，可以把XXX.php设为默认访问页
+
+一旦实现了多站点配置，则最初安装Apache成功时的那个默认站点，就失效了。
+
+目录别名（虚拟目录）的设置
+某个站点下www.xxx.com有一个目录为d1，则可以这样访问该目录：
+www.xxx.com/d1 就是真实目录。
+在httpd-vhosts.conf里设置，对应的这个站点的</ virtualhost >内
+第一步：
+	设置目录别名和对应的真实目录
+	alias /目录别名的名字  "实际真实目录的位置"
+
+第二部：
+	设置该真实目录的访问权限（默认是禁止访问的）
+	<Directroy "真实目录">
+		跟其他站点设置一样
+	< /Directroy >
+
+PHP学习
+php基本语法形式
+php的标记符，有一下形式：
+形式1（推荐）
+	<?php
+		符合php语法的语句
+	>?
+
+形式2：
+	<script  language="php">
+		php语句
+	</script>
+
+形式3：（不推荐）它依赖于php.ini中的设置项——short_open_tag = off，将其改为on，才可以用
+	<?
+		php语句
+	?>
+php的结束标记，在如下情况可以省略：php的语句之后没有html代码部分
+php的语法
+1.变量区分大小写
+2.常量默认也区分，但可以认为设定为不区分（但这种做法不推荐）
+3.其他场合的关键字都不区分，比如函数名，系统关键字（for，while，等等）
+4.一条语句必须要用1个分号结束，最后一句的分号可以省略，如果省略了结束标签，就不能省略
+5.php的注释
+	形式1：//注释
+	形式2：#注释
+	多行注释：/*注释*/
+
+php变量
+使用形式：
+php中的变量，要以$开头
+例：$a=1;
+
+定义形式：
+php中，不支持“单纯定义”，而是在第一次变量赋值的时候，定义变量。
+
+基本操作：
+赋值、取值、判断isset()、删除unset()
+
+赋值：
+等号（=）的左边放变量名，右边放“数据”，就是赋值；
+$v1 = 1;
+	变量可以理解为只是一个代表一定存储空间及其中的数据的一个“标识符”——也就是一个名字。
+	$v1  =  1;	这一行代码，图示如下：
+
+
+
+
+	这表明，使用该变量，就是在使用该数据空间的数据值！比如：
+	echo  $v1;		///输出的是数据1
+	$v2 = $v1 + 3;		//此时，其实进行的是1+3的计算！
+
+取值：
+任何需要一个数据的语句中使用一个变量，此时就是指从该变量取得该变量的值——取值；
+概括来说，大约有如下情形：
+echo  $v1;		//取出v1的值并输出
+$v2  =  $v1;		//取出v1的值并给其他变量赋值；
+$v2  =  $v1 + 3;	//取出v1的值并与3进行运算！
+$v2  =   round( $v1 );		//取出v1的值并并使用函数round()对其进行四舍五入运算
+
+判断isset(变量名)：
+作用：判断该变量是否存在，或该变量是否有数据值！存在或有数据值，就是true，否则就是false
+
+ 
+
+删除unset(变量名)：
+含义：删除一个变量，并不是指将该变量从程序中删掉，而是，“断开”该变量名跟该变量原有的数据值之间的“引用关系”（联系）！，此时，会有这样的结果：
+1，该变量名已经不指向（引用）任何数据了，则此时其isset()判断的结果就是false
+	2，该数据（可能）没有任何变量指向它了，就成为“无法使用的数据”——通常就被自动回收了
+
+
+
+
+
+$v1 = 1;
+unset($v1);
+$s1 = isset($v1);		//false
+
+变量命名规则
+基本规则——保证程序的正确性
+以字母或下划线开头
+后跟任意数量（含０个）的字母，数字和下划线
+
+有3种常见的命名法：
+1，骆驼命名法：首单词小写，其后每个单词首字母大写
+举例：$name   $myName   $myFatherName
+
+2，帕斯卡命名法：每个单词首字母大写
+举例：$Name   $MyName   $MyFatherName
+
+3，下划线分割法：每个单词小写，并且之间用下划线分开
+	举例：$name   $my_name   $my_father_name
+
+变量的传值方式
+1，变量的传值方式，是指“一个变量，传给另一个变量”的内部细节形式——单对单；
+2，变量的传值方式，只有2中：值传递，引用传递；
+值传递
+$v1 = 1;
+$v2 = $v1;	//这就是值传递
+简单理解：将$v1的值取出来（注意：$v1中的值还在），然后再用该值给$v2赋值。
+图示理解：
+
+
+
+
+
+可见，值传递，就是变量v1的值进行了复制，然后在给另一个变量v2赋值。
+注意：
+1这两个变量此时是值相等的；
+2这两个变量又是互相独立的——互不影响；
+即$v1 = 10;	则echo  $v2 ；//输出1
+
+引用传递
+php中，只有一种语法形式可以实现变量的引用传值方式：&符号。
+举例如下：
+$m1  =  1;
+$m2  =  & $m1;		//引用传值方式
+简单理解：	将变量$m1跟其数据值之间的“引用关系”，复制一份，再给予变量$m2，即，此时，变量$m2也同样具有跟原来数据的一个“引用关系”（指向关系）；
+
+图示理解：
+
+
+
+
+
+
+结果是：
+1，此时仍然有了2个变量，但只有一个数据值（数据空间），2个变量都共同指向该数据空间。
+2，对其中任何一个变量的操作，其实都是在操作数据值（空间）；
+
+可变变量
+$s1 = “abc”;		//这是一个变量，里面存储的是字符串”abc”
+$abc  =  10;		//
+echo   $$s1;		//$abc，输出10
+理解：
+1，在php中，一个”$”后面，总是跟着一个变量名！
+2，这里，echo输出的这个变量(以第一个$为标识）的名字是：$s1, 即”abc”
+3，所以，这里输出的是 $abc,  即 10
+4，这种连续出现“$”的变量形式，就是所谓的“可变变量”；
+
+/*可变变量的灵活处理*/
+$a1=115;
+$a2=15;
+$a3=34;
+$a4=45;
+//求和
+$sum=0;
+for ($i=1; $i < 5; $i++) { 
+	$v='a'.$i;//给有规律的名字起了个变量
+	$sum+=$$v;//$sum每进来一次循环，自加$$v，也就是对应的$a1、$a2，类推
+}
+echo "<br/>",$sum;
+
+$k1="k2";
+$k2="k3"
+$k3=3;
+$a=$$$k1;     //逐级理解为：$k1为k2==》$a=$$k2，接着$k2为k3==》$a=$k3。
+
+预定义变量
+所谓预定义变量，其实指，php这个语言工具中，预先就定义好的变量；我们只是“拿来使用”。
+
+综述
+•	主要有：$_GET, $_POST, $_REQUEST, $_SERVER, $GLOBALS，
+•	均是数组
+•	系统定义与维护——即我们不应该其给其赋值或销毁其值，只应该去“用其值”。
+•	具有超全局作用域——哪里都可以使用。
+•	不同情形下可能具有不同的值
+
+$_GET：get请求（）
+含义：
+它代表用户通过get方式（ 有5种get形式 ）提交的时候所提交的所有数据——这个称为get数据。
+小提示：get，post没有翻译，只是纯粹的两种方式！
+
+提交get数据有5种形式：
+
+形式1：
+<form  action="目标文件.php" method="get">
+	<input type="text"  name="data1" />
+	<input type="text"  name="data2" />
+	<input type="submit" value="提交" />
+</form>
+这种形式的get数据，跟post数据类似，数据内容由用户填写或选择而得到！
+
+形式2：
+<a   href=”目标文件.php？data1=5&data2=cctv&age=18”>链接文字</a>
+说明：
+1，它只是一个链接而已，只是在链接文件名的后面加上“？”，然后一个一个“串接数据”；
+2，数据形式为：数据项名称=数据值， 相互之间用“&”符号隔开
+3，这种形式的数据也同样是“点击链接”就提交的get数据，但用户只能选择点还是不点，而不能修改数据。
+
+形式3：
+<script>
+	location.href = “目标文件.php？data1=5&data2=cctv&age=18”;
+</script>
+说明：
+1，该语句可以看做是通过js技术实现的页面跳转功能，跟a标签的连接功能完全一样！
+2，其中该语句，通常都是放在一个函数中，然后因为某个事件发生而去调用该函数！
+
+形式4：
+<script>
+	location.assign( “目标文件.php？data1=5&data2=cctv&age=18”);
+</script>
+说明：
+该语句其实跟形式3完全一样功能，只是location这个对象实现页面跳转的另一个语法形式而已！
+
+形式5：php的跳转语法
+
+<?php
+//php的跳转语法形式： header(“location: 目标网页地址”);
+
+header(“location: 目标文件.php？data1=5&data2=cctv&age=18”);
+?>
+
+小结：
+上述多种get形式提交数据，都要理解为：
+跳转到某个页面，并“同时”携带（提交）一定的get数据过去！
+
+不管哪种形式的get数据提交，接收get数据，都只有一种形式，跟post类似：
+$v1 = $_GET[‘数据项名称’];	//取得一个get数据项的值；比如$_GET[‘data1’],  $_GET[“age”];
+也可以“输出”所有get数据：
+print_r($_GET);  或  var_dump($_GET);
+
+$_POST：
+代表用户通过表单以post方式（method="post"）提交的时候，所提交的所有数据——这个称为post数据。
+
+	<!-- 以下表单提交的数据，提交后，会交给post_data.php去处理，提交方式是post提交，想提交到哪个地址都行，只不过一般而言，这个都是我们自己处理，否则会被无限提交数据，造成瘫痪 -->
+html文件代码部分
+	<form action="post_data.php" method="POST">
+		账号：<input type="text" name="username"/>
+		<br/>
+		密码：<input type="password" name="psd"/>
+		<input type="submit"/>
+	</form>
+php文件代码部分
+	<?php
+	$a=$_POST['username'];
+	$b=$_POST["psd"];
+	echo "账号是:",$a,"<br/>","密码是:",$b,"<br/>";
+	var_dump($_POST);
+	?>
+empty（变量）：判断变量的“内容”是否为空（与null的空不同，这里单纯指，存不存在数据在里面）它硬性规定以下数据都是“空的”：
+0   “”   “0”   false   null   array（）   这些在empty判断来说，都是“空的”
+
+$_REQUEST变量
+含义：
+一句话，它是$_GET变量和$_POST变量数据的“合集”：即，它里面同时存储了这两种数据。
+ 
+结果为：
+ 
+
+如果表单为get提交方式：
+ 
+结果为：
+ 
+
+怎么能同时具有get和post数据呢？
+只有一个方式：
+<!--以下action中的？号后面的数据都会以get方式提交-->
+<form   action=”目标文件.php？data1=5&data2=cctv&age=18”   method=”post”>
+<!--以下表单项的数据都会以post方式提交-->
+<input type=”text”  name=”n1” />
+<input type=”text”  name=”n1” />
+<input  type=”submit”  value=”提交” />
+</form>
+举例：
+ 
+提交后结果为：
+ 
+
+request数据取值时，跟get数据和post也完全一样！
+$_REQUEST[‘数据项名称’];
+ 
+
+当post数据和get数据的数据项名称相同时（其实我们反对这么做），默认是post数据覆盖了get数据。
+不过这个状况同样可以在php.ini中设置：
+默认时：
+ 
+可修改为：
+ 
+
+$_SERVER变量
+含义：
+它代表在一次浏览网页的过程中的浏览器端的一些信息或服务器端的一些信息。
+我们只是在程序中可以拿到这些信息，并用于编程所需！比如：取得用户的访问IP地址。
+注意：
+这种信息，随着不同的页面，和不同的服务器，以及不同的时刻，都可能不同！
+要求：
+大约有30个左右的信息，我们只要知道其中5个左右！主要有：
+$_SERVER[‘REMOTE_ADDR’]：获取访问者的ip地址
+$_SERVER[‘SERVER_ADDR’]：获取服务器所在的ip地址
+$_SERVER[‘SERVER_NAME’]：获取服务器的名字，其实就是站点设置中的servername
+$_SERVER[‘DOCUMENT_ROOT’]：获取站点的真实物理地址，其实就是站点设置中的documentroot
+$_SERVER[‘PHP_SELF’]：获取当前网页地址（不含域名部分）
+$_SERVER[‘SCRIPT_FILENAME’]：获取当前网页地址物理路径
+$_SERVER[‘QUERY_STRING’]获取当前网页地址中的所有get数据（就是？号后面部分），但只是一个整体的字符串而已。
+ 
+
+常量
+常量相对于变量来说：是其中存储的数据不会、也不应该改变的“标识符”。
+常量的使用，就2个方面：定义，取值。
+常量的定义
+//常量定义语法1：
+	//define（“常量名”，常量值）
+	define("PI",3.14);//习惯上名字大写，不是严格的要求
+	define("SCHOOL", "沙洲中学");
+
+//常量定义语法2：
+	//const 常量名=常量值
+	const  cc1=1234;
+	const  cc2="abcd";
+//const只能用在顶层代码，也就是不能被包在括号里
+$a=6;
+if($a>5){
+const  BCD=123;  //这是错误的，const只能用在顶层代码中
+}
+
+//使用形式1，直接用常量名就行
+	echo SCHOOL."<br/>";//常量不能写到引号中
+
+//使用形式2
+	//constant("常量名");//注意：常量名是一个字符串，意思就是，取得这个字符串内字符代表的常量的值 
+	$s2=constant("PI");
+	echo $s2."<br/>";
+
+//常量的灵活取法
+	$cc1=2;
+	$a=1;
+	$b="cc".$a;
+	echo constant($b);//所取的常量也就是$b字符串内字符所代表的常量，也就是cc1.取其值
+
+常量、变量的区别
+1.定义形式不同
+2.使用形式不同：常量无需$符号
+3.可变程度不同：常量的值不可改变，也不可销毁
+4.作用范围不同：常量具有超全局作用域（函数内外部都可以直接使用）
+5.作用类型不同：常量只能存储标量类型（整数、浮点数、字符串、布尔）
+
+判断常量是否存在
+使用defined()函数，如果存在true，如果不存在false
+
+使用一个未定义的常量
+先看2个对比代码：
+echo "v1的值为".$v1  //注意：该变量未定义过
+echo "C1的值为".C1	//注意：该常量未定义过
+
+注意：在php中，当使用一个未定义的常量时，系统会直接将该常量当做“有值”的常量去使用，并使其值就是该常量名——虽然它也会报错。
+
+预定义常量
+系统中预先定义好的一些常量，大约有几百个，我们要知道几个
+M_PI：圆周率常量
+PHP_OS：php运行所在的操作系统
+PHP_VERSION：php版本号
+PHP_INT_MAX：php中最大的整数值
+
+魔术常量
+其实只是常量的形式，但没有常量的“恒尝”的含义：其值其实会变化，只有很少的几个
+//注意：前后都有两个下杠
+__FILE__ ：代表当前网页文件
+__DIR__：代表当前网页文件所在目录
+__LINE__：代表这个常量名所在的“行号”
+
+
+数据类型
+有8中数据类型：
+基本类型（标量类型）
+	整数类型：int，integer
+	浮点数类型：float，double，real
+	字符串类型：string
+	布尔类型：bool，boolean	//这种类型中，只有2个数据true、false
+
+复合类型：
+数组类型：array
+对象类型：object
+
+特殊类型：
+空类型：null 		//这种类型中，只有一个数据，就是null
+资源类型：resource
+
+整数类型：
+整数类型的三种写法：
+	$n1=123;			//十进制
+	$n2=0123;		//八进制
+	$n3=0x123;		//十六进制
+	$n4=0b1010;		//二进制（目前不学）
+
+进制转换：
+首先记住以下单词：
+	bin：二进制
+	oct：八进制
+	dec：十进制
+hex：十六进制
+
+进制转换主要分两组情况：
+	1.十进制转其他
+	用法：decbin(十进制数)：返回结果是该数的二进制形式字符串
+		  decoct(十进制数)：返回结果是该数的八进制形式字符串
+	2.其他转十进制
+	用法：bindec (二进制数字符串)：返回结果是该二进制数的十进制形式字符串
+		  octdec (八进制数字符串)：返回结果是该八进制数的十进制形式字符串
+
+没有其他形式的组合了，不能随意组合，只能有十进制同其他进制的互换，不能有其他进制间的互相转换。
+
+进制转换的人工计算——了解其原理
+10转2：
+	做法：除2取余倒着写出所有余数。
+	详细解释：将一个10进制数除以2，得到商和余数，如果商还是大于等于2，则继续除2，得到商和余数，直到商为0为止。然后将前面所有余数，按倒序写出，就是对应二进制数字。
+10转8
+	做法：除8
+10转16
+	做法：除16
+	注意：这个的余数，要按16进制的字符来余，比如余10，就是余A，余11是余B
+
+
+
+其他进制转换为10进制的做法：
+
+先看一种对数字大小和“数字权值”的理解：
+对一个10进制数字： 1234，可以这样去理解它的大小：
+1234 = 1*103 + 2*102 + 3*101 + 4*100  = 1000 + 200 + 30 + 4;		(任何数的0次方都是1）
+这里，我们对103 ,  102,   101,  100  等等，称为“权值”；每个位的权值是不同的。
+对于10进制，每个位上的权值，就是10 的 n次方；
+对于8进制，每个位上的权值，就是8的 n次方；
+对于16进制，每个位上的权值，就是16 的 n次方；
+对于2进制，每个位上的权值，就是2 的 n次方；
+
+8进制转换10进制：
+将8进制数字的每个位上的数字乘以其对应位上的权值，然后相加之后的结果。
+举例：有一个8进制数字123，则其实际大小为：
+1 * 82  +  2 * 81 +  3 * 80  =  64 + 16 + 3 = 83;
+
+16进制转换10进制：
+将16进制数字的每个位上的数字乘以其对应位上的权值，然后相加之后的结果。
+举例：有一个16进制数字123，则其实际大小为：
+1 * 162  +  2 * 161 +  3 * 160  =  256 + 32 + 3 = 291;
+
+2进制转换10进制：
+将2进制数字的每个位上的数字乘以其对应位上的权值，然后相加之后的结果。
+举例：有一个2进制数字101011，则其实际大小为：
+1 * 25  +  0 * 24  +  1 * 23  +  0 * 22  +  1 * 21  +  1 * 20=  32 + 0 + 8 + 0 + 2 + 1 = 43;
+
+浮点类型（float，double，real）：
+表现形式：
+1.$a=12.13；常规写法
+2.$a=123.456E3；科学计数法		//含义为：123.456乘以10的3次方；
+  $a=123E3；科学计数法		//含义为：123乘以10的3次方,虽然结果是123000，但是他任然是“浮点型”；
+
+浮点数的细节知识
+1.浮点数不应进行大小比较
+因为在计算机中，所有数字的最终表现形式，都是二进制，而浮点数的二进制形式，不能完全表达准确，最终只能一“很高的精度接近理论值”，因此浮点数的比较是不可靠的。
+主要针对类似8.1/3==2.7，这种比较，是不可靠的。而8.1和8.2的比较，是能比较出来的。
+ 
+处理方法，在考虑精确度要求时，精确度3位时，同时乘以一个1000这样的数，把他变成整数来比较。4位乘以10000
+ 
+
+2. 小数转二进制的做法：乘2并顺序取整数部分(了解）：
+ 
+ 
+3.当整数运算的结果超出整数的范围后，会自动转换为浮点数（了解）。
+获取一个数据（变量）的类型的函数有：
+getType($变量);		返回的是该类型的名字（字符串）；
+var_dump($变量):		会输出该变量的类型，数据内容，（以及长度)；
+
+ 
+
+字符串：
+$str1=" 字符串内容... "
+$str2=' 字符串内容... '
+$str3=<<< " 标识符A " 字符串内容...标识符A			双引号定界符（heredoc）
+
+$str4=<<<' 标识符B ' 字符串内容...标识符B			单引号定界符（nowdoc）
+
+布尔类型：单词（bool，boolean）
+其中只有两个数据：true、false
+布尔类型的一个常见应用情形是：对一个变量直接进行判断（true还是false）
+ 
+这里的判断，永远是指：判断该变量（数据）“是否为真”。
+对于这种情况，只有如下数据是被当做“假”（false）：
+0、   0.0、   “”、   “0”、   null、   array()、   false、   还有一个是“未定义的变量”
+其余都是真。
+参考：
+手册》附录》PHP类型比较表》
+ 
+
+类型转换
+自动转换：
+在任何运算中，如果需要某种类型的数据，而给出的数据不是该类型，通常都会发生自动转换：将该类型转换为目标需要类型。
+比如：octdec（$x）、bindec（$x）		//在这里，$x必须是字符串，如果不是，就会转换；
+      $a=1+"2";		//这里也发生了自动转换	
+
+自动类型转换是由“运算符”或类似运算符的语句来决定的。
+强制转换
+强制转换类型，仅仅是一个简单的语法：
+	形式：（目标类型）数据
+	含义：将该数据转换为目标类型
+//强制转换
+	$a1=123;
+	$a2=(float)$a1;	//将a1的值转换为float类型，注意，此时a1里面保存的还是整数123
+	$a3=(string)$a1;	//	将a1的值转换为字符串类型，注意，此时a1里面保存的还是整数123
+
+通常的转换目标类型有（不会改变数据本身的数据及类型）：
+int、float、string、bool、array、object
+
+直接改变数据的数据类型：setType($变量名,"数据类型")
+
+类型相关的系统函数：
+var_dump()：用于输出变量的“完整信息”，几乎只用于调试代码。
+getType($变量名)：获取该变量的类型名字，返回的是一个表示该类型名字的字符串，比如"string"，"bool"，"double"
+setType($变量名,"目标类型")：将该变量的数据类型强制改变为目标类型
+insset()、empty()、unset()
+is_类型()系列函数：判断某个数据是否为某类型
+	is_int($a)：判断$a是不是整数类型；判断的结果是bool值
+	is_numeric($a)：判断$a是不是数字
+	is_scalar($a)：判断$a是不是一个“标量类型”
+	is_array()：
+	is_object()：
+	is_null()：
+
+运算符
+算术运算符
+基础：+ - * / % 
+1.是针对数值的运算
+2.如果有不是数值的数据，会自动转换为数值
+3.其中取余%，只会针对“整数”运算，如果不是，会截取为整数
+11.3  % 3 相等于11 % 3
+11.9  % 3 也相等于11 % 3
+直接截取，不会四舍五入。
+
+自增自减运算
+字符串只能自增，且自增的效果就是“下一个字符”，只能针对字母/数字，及其组合，不能对汉字
+布尔值递增递减无效
+null递减无效，递增结果为1
+前自增
+前自增及后自增对变量本身没有影响，但是对其赋值或者输出的对象，有直接影响
+$a=1;
+$a1=++$a;	//现在$a为2，同时$a1为2，是自增后进行了赋值（或其他运算）
+
+后自增	
+$a=1;
+$a1=$a++;	//现在$a为2，但是$a1为1，是先赋值（或其他运算）后自增
+
+通常，在循环中，推荐使用前++
+
+比较运算符（比较结果，参考手册）
+一般比较：<、>、<=、>=、!=、===、!==
+是针对数字进行的大小比较
+
+==和===：前者通常叫模糊相等的比较，后者叫做精确相等的比较（只有数据类型和值都一样时，才是全等于）
+
+不要对浮点数直接进行大小比较
+常见不同类型（标量类型）数据之间的比较规律：
+如果比较的数据中，有布尔值，会转为布尔值比较，布尔值比较，只有一个规则：true > false
+否则，如果有数字值，就会转为数字比较：这是常规比较
+否则，如果两边都是纯数字字符串，转为数字比较
+否则，就按字符串比较（对两边的字符串，从前往后，一个取出字符，并进行比较，谁先大，结果就谁大）根据ASCII表来比较的
+
+"abc" > true		//false
+"abc" > false		//true
+"0" > false		//false
+3 > "12"		//false
+3 > "12abc"	//false
+"3" > "12"	//false
+"abc" > "abd"	//false	
+"3abvb" > "12aff"	//true
+
+逻辑运算符
+逻辑运算符都是针对“布尔值”进行的运算，如果不是布尔值，就会转换为布尔值进行，布尔值只有2个，true和false
+基本运算规则（真值表）：
+	逻辑与规则：
+	true&&true   ===》》true
+	true&&false   ===》》false
+	false &&true   ===》》false
+	false && false   ===》》false
+	总结，全true则true，但凡有false结果就false
+
+	逻辑或规则：
+	true||true   ===》》true
+	true||false   ===》》true
+	false ||true   ===》》true
+	false || false   ===》》false
+	总结：全false则false，但凡有true结果就true
+
+	逻辑非规则：
+	!true	===》》false
+	! false	===》》true
+
+	逻辑运算符的“短路”现象：
+结论：在逻辑运算中，如果需要进行多项判断，而且不同判断具有明显不同的复杂程度，那么，把简单的判断放在前面，这时可以利用“短路”现象，以达到提高效率的目的。
+
+字符串运算符
+1.符号只有一个“.”，也衍生出另一个：.= 
+2.含义：就是将符号两边的字符串连接起来
+3.如果两边不是字符串，就会自动转换为字符串，然后连接起来
+
+"ab" . 3  ==>> ab3;
+12 . 3  ==>>"123"
+
+赋值运算符
+一个基本赋值运算符：=
+	形式：$变量名 = 值；
+	理解：将右边的值（不论做了多少运算），赋给左边的变量
+若干个衍生的赋值运算符：
+	+= 加等
+	形式：$变量名 += 值： 
+	含义：相当于	$变量名	= $变量名 + 值；
+
+	-=	*=	/=	.=	%=  都可以认为是上述形式的一种简化版。
+
+条件运算符（三目、三元运算符）
+只有一个，形式如下：
+	数据值1 ? 数据值2 : 数据值3
+含义：对数据值1进行真假判断，如果为“真”则该运算符的结果就是数据值2，否则就是数据值3，它是这个流程控制（逻辑判断）语句的简写形式：
+	if(数据值1){
+		$变量名=数据值2
+	}else{
+		$变量名=数据值3
+	}
+注意：如果数据值1不是布尔值，也会转换为布尔值判断；	
+
+位运算符
+基础规定：
+	1.位是什么？就是2进制数字的每一个“位”，一个整数数字，有（由）32个位构成。、
+	2.位运算符是仅仅针对整数进行的位运算符
+	3.位运算符有如下几个：
+		&：按位于：
+		|：按位或：
+		~：按位非：按位取反
+		^：按位异或：
+	4.位运算符的基本语法规则：
+		按位与基本规则：
+			1 & 1  ==>> 1
+			1 & 0  ==>> 0
+			0 & 1  ==>> 0
+			0 & 0  ==>> 0
+
+		按位或规则：
+			1 & 1  ==>> 1
+			1 & 0  ==>> 1
+			0 & 1  ==>> 1
+			0 & 0  ==>> 0
+
+		按位非基本规则：
+			~1  ==》 0
+			~0  ==》 1
+
+		按位异或基本规则
+			1 ^ 1  ==>> 0
+			1 ^ 0  ==>> 1
+			0 ^ 1  ==>> 1
+			0 ^ 0  ==>> 0
+		按位异或的规则为：相同位0，不同为1
+
+整数的按位与运算
+形式：	$n1 & $n2    //n1,n2是两个任意整数。
+含义：	将该2个整数的2进制数字形式（都是32位）的每一个对应位上的数进行基本按位与运算之后的结果。
+
+案例：只用8位进行逻辑与运算
+$a = 10 & 20
+10的二进制	0	0	0	0	1	0	1	0
+20的二进制	0	0	0	1	0	1	0	0
+结果	0	0	0	0	0	0	0	0
+
+其他的按位运算，方法跟这个一样，只是运算规则不一样。
+
+整数的按位左移运算
+形式：$n1	<<	 $m
+含义：将十进制数$n1 的二进制数字形式（32位）集体左移$m位。得到结果
+$b	=	10	<<	2
+10的二进制	0	0	0	0	1	0	1	0
+左移2位	0	0	1	0	1	0	0	0
+结果	0	0	1	0	1	0	0	0
+
+补充知识：原码，反码，补码。
+原码：就是一个二进制数字，从“数学观念”上来表达出的形式，其中，我们规定：一个数字的最左边一位是“符号位”，0表示正数，1表示负数；
+比如：
+5的原码
+00000000 00000000 00000000 00000101
+-5的原码
+10000000 00000000 00000000 00000101
+
+反码：正数的反码就是其本身（即不变）、负数的反码是：符号位不变，其他位取反；
+5的反码
+00000000 00000000 00000000 00000101
+-5的反码
+11111111 11111111 11111111 11111010
+
+补码：正数的补码就是本身（即不变）、负数的补码是：符号位不变，其他位取反后+1——即反码+1；
+5的补码
+00000000 00000000 00000000 00000101
+-5的补码
+11111111 11111111 11111111 11111011
+
+小知识：计算机的底层，其实就是用的反码在进行运算。
+
+位运算符的应用：管理一组事物的开关状态。
+什么是开关状态？现实中，有很多数据都只有两种结果的，对应的其实就是我们的布尔类型的值。
+
+这里，所谓管理一组事物的开关状态，应该理解为其实就是管理若干个只有2个状态的“数据符号”。
+比如：有5个灯泡，对应5个状态数据。这5个灯泡，可以表示25种状态。
+管理目标：使用一个变量，就可以表达若干个数据的“当前状态”，具体有3个任务：
+	1.通过该变量，就可以获知任何一个数据的当前状态。
+	2.通过该变量，可以将任何一个数据的状态“关闭”或“开启”
+
+数组运算符
+有这些：+（联合）	==（相等）	!=（不等）	===（全等于）	!==（不全等于）
+
++（联合）：也可以理解为“数组串联”，将右边的数组合并到左边数组的后面，得到一个新数组，如果有重复键，则结果以左边的为准。
+$arr1=array(2=>10,5=>8,7=>22)
+$arr2=array(2=>55,6=>17,10=>15)
+$s1=$arr1+$arr2;		//结果为array(2=>10,5=>8,7=>22,6=>17,10=>15) 其中键2重复，以左边为准
+
+==（相等）：如果两个数组具有相同的键名和键值（可以顺序不同，或类型不同），则返回true
+
+===（全等于）：要数组的键名和顺序和类型都一样，才是true
+
+错误控制运算符@：
+通常就用在一个地方：
+$link = @mysql_connect("数据库服务器地址","用户名","密码")
+作用：如果该链接数据的语句失败，屏蔽该失败的错误提示。
+
+运算符的优先级
+运算符都有优先级
+	1.要意识到运算符有优先级问题
+	2.括号最优先，赋值最落后*（通常情况）
+	3.先乘除后加减
+	大致：单目运算符>算数运算符>比较运算符>逻辑运算符（出了“非”运算）
+要会查手册
+
+流程控制
+流程图基本符号：
+只是人们习惯上使用的一些图形符号，以代表一定的含义，帮助别人理解流程过程。图形本身不是固定的。
+
+流程走向：	
+
+
+开始结束：	
+
+
+语句（块）：
+
+
+
+判断：
+
+
+
+
+
+
+输入输出：
+
+
+if分支结构
+基本语法形式如下：
+
+if (条件判断1）{
+分支1；
+}
+else  if (条件判断2）{
+分支2；
+}
+else  if (条件判断3）{
+分支3；
+}
+。。。。。。
+else {
+//else分支
+}
+说明：
+1，其中，绿色的else if部分可以重复若干次，也可以完全省略！
+2，其中，紫色的else部分可以完全省略。
+3，该if语句会从前往后（从上往下）依次判断条件，如果某个条件满足了，就会执行其中对应的分支，然后就结束if分支结构语句！
+4，如果前面所有条件都不满足，就会执行最后的else分支（前提是有else分支）。
+
+图示如下：
+ 
+
+switch分支结构
+switch ( 表达式 ){
+
+case  条件值1：
+分支1；
+【break；】	//是可以省略部分，不是语法所必须；
+case  条件值2：
+分支2；
+【break；】	//是可以省略部分，不是语法所必须；
+........
+default ：
+default 分支；
+}
+说明：
+1，将表达式的结果数据，跟“条件值1”进行“相等判断”，如果相等，就执行分支1，否则继续对后续值进行判断。。。。
+2，如果某个分支判断为相等，则执行该分支语句后，并且如果其中没有break语句，则会直接进入下一个分支继续执行，而不会再去判断下一个分支的条件值了，并直到碰到break语句才会跳出。
+
+关系图如下所示：
+ 
+
+循环结构
+循环中断
+break
+	用于完全终止某个循环，让流程进入到循环后的语句中去
+continue
+	用于终止当前循环，而直接进入到循环的“下一次”流程中去（通常指回到循环开始的地方）
+
+do  while循环：
+for循环语句形式：
+for（【循环变量初始化】；  【循环变量的条件判断】；  【循环变量的改变】){
+
+
+//循环体语句。。。。
+}
+
+while循环语句形式：
+【循环变量初始化】
+while(【循环变量的条件判断】){
+
+//循环体语句。。。
+【循环变量的改变】
+}
+
+do   while循环语句形式：
+【循环变量初始化】
+do {
+
+//循环体语句。。。
+【循环变量的改变】
+}while(【循环变量的条件判断】)；
+
+说明：
+1，do while会先进入循环体执行一次（不判断条件）；
+2，然后，判断循环条件是否满足，如果满足，又会回到do的开始位置（进入循环体）执行——这就是循环的正常情况。
+3，如果不满足，就结束循环。
+
+流程控制的替代语法
+•	if ( ... ) :   。。。。  endif;
+•	if ( ... ) :  。。。else: 。。。 endif;
+•	if ( ... ): 。。。elseif( ... ) : 。。。 elseif( ... ): 。。。 else: 。。。 endif;
+•	switch( ... ) : case ... case ... endSwitch;
+•	while(...): 。。。endwhile;
+•	for(...; ...; ...): 。。。 endfor;
+ 
+ 
+
+goto语句：
+学此语句的目的是：不要用它！
+语法形式：
+
+//程序从这里开始：
+标识符2：
+语句群1.。。。。。
+
+goto 标识符1; 	//含义是：立即跳转到标识符1所在位置的下一行继续执行
+语句群2.。。。。。 
+
+标识符1: 
+语句群3.。。。。。
+
+goto  标识符2:；
+
+
+控制脚本执行
+die(字符串)/exit(字符串)：
+输出该字符串后，立即停止php的执行！即后续程序不再执行，包括后续的其他所有php和html代码部分。
+
+exit是die的同义词。他们也可以不加字符串，而是直接停止。
+
+sleep（$n)
+让程序停止运行指定的秒数。然后等待过了那个时间后，就继续运行！
+
+注意，其单位是“秒”；
+
+ 
+
+文件加载
+前提说明：以下的说明举例，以include为例，也适用于其他3个加载语句；
+
+有3中路径形式可以使用：
+
+相对路径：
+是相对于当前网页文件所在的位置来定位某个被加载的文件位置，主要依赖以下2个特殊的路径符号：
+./	：表示当前位置，即当前网页文件所在的位置（目录）；
+../	：表示上一级位置，即当前网页文件所在的位置的上一级位置（目录）；
+我们需要用这2个符号来表达位置信息，比如：
+include  ‘./page1.php’;		//表示当前网页文件所在位置的page1.php文件；
+include  ‘../page2.php’;
+include  ‘../ab/page3.html’;
+
+绝对路径：
+绝对路径又分2种：
+本地绝对路径：
+比如：
+include  “c:/d1/d2/p1.php”;   
+include  “f:/f1/abc/p2.html”;
+特别注意：我们其实几乎都不应该在代码中直接写这种本地绝对路径！
+但，其实我们这种本地绝对路径的写法是很常用的！
+那怎么做？示例如下：
+ 
+
+
+网络绝对路径：
+比如：
+include  “http://www.abc.com/p1.php”;   
+include  “http://www.baidu.com/index.php”;
+
+“无路径”（不推荐）：
+形式就是没有给出路径信息，而只给出文件名，我们不推荐。
+比如：include  ‘page1.php’;		//此时通常其实php语言引擎会在当前网页目录下找该文件。
+
+文件载入和执行过程详解
+•	第1步：从include语句处退出php脚本模式（进入html代码模式）
+•	第2步：载入include语句所设定的文件中的代码，并执行之（如同在当前文件中一样）
+•	第3步：退出html模式重新进入php脚本模式，继续执行之后的代码
+ 
+它相当于：
+ 
+
+4个载入语句的区别
+include和require的区别：
+include载入文件失败时（即没有找到该文件），报一个“提示错误”，然后继续执行后续代码；
+requre载入文件失败时，报错并立即终止执行。
+通常，require用于在程序中，后续的代码依赖于载入的文件的时候。
+
+include_once和require_once的区别：
+同include和require的区别：
+
+include和include_once的区别：
+include载入的文件不判断是否重复，只要有include语句，就会载入一次——即此时可能导致重复载入。
+
+include_once载入的文件会有内部判断机制是否“前面代码”已经载入过，如果载入过，就不再载入。
+
+require和require_once的区别：
+同include和include_once的区别。
+
+在被载入文件中return语句的作用
+1，一个载入语句，如果载入成功，其实其是有返回值的，为1，如果载入失败，则返回的是false。
+（虽然我们通常不去使用该返回值）。
+
+ 
+
+但，如果被载入文件中有return语句，此时就有另外的机制和作用：
+2，return语句此时的作用是终止载入过程——该return语句的后续被载入文件的代码不再载入。
+ 
+运行结果为：
+ 
+3，return语句也可以用于该被载入文件载入时返回一个数据，形式为：return  XX数据；
+
+ 
+运行结果为：
+ 
+
+
+错误处理
+错误分类：
+语法错误：程序运行前，都会先自检语法，如果语法有错误，就会立即报错并停止执行。
+
+运行时错误：程序语法检查通过，运行中产生的错误，常见有三种：
+	提示性错误：
+	警告性错误：
+	致命错误：
+
+
+逻辑错误：程序本身可以正常执行，但“计算结果”却错了
+错误分级：
+php语言中，将各种错误进行了不同类别的分类归纳，并形成大约10几个级别的错误。这是技术层面的错误分级。
+每一级的错误，都有一个“代号”，这个代号也就是系统内部的“常量而已”。比如：
+
+系统常见错误：
+E_ERROR：致命错误
+E_WARNING：警告性错误
+E_NOTICE：提示性错误
+
+
+用户可自定义的错误：
+E_USER_ERROR：自定义致命错误
+E_ USER_WARNING：自定义警告性错误
+E_ USER_NOTICE：自定义提示性错误
+
+其他：
+E_STRICT：严谨性语法检查错误
+E_ALL：代表“所有错误”
+
+错误触发：
+系统触发
+程序运行到某行代码，确实出现了某种错误，此时系统报错，着就是触发了系统错误。
+系统触发的典型错误有3种：
+E_NOTICE：提示性错误：会输出错误提示，并继续执行后续代码；
+例子：使用不存在的变量/常量
+
+E_WARNING：警告性错误：也会输出错误提示，并继续执行后续代码（要视具体情况，比如require也会终止程序，引起终止时因为require，不是因为warrning）；
+
+E_ERROR：致命错误：会终止运行。
+举例：调用一个不存在函数！
+
+自定义触发
+当我们处理某些数据的时候，本来数据本身是没有错误的，但根据具体应用（业务）的需要，会要求数据满足某种条件，而当该数据不满足的时候，我们可以在程序中“主动”去触发（创建）一个错误，以表明该数据的“非法性”
